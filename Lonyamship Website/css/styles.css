@@ -72,7 +72,20 @@ body {
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
+form{
+display:block;
+width:50%;
+margin-left: 35%;
+margin-bottom: 0%;
+}
 
+.suggestions{
+text-align: center;
+
+font-style: italic;
+
+
+}
 hr {
   box-sizing: content-box;
   height: 0;
