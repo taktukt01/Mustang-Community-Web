@@ -8,7 +8,7 @@ For many, this is a tough time, and so by creating this website, my aim is to:
 
 ## Visit our website at: https://lokyidug.xyz/
 
-**This is not a final product, I am working to add more features in the coming future.
+**This is not a final product, I am working to add more features in the coming future.**
 
-*Don't hesitate to contact me at taktukgg@gmail.com if you want to collaborate on this project with me!
+*Don't hesitate to contact me at taktukgg@gmail.com if you want to collaborate on this project with me!*
 
