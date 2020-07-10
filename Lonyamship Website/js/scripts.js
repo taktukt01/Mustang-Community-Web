@@ -21,8 +21,17 @@
     });
     $('.carousel').carousel({
       interval: 1700
-    })
+    });
   
+    $('.executiveMembers').click(function(){
+      var myHtml = document.getElementById('executiveMembersPopUp').innerHTML;
+      document.getElementById('executiveMembersList').innerHTML = myHtml;
+$(this).hide();
+
+    });
+     
+
+
     // Scroll to top button appear
     $(document).scroll(function() {
       var scrollDistance = $(this).scrollTop();
