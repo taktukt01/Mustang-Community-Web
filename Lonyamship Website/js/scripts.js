@@ -22,15 +22,83 @@
     $('.carousel').carousel({
       interval: 1700
     });
+
+    $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+
   
-    $('.executiveMembers').click(function(){
-      var myHtml = document.getElementById('executiveMembersPopUp').innerHTML;
-      document.getElementById('executiveMembersList').innerHTML = myHtml;
-$(this).hide();
+    // $('.executiveMembers').click(function(){
+// $(this).hide();
 
-    });
+    // });
      
+    function addExecMember(name, email,phone,fbLink){
+      var code =`<li class="list-group-item"><strong> ` + name + `</strong>
+      <ul>
+      <li>
+          Phone Number:` + phone + 
+          `</li>
+      
+      <li>
+      Email address: ` + email + `
+      
+      </li>
+      
+      <li>
+      
+      <a class="btn btn-outline-dark btn-social mx-1" href=`+email+`><i class="fab fa-fw fa-facebook-f"></i></a>
+      
+      </li>`
+      ;
+      
+return code;
+    }
 
+    // This is a shortcut. 
+    // In the future I would like to grab from an excel sheet and 
+    // extract the data from there onto here
+    // Adding Executive Members
+    
+    document.getElementById("execMember").innerHTML += addExecMember("Sonam Sangpo, President" , 
+    "taktukgg@gmail.com","92939923932","https://www.facebook.com/taktuk2s/");
+
+
+    document.getElementById("execMember").innerHTML += addExecMember("Tashi Lhagyal, Vice President","","");
+
+
+    document.getElementById("execMember").innerHTML += addExecMember("Jamyang Choesang, Secretary","","","");
+
+    document.getElementById("execMember").innerHTML += addExecMember("Karsang Gyamtso, Senior Adviser","","","");
+
+    document.getElementById("execMember").innerHTML += addExecMember("Bhomo Lhakpa, Co-Adviser","","","");
+
+    document.getElementById("execMember").innerHTML += addExecMember("Tsering Dhundup, Accountant","","","");
+
+    document.getElementById("execMember").innerHTML += addExecMember("Tsering Wangdu, Co-accountant","","","");
+
+    document.getElementById("execMember").innerHTML += addExecMember("Rinzin Gelek, Treasury","","","");
+
+    document.getElementById("execMember").innerHTML += addExecMember("Tenzin Thupten, Co-treasury","","","");
+
+
+    // Adding Board Members
+
+    document.getElementById("boardMember").innerHTML += addExecMember("Sonam Duke","","","","");
+    document.getElementById("boardMember").innerHTML += addExecMember("Tenzin Sonam","","","","");
+    document.getElementById("boardMember").innerHTML += addExecMember("Pema Dorjee","","","","");
+    document.getElementById("boardMember").innerHTML += addExecMember("Lhamo Dolkar","","","","");
+    document.getElementById("boardMember").innerHTML += addExecMember("Kunga Sangpo","","","","");
+    document.getElementById("boardMember").innerHTML += addExecMember("Lobsang Wangdi","","","","");
+    document.getElementById("boardMember").innerHTML += addExecMember("Jamyang Choesang","","","","");
+
+
+    //Adding New Members
+
+    document.getElementById("newMember").innerHTML += addExecMember("Jigme Bista","","","");
+    document.getElementById("newMember").innerHTML += addExecMember("Wangdi p Bista","","","");
+    document.getElementById("newMember").innerHTML += addExecMember("Pema Tsering","","","");
+    document.getElementById("newMember").innerHTML += addExecMember("Tashi Tsering","","","");
+    document.getElementById("newMember").innerHTML += addExecMember("Dechen Wangmo","","","");
+    document.getElementById("newMember").innerHTML += addExecMember("Karma Dhundup","","","");
 
     // Scroll to top button appear
     $(document).scroll(function() {
