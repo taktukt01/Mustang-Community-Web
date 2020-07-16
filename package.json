@@ -1,0 +1,23 @@
+{
+  "name": "mustang-community-web",
+  "version": "1.0.0",
+  "description": "As the coronavirus pandemic has set in, it's important for us as a community to be together while maintaining social distance. For many, this is a tough time, and so by creating this website, my aim is to: - Get the youth in our community to share their projects that they are working on, anything they would like to collaborate on - Support those that may need any help - Most importantly, to preserve our culture through gallery of our village, traditions, and tibetan musical instruments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taktukt01/Mustang-Community-Web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taktukt01/Mustang-Community-Web/issues"
+  },
+  "homepage": "https://github.com/taktukt01/Mustang-Community-Web#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "stripe": "^8.73.0"
+  }
+}
