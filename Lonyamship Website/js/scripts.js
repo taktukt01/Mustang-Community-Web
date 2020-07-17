@@ -25,6 +25,13 @@
 
     $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
 
+
+
+    $(".donate-btn").click(function(){
+
+      window.location.href = "http://localhost:3000/payment";
+
+    });
   
     // $('.executiveMembers').click(function(){
 // $(this).hide();

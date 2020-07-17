@@ -2,6 +2,7 @@
  const express = require('express');
  const router = express.Router();
  const path = require("path")
+ const pathFile = __dirname+'/Lonyamship Website/index.html';
 
  router.get("/", (req, res) => {
 
@@ -13,7 +14,16 @@
   router.get("/payment" , (req,res)=>{
 
     res.sendFile("/Users/dodo/Desktop/Mustang-Community-Web/Lonyamship Website/payment.html");
+
   });
+
+
+//   app.get('/home', function(request, response) {
+//     response.render('pages/home');
+// });
+
+
+  
 
 
 
