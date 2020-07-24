@@ -27,7 +27,8 @@
 
     $(".donate-btn").click(function(){
 
-      window.location.href = "http://localhost:3000/payment";
+      // window.location.href = "http://localhost:3000/payment";
+      alert("Coming Soon!");
 
     });
   
