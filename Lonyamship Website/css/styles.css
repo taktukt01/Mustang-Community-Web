@@ -6442,10 +6442,6 @@ a.close.disabled {
   vertical-align: text-top !important;
 }
 
-.bg-primary {
-  background-color: #1abc9c !important;
-}
-
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
@@ -10421,10 +10417,13 @@ h3 {
 }
 
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
+background:rgb(37, 16, 13) url("../images/free-tibet-flag-recovered.jpg");
+background-repeat: repeat;
+text-align:center;
+margin:auto;
+padding:0;
+
+
 }
 #mainNav .navbar-brand {
   color: #fff;
