@@ -3,8 +3,21 @@ const cors = require('cors');
 const morgan = require('morgan');
 const fetch = require('node-fetch');
 const app = express();
-
+const {google} = require('googleapis');
 require('dotenv').config();
+
+
+
+// I want the server to respond with all the videos of this certain Channel
+
+google.youtube('v3').playlists.list( {
+key: process.env.GOOGLE_API_KEY,
+part: 'snippet',
+id: ['PLq0KjKjR7nOxOSjTEAXOYSQksSKiFS1O9'],
+
+
+}).then(resp => console.log(resp.data.items[0].snippet)).catch(err => console.log(err));
+
 
 
 app.use(express.static('Lonyamship Website'));

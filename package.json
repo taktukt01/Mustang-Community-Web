@@ -20,6 +20,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "googleapis": "^59.0.0",
     "jquery.scrollto": "^2.1.2",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.0",
