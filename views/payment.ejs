@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accept a card payment</title>
+    <meta name="description" content="A demo of a card payment on Stripe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+ 
+
+
+
+
+    <script>
+      var stripePublicKey = '<%= publish_key %>'
+
+  </script>
+
+  </head>
+
+  <body>
+    <!-- Display a payment form -->
+    <form method="POST" action="/payment">
+        
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationCustom01">Enter Amount</label>
+          <input type="text" class="form-control amount-value" name = "donationAmount" id="validationCustom01" placeholder="Amount" required>
+        </div>
+
+        </div>
+        
+        
+        <button type="submit" class="btn btn-info checkout-button">Submit</button>
+    </form>
+
+
+
+
+    <script src="./js/stripe.js" defer></script>
+
+  </body>
+</html>
