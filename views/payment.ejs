@@ -7,33 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://js.stripe.com/v3/"></script>
 
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/stripe.css">
  
 
 
 
 
     <script>
-      var stripePublicKey = '<%= publish_key %>'
+      var stripePublicKey = '<%= publish_key %>';
+
+      var donationAmt = '<%= donationAmount %>';
+
+  
+
+
 
   </script>
 
   </head>
 
   <body>
-    <!-- Display a payment form -->
-    <form method="POST" action="/payment">
-        
+
+
+
+    <form action="/payment" method="post" id="payment-form">
       <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label for="validationCustom01">Enter Amount</label>
-          <input type="text" class="form-control amount-value" name = "donationAmount" id="validationCustom01" placeholder="Amount" required>
+
+
+        <div class="form-group">
+          <label for="amountDonate">Donate</label>
+          <input type="text" class="form-control" name="amountDonate" id="amountDonate" placeholder="Amount to Donate">
         </div>
+        
+
+
+        <label for="card-element">
+          Credit or debit card
+        </label>
+        <div id="card-element">
+          <!-- A Stripe Element will be inserted here. -->
+
+
 
         </div>
         
-        
-        <button type="submit" class="btn btn-info checkout-button">Submit</button>
+
+    
+
+    
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+        </div>
+    
+      <button>Submit Payment</button>
     </form>
 
 
