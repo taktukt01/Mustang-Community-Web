@@ -13,59 +13,76 @@
 
 
 
-    <script>
-      var stripePublicKey = '<%= publish_key %>';
-
-      var donationAmt = '<%= donationAmount %>';
-
-  
-
-
-
-  </script>
 
   </head>
 
   <body>
 
+          
+          <!-- <label for="amountDonate">Donate</label> -->
+          <!-- <input type="text" class="form-control" name="amountDonate" id="amountDonate" placeholder="Amount to Donate"> -->
+          <button id="checkout-button">Checkout</button>
 
 
-    <form action="/payment" method="post" id="payment-form">
-      <div class="form-row">
 
 
-        <div class="form-group">
-          <label for="amountDonate">Donate</label>
-          <input type="text" class="form-control" name="amountDonate" id="amountDonate" placeholder="Amount to Donate">
-        </div>
+
+
+
+
+
+    
+    <script type = "text/javascript">
+      var stripePublicKey = '<%= publish_key %>';
+
+      var donationAmt = '<%= amountDonate %>';
+
+  
+      var stripe = Stripe(stripePublicKey);
+      var checkoutButton = document.getElementById('checkout-button');
+
+      checkoutButton.addEventListener('click', function() {
+
+
+        fetch('/payment', {
+          method: 'POST',
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session) {
+          return stripe.redirectToCheckout({ sessionId: session.id ,
         
+   });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
 
 
-        <label for="card-element">
-          Credit or debit card
-        </label>
-        <div id="card-element">
-          <!-- A Stripe Element will be inserted here. -->
-
-
-
-        </div>
-        
-
-    
-
-    
-        <!-- Used to display form errors. -->
-        <div id="card-errors" role="alert"></div>
-        </div>
-    
-      <button>Submit Payment</button>
-    </form>
-
-
-
+    </script>
 
     <script src="./js/stripe.js" defer></script>
 
   </body>
+  <footer>
+    <br> <br> 
+    <br> <br> 
+
+    <br> <br> 
+    <br> <br> 
+    <br> <br> 
+
+    <i> Thank you for your $20 donation!</i>
+    
+  </footer>
 </html>

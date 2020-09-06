@@ -9,10 +9,8 @@ const bodyParser = require('body-parser');
 
 
 
-router.use(bodyParser.urlencoded({
-  extended: true
-}));
-
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+router.use(bodyParser.json())
 
 
 const publishable_key = process.env.PUBLISHABLE_KEY;
@@ -34,11 +32,41 @@ router.get("/", (req,res)=>{
     res.render("payment" , {
 //data here
 publish_key : publishable_key,
-donationAmount : 0 ,
+amountDonate : 0 ,
 
     })
 
 });
+
+router.post("/payment", urlencodedParser, async (req, res) => {
+
+
+  const session = await stripe.checkout.sessions.create({
+    submit_type: 'donate',
+    payment_method_types: ["card"],
+    line_items: [
+      {
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: "Donation"
+          },
+          unit_amount: 2000,
+        },
+        quantity: 1,
+      },
+    ],
+    mode: "payment",
+    success_url: "https://example.com/cancel",
+    cancel_url: "https://example.com/cancel",
+  });
+
+
+  res.json({ id: session.id 
+  });
+});
+
+
 
 //  router.get("/formSuccess", function(req,res){
 //    res.render("formSuccess");
@@ -61,55 +89,5 @@ donationAmount : 0 ,
 
 
 //  });
-
-router.post("/payment", async (request,response)=>{
-
-try {
-
-  console.log(request.body);
-
-
-  //stripe accepts payments in the form of cents. What?!
-  // console.log(request.body.amountDonate * 100);
-  // Create the PaymentIntent
-  let intent = await stripe.paymentIntents.create({
-    amount: request.body.amountDonate * 100, 
-    currency: 'usd',
-    payment_method: request.body.payment_method_id,
-
-    // A PaymentIntent can be confirmed some time after creation,
-    // but here we want to confirm (collect payment) immediately.
-    confirm: true,
-
-    // If the payment requires any follow-up actions from the
-    // customer, like two-factor authentication, Stripe will error
-    // and you will need to prompt them for a new payment method.>
-    error_on_requires_action: true,
-
-  });
-  return generateResponse(response, intent);
-} catch (e) {
-  if (e.type === 'StripeCardError') {
-    // Display error on client
-    return response.send({ error: e.message });
-  } else {
-    // Something else happened
-    return response.status(500).send({ error: e.type });
-  }
-}
-});
-
-
-
-function generateResponse(response, intent) {
-if (intent.status === 'succeeded') {
-  // Handle post-payment fulfillment
-  return response.send({ success: true });
-} else {
-  // Any other status would be unexpected, so error
-  return response.status(500).send({error: 'Unexpected status ' + intent.status});
-}
-}
-
 
  module.exports = router;
