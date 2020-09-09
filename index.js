@@ -39,7 +39,7 @@ require('dotenv').config();
 
 
 //This is our root path now!
-app.use(express.static('Lonyamship Website'));
+app.use(express.static('public'));
 
 
 app.set('view engine','ejs')

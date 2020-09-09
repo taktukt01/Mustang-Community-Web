@@ -10416,19 +10416,11 @@ h3 {
   line-height: 3.1rem;
 }
 
-#mainNav {
-background:rgb(37, 16, 13) url("../images/free-tibet-flag-recovered.jpg");
-background-repeat: repeat;
-text-align:center;
-margin:auto;
-padding:0;
 
-
-}
-#mainNav .navbar-brand {
+/* #mainNav .navbar-brand {
   color: #fff;
-}
-#mainNav .navbar-nav {
+} */
+/* #mainNav .navbar-nav {
   margin-top: 1rem;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link {
@@ -10446,7 +10438,7 @@ padding:0;
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.8rem;
-}
+} */
 
 @media (min-width: 992px) {
   #mainNav {
@@ -10466,9 +10458,7 @@ padding:0;
     background: #1abc9c;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
-    color: #fff;
-    background: #1abc9c;
-  }
+    
 
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
@@ -10477,7 +10467,6 @@ padding:0;
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.5em;
   }
-}
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
@@ -10492,6 +10481,7 @@ padding:0;
 .masthead .masthead-avatar {
   width: 15rem;
 }
+
 
 @media (min-width: 992px) {
   .masthead {

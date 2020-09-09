@@ -161,14 +161,18 @@ sup {
   top: -.5em;
 }
 
+#logoBrand{
+  margin-right: 47vw;
+}
+
 a {
-  color: #d9230f;
+  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #91170a;
+  color: #ffc107;
   text-decoration: underline;
 }
 
