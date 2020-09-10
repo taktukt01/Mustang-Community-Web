@@ -5,7 +5,6 @@
 
 const bodyParser = require('body-parser');
 
-//  const pathFile = __dirname+'/Lonyamship Website/index.html';
 
 
 
@@ -14,10 +13,7 @@ router.use(bodyParser.json())
 
 
 const publishable_key = process.env.PUBLISHABLE_KEY;
- 
 const secret_key_stripe =  process.env.SECRET_KEY;
-
-
 const stripe = require('stripe')(secret_key_stripe)
 
 
@@ -38,6 +34,7 @@ amountDonate : 0 ,
 
 });
 
+
 router.post("/payment", urlencodedParser, async (req, res) => {
 
 
@@ -57,7 +54,7 @@ router.post("/payment", urlencodedParser, async (req, res) => {
       },
     ],
     mode: "payment",
-    success_url: "https://example.com/cancel",
+    success_url: "http://localhost:5000/paymentSuccess",
     cancel_url: "https://example.com/cancel",
   });
 
@@ -68,9 +65,9 @@ router.post("/payment", urlencodedParser, async (req, res) => {
 
 
 
-//  router.get("/formSuccess", function(req,res){
-//    res.render("formSuccess");
-//  });
+ router.get("/paymentSuccess", function(req,res){
+   res.render("paymentSuccess");
+ });
 
 //  router.post("/payment", async function(req,res){
 

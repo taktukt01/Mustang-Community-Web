@@ -46,6 +46,8 @@ app.set('view engine','ejs')
 
 
 app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
+
 
 app.use(morgan('tiny'));
 
