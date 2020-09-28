@@ -10,9 +10,6 @@ var fetch = require('node-fetch');
 
 var app = express();
 
-var _require = require('googleapis'),
-    google = _require.google;
-
 require('dotenv').config(); // const publishable_key = process.env.publishable_key;
 // const secret_key_stripe =  process.env.secret_key_stripe;
 // I want the server to respond with all the videos of this certain Channel\
@@ -32,9 +29,10 @@ require('dotenv').config(); // const publishable_key = process.env.publishable_k
 //This is our root path now!
 
 
-app.use(express["static"]('Lonyamship Website'));
+app.use(express["static"]('public'));
 app.set('view engine', 'ejs');
 app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 app.use(morgan('tiny'));
 app.use(cors());
 

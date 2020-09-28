@@ -35,6 +35,8 @@
 // $(this).hide();
 
     // });
+
+    
      
     function addExecMember(name, email,phone,fbLink){
       var code =`<li class="list-group-item"><strong> ` + name + `</strong>

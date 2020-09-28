@@ -26,9 +26,14 @@
 <!-- Navigation-->
 
 <body id="page-top">
+
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=394548438190983&autoLogAppEvents=1" nonce="EiObyex9"></script>
+
+
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-    
+
             <button
                 class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
                 type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -39,10 +44,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
 
-                    <a class="navbar-brand"  href="#">
+                    <a class="navbar-brand" href="#">
                         <img src="./images/pic1.jpg" id="logoBrand" alt="">
-                      </a>
-                      
+                    </a>
+
 
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="#portfolio">Board Members</a></li>
@@ -56,21 +61,23 @@
 
 
 
-            <a class="btn btn-default" href="/users/register" role="button">Register</a>
+                    <!-- <a class="btn btn-default" href="/users/register" role="button">Register</a> -->
 
-<!-- <a href="/users/register"   >Register</a> -->
-<!-- <a href="/users/login"> Login</a> -->
+                    <!-- <a href="/users/register"   >Register</a> -->
+                    <!-- <a href="/users/login"> Login</a> -->
 
-<a class="btn btn-default" href="/users/login" role="button">Login</a>
+                    <!-- <a class="btn btn-default" href="/users/login" role="button">Login</a> -->
+
+                    <!-- <a class="btn btn-default" href="/google" role="button">Login</a> -->
+
+                    <a href="/google">Sign in with Google</a>
+
+                    
 
 
+                    <button type="button" class="btn btn-success donate-btn">Donate</button>
 
 
-
-
-    <button type="button" class="btn btn-success donate-btn">Donate</button>
-
-                        
 
 
                 </ul>
@@ -87,31 +94,31 @@
 
 
 
-    <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center text-style-">
-        <div class="container d-flex align-items-center flex-column">
-            <!-- <h5 class="masthead-heading">About Us </h1> -->
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center text-style-">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- <h5 class="masthead-heading">About Us </h1> -->
 
-            <!-- Masthead Avatar Image-->
-            <!-- Masthead Heading-->
-            <div class="divider-custom divider-light">
-            </div>
-            <!-- 
+                <!-- Masthead Avatar Image-->
+                <!-- Masthead Heading-->
+                <div class="divider-custom divider-light">
+                </div>
+                <!-- 
 Insert About Us Section here -->
 
-            <!-- About Section Heading-->
+                <!-- About Section Heading-->
 
 
-            <h1 class="display-3 text-light">About Lonyamship</h1>
+                <h1 class="display-3 text-light">About Lonyamship</h1>
 
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- About Section Content-->
-            <!-- <div class = "row">
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <!-- <div class = "row">
          
 
       <div style="float: left; width: 50%">
@@ -120,43 +127,47 @@ Insert About Us Section here -->
            -->
 
 
-            <!-- </div> -->
+                <!-- </div> -->
 
-            <div class="float-container">
+                <div class="float-container">
 
-                <div class="float-child">
-                    <div class="green">
+                    <div class="float-child">
+                        <div class="green">
 
-                        <p class = "lead text-light">
+                            <p class="lead text-light">
 
-                        Lo-Nyamship Kyidug USA is a non-profit organization established primarily to help the people of
-                        Upper Mustang community in the USA and also living in Nepal.
+                                Lo-Nyamship Kyidug USA is a non-profit organization established primarily to help the
+                                people of
+                                Upper Mustang community in the USA and also living in Nepal.
 
-                        Its main objective is to preserve Mustang culture and traditions and bringing everyone under one
-                        roof to celebrate.
+                                Its main objective is to preserve Mustang culture and traditions and bringing everyone
+                                under one
+                                roof to celebrate.
+                        </div>
                     </div>
+
+                    <div class="float-child">
+                        <div class="blue">
+                            <p class="lead text-light">
+                                We achieve this by gathering and celebrating our traditions even though we are far from
+                                home.
+                                The association aims to preserve our culture through community
+                                programs that allow people of different age groups to share their knowledge to the
+                                coming
+                                generation.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="float-child">
-                    <div class="blue">
-<p class= "lead text-light">
-                        We achieve this by gathering and celebrating our traditions even though we are far from home.
-                        The association aims to preserve our culture through community
-                        programs that allow people of different age groups to share their knowledge to the coming
-                        generation.
-</p>
-                    </div>
-                </div>
+
 
             </div>
 
 
-
-        </div>
-
-
-        </section>
-        <!--end of front page -->
+    </section>
+    <!--end of front page -->
     </header>
     <!-- MEMBERS Section-->
     <section class="page-section portfolio" id="portfolio">
@@ -189,7 +200,7 @@ Insert About Us Section here -->
                                         </div>
                                         <div class="modal-body">
 
-                                            <ul class="list-group" id = "execMember">
+                                            <ul class="list-group" id="execMember">
 
 
 
@@ -216,101 +227,101 @@ Insert About Us Section here -->
                 <div class="col">
 
                     <div class="card mx-auto border-primary float-left" style="width:150px">
-                    <div class="card-body">
-                        <h5 class="card-title">Board Members</h5>
-                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#boardMembersToggle">
-                            See Members
-                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">Board Members</h5>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#boardMembersToggle">
+                                See Members
+                            </button>
 
 
-                        <!-- Modal for Board Members -->
-                        <div class="modal fade" id="boardMembersToggle" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Members</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <!-- Modal for Board Members -->
+                            <div class="modal fade" id="boardMembersToggle" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Members</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                                            <span aria-hidden="true">&times;</span>
-                                    </div>
-                                    <div class="modal-body">
+                                                <span aria-hidden="true">&times;</span>
+                                        </div>
+                                        <div class="modal-body">
 
-                                        <ul class="list-group" id = "boardMember">
-
-
-
-
-                                        </ul>
+                                            <ul class="list-group" id="boardMember">
 
 
 
 
+                                            </ul>
 
 
 
+
+
+
+
+                                        </div>
                                     </div>
                                 </div>
+
+
+
                             </div>
-                   
+                        </div>
 
-                           
+                    </div>
                 </div>
-                </div>
-
-</div>
-</div>
                 <!-- New Members Modal -->
 
                 <div class="col">
 
                     <div class="card mx-auto border-primary float-left" style="width:150px">
-                    <div class="card-body">
-                        <h5 class="card-title">New Members</h5>
-                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#newMembersToggle">
-                            See Members
-                        </button>
+                        <div class="card-body">
+                            <h5 class="card-title">New Members</h5>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#newMembersToggle">
+                                See Members
+                            </button>
 
 
-                        <!-- Modal for New Members -->
-                        <div class="modal fade" id="newMembersToggle" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Members</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <!-- Modal for New Members -->
+                            <div class="modal fade" id="newMembersToggle" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Members</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                                            <span aria-hidden="true">&times;</span>
-                                    </div>
-                                    <div class="modal-body">
+                                                <span aria-hidden="true">&times;</span>
+                                        </div>
+                                        <div class="modal-body">
 
-                                        <ul class="list-group" id = "newMember">
-
-
-
-
-                                        </ul>
+                                            <ul class="list-group" id="newMember">
 
 
 
 
+                                            </ul>
 
 
 
+
+
+
+
+                                        </div>
                                     </div>
                                 </div>
+
+
+
                             </div>
-                   
+                        </div>
 
-                           
+                    </div>
                 </div>
-                </div>
-
-</div>
-</div>
             </div>
         </div>
 
@@ -320,64 +331,66 @@ Insert About Us Section here -->
     <!-- Gallery Section-->
     <section class="page-section bg-primary text-white mb-0" id="gallery">
 
-<!-- Page Content -->
+        <!-- Page Content -->
 
 
-<div class="fluid-container gallery-container">
+        <div class="fluid-container gallery-container">
 
-    <h1 class="text-center text-lg-center mt-4 mb-0 photo-gall-heading text-dark">Photo Gallery</h1>
-  
-    <hr class="mt-2 mb-5">
-  
-   
-    <div class="tz-gallery">
+            <h1 class="text-center text-lg-center mt-4 mb-0 photo-gall-heading text-dark">Photo Gallery</h1>
 
-        <div class="row">
+            <hr class="mt-2 mb-5">
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug12.jpg">
-                        <img class="img-thumbnail" src="images/kyidug12.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+            <div class="tz-gallery">
+
+                <div class="row">
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug7.jpg">
-                        <img class="img-thumbnail" src="images/kyidug7.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug12.jpg">
+                                <img class="img-thumbnail" src="images/kyidug12.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug7.jpg">
+                                <img class="img-thumbnail" src="images/kyidug7.jpg" alt="Card image" style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug31.jpg">
-                        <img class="img-thumbnail" src="images/kyidug31.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug31.jpg">
+                                <img class="img-thumbnail" src="images/kyidug31.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
 
-            
-          
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug1.jpg">
-                        <img class="img-thumbnail" src="images/kyidug1.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                        </div>
+                    </div>
 
 
-            <!-- <div class="col-sm-6 col-md-4">
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug1.jpg">
+                                <img class="img-thumbnail" src="images/kyidug1.jpg" alt="Card image" style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <a class="lightbox" href="images/kyidug2.jpg">
                         <img class = "img-thumbnail" src="images/kyidug2.jpg" alt="Tuneel">
@@ -387,154 +400,163 @@ Insert About Us Section here -->
             </div> -->
 
 
-          
-
-            
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug3.jpg">
-                        <img class = "img-thumbnail" src="images/kyidug3.jpg" alt="Coast">
-                    </a>
-                   
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug4.jpg">
-                        <img class = "img-thumbnail" src="images/kyidug4.jpg" alt="Rails">
-                    </a>
-                   
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug5.jpg">
-                        <img class = "img-thumbnail" src="images/kyidug5.jpg" alt="Traffic">
-                    </a>
-                   
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug6.jpg">
-                        <img class="img-thumbnail" src="images/kyidug6.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
 
 
-           
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug3.jpg">
+                                <img class="img-thumbnail" src="images/kyidug3.jpg" alt="Coast">
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug4.jpg">
+                                <img class="img-thumbnail" src="images/kyidug4.jpg" alt="Rails">
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug5.jpg">
+                                <img class="img-thumbnail" src="images/kyidug5.jpg" alt="Traffic">
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug6.jpg">
+                                <img class="img-thumbnail" src="images/kyidug6.jpg" alt="Card image" style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug8.jpg">
-                        <img class="img-thumbnail" src="images/kyidug8.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug9.jpg">
-                        <img class="img-thumbnail" src="images/kyidug9.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug10.jpg">
-                        <img class="img-thumbnail" src="images/kyidug10.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug11.jpg">
-                        <img class="img-thumbnail" src="images/kyidug11.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
 
-        
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug13.jpg">
-                        <img class="img-thumbnail" src="images/kyidug13.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug8.jpg">
+                                <img class="img-thumbnail" src="images/kyidug8.jpg" alt="Card image" style="width:100%">
+                            </a>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug14.jpg">
-                        <img class="img-thumbnail" src="images/kyidug14.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                        </div>
+                    </div>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug15.jpg">
-                        <img class="img-thumbnail" src="images/kyidug15.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug9.jpg">
+                                <img class="img-thumbnail" src="images/kyidug9.jpg" alt="Card image" style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug10.jpg">
+                                <img class="img-thumbnail" src="images/kyidug10.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug16.jpg">
-                        <img class="img-thumbnail" src="images/kyidug16.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug11.jpg">
+                                <img class="img-thumbnail" src="images/kyidug11.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug17.jpg">
-                        <img class="img-thumbnail" src="images/kyidug17.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug13.jpg">
+                                <img class="img-thumbnail" src="images/kyidug13.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug18.jpg">
-                        <img class="img-thumbnail" src="images/kyidug18.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                        </div>
+                    </div>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug19.jpg">
-                        <img class="img-thumbnail" src="images/kyidug19.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug14.jpg">
+                                <img class="img-thumbnail" src="images/kyidug14.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug15.jpg">
+                                <img class="img-thumbnail" src="images/kyidug15.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <!-- <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug16.jpg">
+                                <img class="img-thumbnail" src="images/kyidug16.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug17.jpg">
+                                <img class="img-thumbnail" src="images/kyidug17.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug18.jpg">
+                                <img class="img-thumbnail" src="images/kyidug18.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug19.jpg">
+                                <img class="img-thumbnail" src="images/kyidug19.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <a class="lightbox" href="images/kyidug20.jpg">
                         <img class="img-thumbnail" src="images/kyidug20.jpg" alt="Card image" style="width:100%">
@@ -543,114 +565,124 @@ Insert About Us Section here -->
                 </div>
             </div> -->
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug21.jpg">
-                        <img class="img-thumbnail" src="images/kyidug21.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug21.jpg">
+                                <img class="img-thumbnail" src="images/kyidug21.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug22.jpg">
-                        <img class="img-thumbnail" src="images/kyidug22.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                        </div>
+                    </div>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug23.jpg">
-                        <img class="img-thumbnail" src="images/kyidug23.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug22.jpg">
+                                <img class="img-thumbnail" src="images/kyidug22.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
 
+                        </div>
+                    </div>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug24.jpg">
-                        <img class="img-thumbnail" src="images/kyidug24.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug23.jpg">
+                                <img class="img-thumbnail" src="images/kyidug23.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug25.jpg">
-                        <img class="img-thumbnail" src="images/kyidug25.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug24.jpg">
+                                <img class="img-thumbnail" src="images/kyidug24.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug26.jpg">
-                        <img class="img-thumbnail" src="images/kyidug26.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug25.jpg">
+                                <img class="img-thumbnail" src="images/kyidug25.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug27.jpg">
-                        <img class="img-thumbnail" src="images/kyidug27.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug26.jpg">
+                                <img class="img-thumbnail" src="images/kyidug26.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug27.jpg">
+                                <img class="img-thumbnail" src="images/kyidug27.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug28.jpg">
-                        <img class="img-thumbnail" src="images/kyidug28.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                        </div>
+                    </div>
 
 
 
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug29.jpg">
-                        <img class="img-thumbnail" src="images/kyidug29.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug28.jpg">
+                                <img class="img-thumbnail" src="images/kyidug28.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
 
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug30.jpg">
-                        <img class="img-thumbnail" src="images/kyidug30.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div>
-
-
-        
+                        </div>
+                    </div>
 
 
 
-            
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug29.jpg">
+                                <img class="img-thumbnail" src="images/kyidug29.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
 
 
-            <!-- <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="images/kyidug30.jpg">
+                                <img class="img-thumbnail" src="images/kyidug30.jpg" alt="Card image"
+                                    style="width:100%">
+                            </a>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <a class="lightbox" href="images/lomanthang.jpg">
                         <img class = "img-thumbnail" src="images/lomanthang.jpg" alt="Traffic">
@@ -662,15 +694,15 @@ Insert About Us Section here -->
 
         -->
 
-        </div>        
-        
-        
-        
+                </div>
 
-    </div>
-    </div>
 
-  <!-- /.container -->
+
+
+            </div>
+        </div>
+
+        <!-- /.container -->
     </section>
 
 
@@ -795,9 +827,34 @@ Insert About Us Section here -->
     <script src="js/scripts.js"></script>
 
 
+
+
 <script>
-    baguetteBox.run('.tz-gallery');
-</script>
+
+baguetteBox.run('.tz-gallery');
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '394548438190983',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v8.0'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
 
 </body>
 
@@ -805,22 +862,22 @@ Insert About Us Section here -->
 <footer class="footer text-center">
     <div class="container">
         <div class="row">
-           
+
             <!-- Footer Social Icons-->
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                 <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-youtube"></i></a>
             </div>
-          
+
         </div>
     </div>
 
     <!-- Copyright Section-->
-<div class="copyright py-4 text-center text-white">
-    <div class="container"><small>Copyright © Your Website 2020</small></div>
-</div>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright © Your Website 2020</small></div>
+    </div>
 
 </footer>
 
 
-</html> 
+</html>

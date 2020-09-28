@@ -1,20 +1,42 @@
 "use strict";
 
-// routes/index.js
+//  Shift + Option + F to reformat code
 var express = require('express');
+
+var cors = require('cors');
 
 var router = express.Router(); //  const path = require("path");
 
-var bodyParser = require('body-parser'); //  const pathFile = __dirname+'/Lonyamship Website/index.html';
+var passport = require('passport');
+
+require('dotenv').config();
+
+var cookieSession = require('cookie-session');
+
+var bodyParser = require('body-parser');
+
+var _require = require('ejs'),
+    closeDelimiter = _require.closeDelimiter;
+
+require("./passport-google"); // var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 
 router.use(bodyParser.urlencoded({
-  extended: true
+  extended: false
+}));
+router.use(bodyParser.json());
+router.use(passport.initialize());
+router.use(passport.session());
+router.use(cors());
+router.use(cookieSession({
+  name: 'google-session',
+  keys: ['key1', 'key2']
 }));
 var publishable_key = process.env.PUBLISHABLE_KEY;
 var secret_key_stripe = process.env.SECRET_KEY;
 
-var stripe = require('stripe')(secret_key_stripe);
+var stripe = require('stripe')(secret_key_stripe); // Stripe JS
+
 
 router.get("/", function (req, res) {
   res.render("index");
@@ -23,86 +45,91 @@ router.get("/payment", function (req, res) {
   res.render("payment", {
     //data here
     publish_key: publishable_key,
-    donationAmount: 0
+    amountDonate: 0
   });
-}); //  router.get("/formSuccess", function(req,res){
-//    res.render("formSuccess");
-//  });
-//  router.post("/payment", async function(req,res){
-//   console.log(JSON.stringify(req.body.donationAmount));
-//   res.render('payment', {
-//  donationAmount : req.body.donationAmount,
-//  publish_key : publishable_key 
-//   });
-//  });
-
-router.post("/payment", function _callee(request, response) {
-  var intent;
+});
+router.post("/payment", function _callee(req, res) {
+  var session;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.prev = 0;
-          console.log(request.body); //stripe accepts payments in the form of cents. What?!
-          // console.log(request.body.amountDonate * 100);
-          // Create the PaymentIntent
-
-          _context.next = 4;
-          return regeneratorRuntime.awrap(stripe.paymentIntents.create({
-            amount: request.body.amountDonate * 100,
-            currency: 'usd',
-            payment_method: request.body.payment_method_id,
-            // A PaymentIntent can be confirmed some time after creation,
-            // but here we want to confirm (collect payment) immediately.
-            confirm: true,
-            // If the payment requires any follow-up actions from the
-            // customer, like two-factor authentication, Stripe will error
-            // and you will need to prompt them for a new payment method.>
-            error_on_requires_action: true
+          _context.next = 2;
+          return regeneratorRuntime.awrap(stripe.checkout.sessions.create({
+            submit_type: 'donate',
+            payment_method_types: ["card"],
+            line_items: [{
+              price_data: {
+                currency: "usd",
+                product_data: {
+                  name: "Donation"
+                },
+                unit_amount: 2000
+              },
+              quantity: 1
+            }],
+            mode: "payment",
+            success_url: "http://localhost:5000/paymentSuccess",
+            cancel_url: "https://example.com/cancel"
           }));
+
+        case 2:
+          session = _context.sent;
+          res.json({
+            id: session.id
+          });
 
         case 4:
-          intent = _context.sent;
-          return _context.abrupt("return", generateResponse(response, intent));
-
-        case 8:
-          _context.prev = 8;
-          _context.t0 = _context["catch"](0);
-
-          if (!(_context.t0.type === 'StripeCardError')) {
-            _context.next = 14;
-            break;
-          }
-
-          return _context.abrupt("return", response.send({
-            error: _context.t0.message
-          }));
-
-        case 14:
-          return _context.abrupt("return", response.status(500).send({
-            error: _context.t0.type
-          }));
-
-        case 15:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[0, 8]]);
+  });
 });
+router.get("/paymentSuccess", function (req, res) {
+  res.render("paymentSuccess");
+}); // Passport JS
+// Auth middleware that checks if the user is logged in
 
-function generateResponse(response, intent) {
-  if (intent.status === 'succeeded') {
-    // Handle post-payment fulfillment
-    return response.send({
-      success: true
-    });
+var isLoggedIn = function isLoggedIn(req, res, next) {
+  if (req.user) {
+    next();
   } else {
-    // Any other status would be unexpected, so error
-    return response.status(500).send({
-      error: 'Unexpected status ' + intent.status
-    });
+    //  res.sendStatus(401);
+    res.send("Unauthorized credintals");
   }
-}
+}; // GET /auth/google
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request.  The first step in Google authentication will involve redirecting
+//   the user to google.com.  After authorization, Google will redirect the user
+//   back to this application at /auth/google/callback
 
+
+router.get('/google', passport.authenticate('google', {
+  scope: ['profile', 'email']
+})); // GET /auth/google/callback
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request.  If authentication fails, the user will be redirected back to the
+//   login page.  Otherwise, the primary route function function will be called,
+//   which, in this example, will redirect the user to the home page.
+
+router.get('/google/callback', passport.authenticate('google', {
+  failureRedirect: '/failed'
+}), function (req, res) {
+  res.redirect('/good');
+});
+router.get("/failed", function (req, res) {
+  res.render("failed");
+});
+router.get("/good", isLoggedIn, function (req, res) {
+  res.send("welcome  Mr. ".concat(req.user.username, "!"));
+});
+router.get("/logout", isLoggedIn, function (req, res) {
+  res.send("You are successfully logged out!");
+});
+router.get("/logout", function (req, res) {
+  req.session = null;
+  req.logout();
+  res.redirect("/logout");
+});
 module.exports = router;

@@ -3,13 +3,12 @@ const cors = require('cors');
 const morgan = require('morgan');
 const fetch = require('node-fetch');
 const app = express();
-const {google} = require('googleapis');
 require('dotenv').config();
 
 
 
 // const publishable_key = process.env.publishable_key;
- 
+
 // const secret_key_stripe =  process.env.secret_key_stripe;
 
 // I want the server to respond with all the videos of this certain Channel\
@@ -38,15 +37,18 @@ require('dotenv').config();
 // }).then(resp => console.log(resp.data.items[0].snippet)).catch(err => console.log(err));
 
 
+
 //This is our root path now!
 app.use(express.static('public'));
 
 
-app.set('view engine','ejs')
+app.set('view engine', 'ejs')
 
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+
+
 
 
 app.use(morgan('tiny'));
@@ -80,6 +82,3 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log('Listening on port', port);
 });
-
-
-    

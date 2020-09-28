@@ -19,13 +19,17 @@
   "homepage": "https://github.com/taktukt01/Mustang-Community-Web#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "googleapis": "^59.0.0",
     "jquery.scrollto": "^2.1.2",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth20": "^2.0.0",
     "stripe": "^8.86.0"
   },
   "devDependencies": {
