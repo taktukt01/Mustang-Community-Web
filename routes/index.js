@@ -1,12 +1,23 @@
 //  Shift + Option + F to reformat code
  const express = require('express');
+
+ //need along with passport
  const cors = require('cors')
+ var passport = require('passport');
 
  const router = express.Router();
- //  const path = require("path");
-
- var passport = require('passport');
  require('dotenv').config();
+
+/*
+Multer -  will allow access to files submitted through the form
+Cloudinary - is used for configuration and uploading
+multer-storage-cloudinary will make the process of combining these easy.
+
+Source: https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/
+*/
+  const multer = require("multer");
+  const cloudinary = require("cloudinary");
+  const cloudinaryStorage = require("multer-storage-cloudinary");
 
 
  const cookieSession = require('cookie-session')
@@ -152,6 +163,24 @@ const { closeDelimiter } = require('ejs');
    res.redirect("/logout");
  });
 
+
+
+//  Image upload section
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+  });
+  const storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: "demo",
+  allowedFormats: ["jpg", "png"],
+  transformation: [{ width: 500, height: 500, crop: "limit" }]
+  });
+  const parser = multer({ storage: storage });
+
+  
 
 
  module.exports = router;

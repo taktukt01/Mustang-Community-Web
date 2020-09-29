@@ -57,7 +57,9 @@
                             href="#contact">Contact</a></li>
 
 
-
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                href="#upload-image">Upload your images</a></li>
+                           
 
 
 
@@ -742,6 +744,11 @@ Insert About Us Section here -->
 
 
 
+   
+
+
+
+
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
     <div class="scroll-to-top d-lg-none position-fixed">
@@ -795,6 +802,16 @@ Insert About Us Section here -->
 
 
     </div>
+
+    <section class="page-section" id="upload-image">
+
+        <form action='/api/images' method="post" enctype="multipart/form-data">
+            <input type='file' name='image' />
+          </form>
+
+
+        </section>
+        
 
 
 
