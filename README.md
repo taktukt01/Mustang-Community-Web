@@ -16,3 +16,4 @@ For many, this is a tough time, and so by creating this website, my aim is to:
 *Don't hesitate to contact me at taktukgg@gmail.com if you want to collaborate on this project with me!*
 
 Documentations used: https://mongoosejs.com/docs/guide.html
+https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/
