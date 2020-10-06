@@ -805,8 +805,10 @@ Insert About Us Section here -->
 
     <section class="page-section" id="upload-image">
 
-        <form action='/api/images' method="post" enctype="multipart/form-data">
-            <input type='file' name='image' />
+        <form method="post"  action='http://localhost:5000/upload' 
+        enctype="multipart/form-data" >
+            <input type='file' name='imageUpload' multiple />
+            <input type='submit' value='Upload'/>
           </form>
 
 
