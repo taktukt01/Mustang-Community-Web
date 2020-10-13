@@ -24,8 +24,14 @@
 
 </head>
 
+<<<<<<< HEAD
 <div class="container">
 
+=======
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                href="#upload-image">Upload your images</a></li>
+                           
+>>>>>>> ab2125aa05053df9e3abc238ca32d23d393b1937
 
 <nav class="navbar navbar-light">
     
@@ -711,6 +717,11 @@ Insert About Us Section here -->
 
 
 
+   
+
+
+
+
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
     <div class="scroll-to-top d-lg-none position-fixed">
@@ -764,6 +775,18 @@ Insert About Us Section here -->
 
 
     </div>
+
+    <section class="page-section" id="upload-image">
+
+        <form method="post"  action='http://localhost:5000/upload' 
+        enctype="multipart/form-data" >
+            <input type='file' name='imageUpload' multiple />
+            <input type='submit' value='Upload'/>
+          </form>
+
+
+        </section>
+        
 
 
 

@@ -6,6 +6,7 @@ const app = express();
 
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
+const imgUploadControllers = require('./routes/galleryUpload');
 
 
 
@@ -51,6 +52,7 @@ app.use(cors());
 
 app.use(authControllers);
 app.use(donationControllers);
+app.use(imgUploadControllers);
 
 
 app.get('/' , (req,res)=>{
