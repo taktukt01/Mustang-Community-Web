@@ -17,76 +17,45 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="./css/styles.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
 
 </head>
-<!-- Navigation-->
 
-<body id="page-top">
-
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=394548438190983&autoLogAppEvents=1" nonce="EiObyex9"></script>
+<div class="container">
 
 
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-        <div class="container">
+<nav class="navbar navbar-light">
+    
+    <a class="navbar-brand" href="/">
+        <img src="./images/ogLogo.jpg" alt="">
+      </a>
+    <!-- Navbar content -->
+   <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+        href="#portfolio">Board Members</a>
+<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+        href="#gallery">Gallery</a>
+<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+        href="#contact">Contact</a>
 
-            <button
-                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+            href="/register">Register</a>
 
-                    <a class="navbar-brand" href="#">
-                        <img src="./images/pic1.jpg" id="logoBrand" alt="">
-                    </a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="/login">Login</a>
 
+                <button type="button" class="btn btn-success donate-btn">Donate</button>
 
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#portfolio">Board Members</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#gallery">Gallery</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#contact">Contact</a></li>
+  </nav>
+
+</div>
+  
 
 
 
 
-
-
-                    <!-- <a class="btn btn-default" href="/users/register" role="button">Register</a> -->
-
-                    <!-- <a href="/users/register"   >Register</a> -->
-                    <!-- <a href="/users/login"> Login</a> -->
-
-                    <!-- <a class="btn btn-default" href="/users/login" role="button">Login</a> -->
-
-                    <!-- <a class="btn btn-default" href="/google" role="button">Login</a> -->
-
-                    <a href="/google">Sign in with Google</a>
-
-                    
-
-
-                    <button type="button" class="btn btn-success donate-btn">Donate</button>
-
-
-
-
-                </ul>
-
-
-
-            </div>
-        </div>
-    </nav>
 
 
 
@@ -833,25 +802,7 @@ Insert About Us Section here -->
 
 baguetteBox.run('.tz-gallery');
 
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '394548438190983',
-        cookie     : true,
-        xfbml      : true,
-        version    : 'v8.0'
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
   
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
   </script>
 
 
