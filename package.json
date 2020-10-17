@@ -36,13 +36,9 @@
     "passport-facebook": "^3.0.0",
     "passport-google-oauth": "^2.0.0",
     "passport-google-oauth20": "^2.0.0",
-<<<<<<< HEAD
+    "randomstring": "^1.1.5",
     "stripe": "^8.86.0",
     "validator": "^13.1.17"
-=======
-    "randomstring": "^1.1.5",
-    "stripe": "^8.86.0"
->>>>>>> ab2125aa05053df9e3abc238ca32d23d393b1937
   },
   "devDependencies": {
     "@types/validator": "^13.1.0",

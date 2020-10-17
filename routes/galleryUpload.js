@@ -9,3 +9,5 @@ const imgUploadController = require('../controllers/imgUploadControllers');
 router.use(fileUpload());
 
 router.post('/upload', imgUploadController.upload_post);
+
+module.exports = router;
