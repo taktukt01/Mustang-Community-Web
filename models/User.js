@@ -2,7 +2,6 @@
 const mongoose= require('mongoose');
 //Importing validator rather than doing substring or regex to check.
 const { isEmail } = require('validator');
-const bcrypt = require('bcrypt');
 
 
 

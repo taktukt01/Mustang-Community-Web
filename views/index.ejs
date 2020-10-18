@@ -32,26 +32,29 @@
 
 <nav class="navbar navbar-dark bg-primary">
         
+    <div class="container-fluid">
+
     <!-- Logo here -->
         <a class="navbar-brand" href="/">
             <img src="./images/ogLogo.jpg" alt="">
           </a>
         <!-- Navbar content -->
-       <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+       <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
             href="#portfolio">Board Members</a>
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
             href="#gallery">Gallery</a>
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
             href="#contact">Contact</a>
     
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+    <a class="nav-link navbar-right py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
                 href="/register">Register</a>
     
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
                     href="/login">Login</a>
     
                     <button type="button" class="btn btn-success donate-btn">Donate</button>
     
+        </div>
       </nav>
 
 
@@ -59,11 +62,11 @@
 </head>
 
   
-<body>
+<body class ="bg-primary">
 
     
 
-    <section class="page-section p-3 mb-2 bg-primary text-secondary">
+    <section class="page-section p-3 mb-2 bg-primary">
 
 
 
@@ -141,7 +144,7 @@ Insert About Us Section here -->
     </section>
     <!--end of front page -->
     <!-- MEMBERS Section-->
-    <section class="page-section portfolio" id="portfolio">
+    <section class="page-section portfolio bg-primary" id="portfolio">
 
 
         <h1 class="text-center text-lg-center mt-4 mb-0 photo-gall-heading text-dark">Members</h1>
@@ -300,7 +303,7 @@ Insert About Us Section here -->
 
 
     <!-- Gallery Section-->
-    <section class="page-section bg-secondary text-white mb-0" id="gallery">
+    <section class="page-section bg-white text-white mb-0" id="gallery">
 
         <!-- Page Content -->
 
@@ -679,8 +682,8 @@ Insert About Us Section here -->
 
     <!-- Upload Images Section! -->
 
-    <section class="page-section bg-secondary" id="contact">
-        <div class="container-fluid">
+    <section class="page-section bg-white" id="contact">
+        <div class="mx-auto" style="width: 750px">
             <!-- Contact Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-auto">Contact Us!</h2>
             <!-- Icon Divider-->
@@ -776,14 +779,15 @@ Insert About Us Section here -->
 
 
 
-    <section class="page-section bg-secondary" id="upload-image">
+    <section class="page-section bg-white" id="upload-image">
+        <div class="mx-auto" style="width: 750px">
 
         <form method="post"  action='http://localhost:5000/upload' 
         enctype="multipart/form-data" >
             <input type='file' name='imageUpload' multiple />
             <input type='submit' value='Upload'/>
           </form>
-
+</div>
 
         </section>
         
@@ -829,7 +833,7 @@ baguetteBox.run('.tz-gallery');
 </body>
 
 <!-- Footer-->
-<footer class="footer text-center bg-secondary">
+<footer class="footer text-center bg-white">
     <div class="container">
 
             <!-- Footer Social Icons-->
