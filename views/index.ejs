@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>LONYAMSHIP WEBSITE</title>
+    <meta name="description"  />
+    <meta name="author" />
+    <title>Official Lonyamship Website</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
@@ -16,55 +16,58 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+
+<!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <!-- also styling with css  -->
     <link href="./css/styles.css" rel="stylesheet" />
 
+    <!-- BaguetteBox for gallery: 
+    :Simple and easy to use lightbox script written in pure JavaScript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+
+
+    
+<!-- NavBar -->
+
+<nav class="navbar navbar-dark bg-primary">
+        
+    <!-- Logo here -->
+        <a class="navbar-brand" href="/">
+            <img src="./images/ogLogo.jpg" alt="">
+          </a>
+        <!-- Navbar content -->
+       <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+            href="#portfolio">Board Members</a>
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+            href="#gallery">Gallery</a>
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+            href="#contact">Contact</a>
+    
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="/register">Register</a>
+    
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                    href="/login">Login</a>
+    
+                    <button type="button" class="btn btn-success donate-btn">Donate</button>
+    
+      </nav>
+
 
 
 </head>
 
-<div class="container">
-
-
-<nav class="navbar navbar-light">
-    
-    <a class="navbar-brand" href="/">
-        <img src="./images/ogLogo.jpg" alt="">
-      </a>
-    <!-- Navbar content -->
-   <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-        href="#portfolio">Board Members</a>
-<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-        href="#gallery">Gallery</a>
-<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-        href="#contact">Contact</a>
-
-<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-            href="/register">Register</a>
-
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="/login">Login</a>
-
-                <button type="button" class="btn btn-success donate-btn">Donate</button>
-
-  </nav>
-
-</div>
   
+<body>
 
+    
 
-
-
-
-
-
-    <section class="page-section" id="frontCover">
+    <section class="page-section p-3 mb-2 bg-primary text-secondary">
 
 
 
         <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center text-style-">
             <div class="container d-flex align-items-center flex-column">
                 <!-- <h5 class="masthead-heading">About Us </h1> -->
 
@@ -137,7 +140,6 @@ Insert About Us Section here -->
 
     </section>
     <!--end of front page -->
-    </header>
     <!-- MEMBERS Section-->
     <section class="page-section portfolio" id="portfolio">
 
@@ -298,7 +300,7 @@ Insert About Us Section here -->
 
 
     <!-- Gallery Section-->
-    <section class="page-section bg-primary text-white mb-0" id="gallery">
+    <section class="page-section bg-secondary text-white mb-0" id="gallery">
 
         <!-- Page Content -->
 
@@ -677,7 +679,7 @@ Insert About Us Section here -->
 
     <!-- Upload Images Section! -->
 
-    <section class="page-section" id="contact">
+    <section class="page-section bg-secondary" id="contact">
         <div class="container-fluid">
             <!-- Contact Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-auto">Contact Us!</h2>
@@ -704,6 +706,55 @@ Insert About Us Section here -->
 
 
             </div>
+
+            <form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/taktukgg@gmail.com"
+            method="post">
+            <div class="form-row align-items-center">
+                <div class="form-group col-md-6">
+                    <label for="inputName">Full Name</label>
+                    <input type="text" class="form-control" id="inputName" name="fullName" placeholder="Enter Full Name">
+                </div>
+    
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" name="_replyto" placeholder="Email"
+                        required="">
+                </div>
+    
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputSubject">Subject</label>
+                    <input type="text" class="form-control" id="inputSubject" name="_subject" placeholder="Subject"
+                        required="">
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="3" name="message"
+                        placeholder="Enter Message here..."></textarea>
+    
+    
+                </div>
+            </div>
+    
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+    
+        </form>
+    
+        <br>
+    
+    
+        </div>
+
+
         </div>
         </div>
         </div>
@@ -723,54 +774,9 @@ Insert About Us Section here -->
                 class="fa fa-chevron-up"></i></a>
     </div>
 
-    <form name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/taktukgg@gmail.com"
-        method="post">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputName">Full Name</label>
-                <input type="text" class="form-control" id="inputName" name="fullName" placeholder="Enter Full Name">
-            </div>
-
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" name="_replyto" placeholder="Email"
-                    required="">
-            </div>
-
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputSubject">Subject</label>
-                <input type="text" class="form-control" id="inputSubject" name="_subject" placeholder="Subject"
-                    required="">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3" name="message"
-                    placeholder="Enter Message here..."></textarea>
 
 
-            </div>
-        </div>
-
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-
-    </form>
-
-    <br>
-
-
-    </div>
-
-    <section class="page-section" id="upload-image">
+    <section class="page-section bg-secondary" id="upload-image">
 
         <form method="post"  action='http://localhost:5000/upload' 
         enctype="multipart/form-data" >
@@ -798,7 +804,6 @@ Insert About Us Section here -->
         });
     </script>
 
-    <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -806,11 +811,8 @@ Insert About Us Section here -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Contact form JS-->
-    <script src="assets/mail/jqBootstrapValidation.js"></script>
-    <script src="assets/mail/contact_me.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="./js/scripts.js"></script>
 
 
 
@@ -827,21 +829,19 @@ baguetteBox.run('.tz-gallery');
 </body>
 
 <!-- Footer-->
-<footer class="footer text-center">
+<footer class="footer text-center bg-secondary">
     <div class="container">
-        <div class="row">
 
             <!-- Footer Social Icons-->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-youtube"></i></a>
+            <div class="socialsLinks">
+                <a class="btn btn-outline-dark btn-social mx-1 " href="https://www.facebook.com/lonyamship.kyiduk"><i class="fab fa-fw fa-facebook-f"> </i></a>
+                <a class="btn btn-outline-dark btn-social mx-1" href="https://www.youtube.com/channel/UCm-XlyipdfDoStx3d222yuQ"><i class="fab fa-youtube"></i></a>
             </div>
 
-        </div>
     </div>
 
     <!-- Copyright Section-->
-    <div class="copyright py-4 text-center text-white">
+    <div class="copyright py-4 text-center text-dark">
         <div class="container"><small>Copyright © Your Website 2020</small></div>
     </div>
 
