@@ -16,12 +16,7 @@
 
 
 
-    $(".donate-btn").click(function(){
-
-      window.location.href = "http://localhost:5000/payment";
-      
-    });
-  
+   
     // $('.executiveMembers').click(function(){
 // $(this).hide();
 

@@ -1,0 +1,24 @@
+1) Members section
+
+
+
+
+2)User auth/registration
+
+
+
+
+3) Admin Panel
+
+
+
+
+4) Gallery - user upload
+
+
+
+5) Donation page - User input donation form..
+
+
+
+6) Dramyin Notes 

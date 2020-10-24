@@ -3,10 +3,33 @@ const cors = require('cors');
 const morgan = require('morgan');
 // const fetch = require('node-fetch');
 const app = express();
+require('dotenv').config()
 
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
+
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+
+var bodyParser = require('body-parser')
+
+
+var jsonParser = bodyParser.json()
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
+const dbUri = 'mongodb+srv://taktuk:'+process.env.MONGOOSE_PWD+'@cluster0.90g2u.mongodb.net/'+ process.env.DB_TITLE + '?retryWrites=true&w=majority';
+mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true });
+mongoose.promise = global.promise
+mongoose.connection
+.on('connected', () => {
+    console.log(`mongooose conncetion open on ${process.env.DB_TITLE}`);
+})
+.on('error', (err) => {
+    console.log(`connection error ${err.message}`)
+})
 
 
 

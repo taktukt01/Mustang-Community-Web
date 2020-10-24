@@ -2,25 +2,18 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authControllers');
 const mongoose = require('mongoose');
+var bodyParser = require('body-parser')
+var jsonParser = bodyParser.json()
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const dbUri = 'mongodb+srv://taktuk:'+process.env.MONGOOSE_PWD+'@cluster0.90g2u.mongodb.net/'+ process.env.DB_TITLE + '?retryWrites=true&w=majority';
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true });
-mongoose.promise = global.promise
-mongoose.connection
-.on('connected', () => {
-    console.log(`mongooose conncetion open on ${process.env.DB_TITLE}`);
-})
-.on('error', (err) => {
-    console.log(`connection error ${err.message}`)
-})
 
 
 
 
 router.get('/login' , authController.login_get);
-router.post('/login' , authController.login_post);
+router.post('/login' , urlencodedParser , authController.login_post);
 router.get('/register' , authController.register_get);
-router.post('/register' , authController.register_post);
+router.post('/register' ,urlencodedParser, authController.register_post);
 
 
 

@@ -1,5 +1,7 @@
 // Import Mongoose
 const mongoose= require('mongoose');
+var bcrypt = require('bcryptjs');
+
 //Importing validator rather than doing substring or regex to check.
 const { isEmail } = require('validator');
 
@@ -9,13 +11,13 @@ const { isEmail } = require('validator');
 const registrationSchema = new mongoose.Schema({
     firstName: {
         type:String,
-        // required: [true, 'Please enter your first name'],
+        required: [true, 'Please enter your first name'],
 
     }
 ,
     lastName:{
         type: String,
-        // required: [true, 'Please enter your last name']
+        required: [true, 'Please enter your last name']
     },
 
     email: {
@@ -47,7 +49,6 @@ const registrationSchema = new mongoose.Schema({
 registrationSchema.pre('save', async function(next) {
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);
-    console.log(this.password);
     next();
   });
 
