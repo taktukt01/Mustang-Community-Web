@@ -9,33 +9,33 @@ const { isEmail } = require('validator');
 
 // Create schema
 const registrationSchema = new mongoose.Schema({
-    firstName: {
-        type:String,
-        required: [true, 'Please enter your first name'],
+//     firstName: {
+//         type:String,
+//         required: [true, 'Please enter your first name'],
 
-    }
-,
-    lastName:{
-        type: String,
-        required: [true, 'Please enter your last name']
-    },
+//     }
+// ,
+//     lastName:{
+//         type: String,
+//         required: [true, 'Please enter your last name']
+//     },
 
-    email: {
-        type: String,
-        required: [true, 'Please enter an email'],
-        unique: true,
-        lowercase: true,
-        validate: [isEmail, 'Please enter a valid email']
+email: {
+    type: String,
+    required: [true, 'Please enter an email'],
+    unique: true,
+    lowercase: true,
+    validate: [isEmail, 'Please enter a valid email']
+  },
+  password: {
+    type: String,
+    required: [true, 'Please enter a password'],
+    minlength: [6, 'Minimum password length is 6 characters'],
+  }
 
-    },
-  
-    password: {
-        type: String,
-        required: [true,'Please enter a password'],
-        minlength: [6, 'Please choose a stronger password.']
 
-    },
-})
+});
+
 
 
 
@@ -51,6 +51,21 @@ registrationSchema.pre('save', async function(next) {
     this.password = await bcrypt.hash(this.password, salt);
     next();
   });
+
+
+registrationSchema.statics.loginUser = async function(email, password){
+
+    const user = await this.findOne({email});
+    if(user){ // valid email
+        const auth = await  bcrypt.compare(password, user.password );  // bcrypt will hash our pw and compare with model
+            if(auth){         // if password matches
+                return user;
+            }
+          throw  Error("Wrong password", password);
+        }
+          throw  Error("Wrong email");
+
+}
 
 //Create model
 const User = mongoose.model('user', registrationSchema);

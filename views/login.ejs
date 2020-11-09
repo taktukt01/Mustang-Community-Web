@@ -22,22 +22,31 @@
                     <div class="col-md-6 login-form-1">
                         <h3>Login</h3>
 
+
+
                         <!--                 Form                       -->
 
                         <form method = "POST" action= "/login"> 
                             <div class="form-group">
                                 <input type="text" class="form-control" name="loggedEmail" placeholder="Your Email *" value="" />
                             </div>
+
+                            <div class="emailError"></div>
+
                             <div class="form-group">
                                 <input type="password" class="form-control" name="loggedPass" placeholder="Your Password *" value="" />
                             </div>
+
+
+                            <div class="passwordError"></div>
+
                             <div class="form-group">
                                 <input type="submit" class="btnSubmit" value="Login" />
                             </div>
-                            <div class="form-group">
+                           <!-- <div class="form-group">
                                 <a href="#" class="ForgetPwd">Forget Password?</a>
                             </div>
-
+                        -->
                             <div class="form-group">
                                 New to the website?
                                 <a href="/register" class="CreateAccount">Create an account</a>
@@ -53,6 +62,61 @@
                 </head>
 
                 <body>
+                
+
+                    <!-- <script>
+
+                        const form = document.querySelector('form');
+                      const emailError = document.querySelector('.emailError');
+                        const passwordError = document.querySelector('.passwordError');
+                        // const firstNameError = document.getElementsByClassName('firstNameError');
+                        // const lastNameError = document.getElementsByClassName('lastNameError');
+                      
+                      
+                        form.addEventListener('submit', async (e) => {
+                          e.preventDefault();
+                          // reset errors
+                          emailError.textContent = '';
+                          passwordError.textContent = '';
+                          // get values
+                          const email = form.loggedEmail.value;
+                          const password = form.loggedPass.value;
+                          // const firstName= form.firstName.value;
+                          // const lastName= form.lastName.value;
+                      
+                          try {
+                            const res = await fetch('/login', { 
+                              method: 'POST', 
+                              body: JSON.stringify({ email, password}),
+                              headers: {'Content-Type': 'application/json'}
+                            });
+                      
+                            const data = await res.json();
+                            console.log(data.errors);
+                      
+                            // Something is wrong with my error handling... RIP
+                            if (data.errors) {
+
+                                emailError.textContent = data.errors.email;
+                                passwordError.textContent = data.errors.password;
+
+                            //   emailError.textContent = "Invalid email or password";
+                              // passwordError.textContent = "Invalid password";
+                              // firstNameError.textContent = data.errors.firstName;
+                              // lastNameError.textContent = data.errors.lastName;
+                            }
+                            if (data.user) {
+                              location.assign('/');
+                            }
+                          }
+                          catch (err) {
+                            
+
+                          }
+                        });
+                       -->
+                      
+                      <!-- </script> -->
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

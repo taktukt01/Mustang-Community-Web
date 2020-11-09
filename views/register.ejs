@@ -24,33 +24,42 @@
 </head>
 <body>
 
-    <div>
+     <div>
 
 
 
     </div>
 
-<!-- REGISTER USER  Form  -->
     <div id="logreg-forms">
-        <form class="form-registration" method="POST"  action = "/register">
+        <form class="form-registration" id= "myForm" method="POST" action = "/register">
             <div class="mx-auto" style="width: 200px;">
 
             <h3>Register</h3>
 
             </div>
-         
 
-            <input type="input" name="firstName" id="firstName" class="form-control" placeholder="First Name">
-
-            <input type="input" name="lastName" id="firstName" class="form-control" placeholder="Last Name">
-
-            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" autofocus="">
-            <div class = "emailError">
+            <div class="errors">
             </div>
 
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
-    <div class = "passwordError">
-    </div>
+         
+
+            <!-- <input type="text" name="firstName"  class="form-control" placeholder="First Name" required>
+
+        <div class = "firstNameError">
+        </div>
+
+            <input type="text" name="lastName"  class="form-control" placeholder="Last Name" required>
+
+            <div class = "lastNameError">
+            </div> -->
+            <input type="email" name="email" class="form-control" placeholder="Email address" autofocus="">
+
+
+            <div class="emailError"></div>
+
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <div class="passwordError"></div>
+
 
 
             
@@ -64,58 +73,59 @@
 
       
             
-    </div>
+    </div> 
             <!-- Display error if there is any -->
 
 
-    
-  
-        
 
 
-
-        <div class = "usernameError">
-            </div>
           
 
+<script>
 
-    <script>
-var regForm= document.querySelector('form');
-regForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const email = form.email.value;
-    const password = form.password.value
-
-
-    try {
-      const res = await fetch('/register', { 
-        method: 'POST', 
-        body: JSON.stringify({ email, password }),
-        headers: {'Content-Type': 'application/json'}
-      });
-      const data = await res.json();
-      console.log(data);
-      if (data.errors) {
-          console.log(data.errors);
-        emailError.textContent = data.errors.email;
-        // passwordError.textContent = data.errors.password;
-              passwordError.textContent = 5000000;
-
-      }
-      if (data.user) {
-        location.assign('/');
-      }
-    }
-    catch (err) {
-      console.log(err);
-    }
-
-})
+// const form = document.querySelector('form');
+// const emailError = document.querySelector('.emailError');
+//   const passwordError = document.querySelector('.passwordError');
+//   // const firstNameError = document.getElementsByClassName('firstNameError');
+//   // const lastNameError = document.getElementsByClassName('lastNameError');
 
 
+//   form.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     // reset errors
+//     emailError.textContent = '';
+//     passwordError.textContent = '';
+//     // get values
+//     const email = form.email.value;
+//     const password = form.password.value;
+//     // const firstName= form.firstName.value;
+//     // const lastName= form.lastName.value;
 
-    </script>
+//     try {
+//       const res = await fetch('/register', { 
+//         method: 'POST', 
+//         body: JSON.stringify({ email, password }),
+//         headers: {'Content-Type': 'application/json'}
+//       });
+//       const data = await res.json();
+//       if (data.errors) {
+//         emailError.textContent = data.errors.email;
+//         passwordError.textContent = data.errors.password;
+//       }
+//       if (data.user) {
+//         location.assign('/');
+//       }
+//     }
+//     catch (err) {
+//       console.log(err);
+//     }
+//   });
+                      
+                      
+   
+
+
+</script> 
 
  
 

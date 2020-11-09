@@ -15,6 +15,9 @@ router.post('/login' , urlencodedParser , authController.login_post);
 router.get('/register' , authController.register_get);
 router.post('/register' ,urlencodedParser, authController.register_post);
 
+router.get('/deleteAll' ,urlencodedParser, authController.remove_all_docs);
+
+
 
 
 
