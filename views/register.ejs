@@ -83,43 +83,45 @@
 
 <script>
 
-// const form = document.querySelector('form');
-// const emailError = document.querySelector('.emailError');
-//   const passwordError = document.querySelector('.passwordError');
-//   // const firstNameError = document.getElementsByClassName('firstNameError');
-//   // const lastNameError = document.getElementsByClassName('lastNameError');
 
 
-//   form.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-//     // reset errors
-//     emailError.textContent = '';
-//     passwordError.textContent = '';
-//     // get values
-//     const email = form.email.value;
-//     const password = form.password.value;
-//     // const firstName= form.firstName.value;
-//     // const lastName= form.lastName.value;
+const form = document.querySelector('form');
+const emailError = document.querySelector('.emailError');
+  const passwordError = document.querySelector('.passwordError');
+  // const firstNameError = document.getElementsByClassName('firstNameError');
+  // const lastNameError = document.getElementsByClassName('lastNameError');
 
-//     try {
-//       const res = await fetch('/register', { 
-//         method: 'POST', 
-//         body: JSON.stringify({ email, password }),
-//         headers: {'Content-Type': 'application/json'}
-//       });
-//       const data = await res.json();
-//       if (data.errors) {
-//         emailError.textContent = data.errors.email;
-//         passwordError.textContent = data.errors.password;
-//       }
-//       if (data.user) {
-//         location.assign('/');
-//       }
-//     }
-//     catch (err) {
-//       console.log(err);
-//     }
-//   });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // reset errors
+    emailError.textContent = '';
+    passwordError.textContent = '';
+    // get values
+    const email = form.email.value;
+    const password = form.password.value;
+    // const firstName= form.firstName.value;
+    // const lastName= form.lastName.value;
+
+    try {
+      const res = await fetch('/register', { 
+        method: 'POST', 
+        body: JSON.stringify({ email, password }),
+        headers: {'Content-Type': 'application/json'}
+      });
+      const data = await res.json();
+      if (data.errors) {
+        emailError.textContent = data.errors.email;
+        passwordError.textContent = data.errors.password;
+      }
+      if (data.user) {
+        location.assign('/');
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  });
                       
                       
    

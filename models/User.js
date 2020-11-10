@@ -55,17 +55,16 @@ registrationSchema.pre('save', async function(next) {
 
 registrationSchema.statics.loginUser = async function(email, password){
 
-    const user = await this.findOne({email});
-    if(user){ // valid email
-        const auth = await  bcrypt.compare(password, user.password );  // bcrypt will hash our pw and compare with model
-            if(auth){         // if password matches
-                return user;
-            }
-          throw  Error("Wrong password", password);
-        }
-          throw  Error("Wrong email");
-
-}
+  const user = await this.findOne({ email });
+  if (user) {
+    const auth = await bcrypt.compare(password, user.password);
+    if (auth) {
+      return user;
+    }
+    throw Error('incorrect password' + "given password :"+ password + user.password);
+  }
+  throw Error('incorrect email' + email);
+};
 
 //Create model
 const User = mongoose.model('user', registrationSchema);

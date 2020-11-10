@@ -1,11 +1,10 @@
 const User = require('../models/User');
 
-require('dotenv').config()
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 const jwt_secret = process.env.JWT_SECRET;
 var bcrypt = require('bcryptjs');
-const e = require('cors');
 
 
 
@@ -58,11 +57,15 @@ const createToken = (id)=>{
   }
 
   module.exports.login_post = async (req,res)=>{
-    console.log(req.body);
   
-    const email = req.body.loggedEmail;
-    const password =req.body.loggedPass;
+  console.log("req..body");
+    console.log(req.body);
 
+    const email = req.body.email;
+    const password =req.body.password;
+
+
+    
 
 
 
@@ -74,8 +77,8 @@ const createToken = (id)=>{
         httpOnly: true,
         expires: new Date(Date.now() + 7200000)  // 7,200,000ms = 120 min = 2 hours
        })
-  //  res.status(200).json({ user: user._id });
-  res.redirect("/");
+   res.status(200).json({ user: user._id });
+  // res.redirect("/");
 
   //  res.render('register' , {
   //    user: user._id ,
@@ -133,7 +136,8 @@ console.log("user.." , user);
         expires: new Date(Date.now() + 7200000)  // 7,200,000ms = 120 min = 2 hours
        })
 
-       res.status(201).json({ user: user._id }); // redirect to home page...
+       res.json({ user: user._id }); // redirect to home page...
+      // res.redirect("/"); // automatically log user in after they register...
       
       }
      catch(err) {

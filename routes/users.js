@@ -2,20 +2,22 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authControllers');
 const mongoose = require('mongoose');
-var bodyParser = require('body-parser')
-var jsonParser = bodyParser.json()
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
+// var bodyParser = require('body-parser')
+// // create application/json parser
+// var jsonParser = bodyParser.json()
+ 
+// // create application/x-www-form-urlencoded parser
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 
 
 router.get('/login' , authController.login_get);
-router.post('/login' , urlencodedParser , authController.login_post);
+router.post('/login'  , authController.login_post);
 router.get('/register' , authController.register_get);
-router.post('/register' ,urlencodedParser, authController.register_post);
+router.post('/register', authController.register_post);
 
-router.get('/deleteAll' ,urlencodedParser, authController.remove_all_docs);
+router.get('/deleteAll', authController.remove_all_docs);
 
 
 
