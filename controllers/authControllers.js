@@ -35,6 +35,48 @@ const handleErrors = (err) => {
   return errors;
 }
 
+/*
+
+
+JWT.verify 
+(Synchronous) If a callback is not supplied, function acts synchronously. 
+Returns the payload decoded if the signature is valid and optional expiration, audience, or issuer are valid. 
+If not, it will throw the error.
+
+jwt.verify(token, secretOrPublicKey, [options, callback])
+ Source: https://www.npmjs.com/package/jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback
+  */
+
+  // our payload ..
+
+const userLoggedIn = (req,res,next)=>{
+
+
+  //check if token exists
+  var token = req.cookies.jwt;
+
+  // if it exists, 
+  if(token){
+
+    jwt.verify(token , jwt_secret ,(err, decodedToken)=>{
+
+
+      if(err){
+
+      }else{
+        // if token matches, look for USER in our db
+        const user = 
+        res.locals.user = 
+      }
+    });
+
+
+  }else{
+
+  }
+
+}
+
 // JWT: parameters -  (payload, secretOrPrivateKey, options => expiresIn)
 //  payload contains that data we want to store in the cache 
 //secretorPrivateKey : our secret key 
