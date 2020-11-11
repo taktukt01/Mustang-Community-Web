@@ -46,11 +46,28 @@
     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
             href="#contact">Contact</a>
     
+
+<!-- If jwt == NULL :
+display LOGIN REGISTER
+
+else
+
+display Logout , welcome message-->
+
+<% if(!user){ %>
     <a class="nav-link navbar-right py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-                href="/register">Register</a>
-    
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-                    href="/login">Login</a>
+    href="/register">Register</a>
+
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
+        href="/login">Login</a>
+
+<% } else{ %>
+    <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
+        href="/logout">Logout</a>
+<% } %>
+
+        
     
                     <a class="btn btn-success" href="/payment">Donate</a>
     
@@ -814,9 +831,19 @@ Insert About Us Section here -->
 
 
     <section class="page-section bg-white" id="upload-image">
-        <div class="mx-auto" style="width: 750px">
 
-        <form method="post"  action='http://localhost:5000/upload' 
+
+        <span class="border border-success">
+            <div class="mx-auto" style="width: 200px;">
+                <h1 class="display-4 ">Upload your images to gallery!</h1>
+                </div>
+        
+
+        </span>
+       
+          <div class="mx-auto" style="width: 750px">
+
+        <form method="post"  action='/upload' 
         enctype="multipart/form-data" >
             <input type='file' name='imageUpload' multiple />
             <input type='submit' value='Upload'/>

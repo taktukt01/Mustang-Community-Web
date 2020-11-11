@@ -3,7 +3,9 @@ const cors = require('cors');
 const morgan = require('morgan');
 // const fetch = require('node-fetch');
 const app = express();
+
 require('dotenv').config()
+
 
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
@@ -13,12 +15,17 @@ const mongoose = require('mongoose');
 // const bcrypt = require('bcryptjs');
 
 
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const {userLoggedIn} = require("./middleware/users");
 // parse application/x-www-form-urlencoded
+var cookieParser = require('cookie-parser')
+app.use(cookieParser());
+
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+
 
 
 const dbUri = 'mongodb+srv://taktuk:'+process.env.MONGOOSE_PWD+'@cluster0.90g2u.mongodb.net/'+ process.env.DB_TITLE + '?retryWrites=true&w=majority';
@@ -78,10 +85,13 @@ app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
 
+app.get('*' , userLoggedIn);
 
-app.get('/' , (req,res)=>{
+
+app.get('/'  , (req,res)=>{
   res.render('index');
 });
+
 
 
 

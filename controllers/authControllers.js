@@ -49,33 +49,6 @@ jwt.verify(token, secretOrPublicKey, [options, callback])
 
   // our payload ..
 
-const userLoggedIn = (req,res,next)=>{
-
-
-  //check if token exists
-  var token = req.cookies.jwt;
-
-  // if it exists, 
-  if(token){
-
-    jwt.verify(token , jwt_secret ,(err, decodedToken)=>{
-
-
-      if(err){
-
-      }else{
-        // if token matches, look for USER in our db
-        const user = 
-        res.locals.user = 
-      }
-    });
-
-
-  }else{
-
-  }
-
-}
 
 // JWT: parameters -  (payload, secretOrPrivateKey, options => expiresIn)
 //  payload contains that data we want to store in the cache 
@@ -188,5 +161,14 @@ console.log("user.." , user);
       }
     
 
+}
+
+module.exports.logout = async (req,res)=>{
+  //clear token 
+  //redirect to index
+  //source: https://stackoverflow.com/questions/27978868/destroy-cookie-nodejs
+
+  res.clearCookie('jwt');
+  res.redirect("/");
 }
 
