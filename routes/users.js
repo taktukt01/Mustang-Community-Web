@@ -1,30 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const authController = require('../controllers/authControllers');
+const mongoose = require('mongoose');
 
 
 
 
 
+router.get('/login' , authController.login_get);
+router.post('/login'  , authController.login_post);
+router.get('/register' , authController.register_get);
+router.post('/register', authController.register_post);
+router.get('/logout', authController.logout);
 
-//login handle
-router.get('/login',(req,res)=>{
-    res.render('login');
-})
-router.get('/register',(req,res)=>{
-    res.render('register')
-    })
-
+router.get('/deleteAll', authController.remove_all_docs);
 
 
-//Register handle
-router.post('/register',(req,res)=>{
-})
-router.post('/login',(req,res,next)=>{
-  })
-
-//logout
-router.get('/logout',(req,res)=>{
- })
 
 
 

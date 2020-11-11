@@ -6,35 +6,54 @@
     <title>Login Page</title>
 
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
 <link rel="stylesheet" href="../css/login.css">
 
 
-<button type="button" class="nav-link py-3 px-0 px-lg-3 rounded btn btn-info">Home</button>
+<a href="/" class = "btn btn-primary" > Home</a>
 
 
+
+<!-- LOGIN USER FORM -->
 
     <div class="container login-container">
                 <div class="row">
                     <div class="col-md-6 login-form-1">
                         <h3>Login</h3>
-                        <form>
+
+
+
+                        <!--                 Form                       -->
+
+                        <form method = "POST" action= "/login"> 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                                <input type="text" class="form-control" name="loggedEmail" placeholder="Your Email *" value="" />
                             </div>
+
+                            <div class="emailError"></div>
+
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                                <input type="password" class="form-control" name="loggedPass" placeholder="Your Password *" value="" />
                             </div>
+
+
+                            <div class="passwordError"></div>
+
                             <div class="form-group">
                                 <input type="submit" class="btnSubmit" value="Login" />
                             </div>
-                            <div class="form-group">
+                           <!-- <div class="form-group">
                                 <a href="#" class="ForgetPwd">Forget Password?</a>
                             </div>
+                        -->
+                            <div class="form-group">
+                                New to the website?
+                                <a href="/register" class="CreateAccount">Create an account</a>
+                            </div>
                         </form>
+
+
                     </div>
                   
                     </div>
@@ -43,7 +62,50 @@
                 </head>
 
                 <body>
+                
+                    <script>
 
+                        const myForm = document.querySelector('form');
+                      const emailError = document.querySelector('.emailError');
+                        const passwordError = document.querySelector('.passwordError');
+                      
+                      
+                        myForm.addEventListener('submit', async (e) => {
+                          e.preventDefault();
+                          // reset errors
+                          emailError.textContent = '';
+                          passwordError.textContent = '';
+                          // get values
+                          const email = myForm.loggedEmail.value;
+                          const password = myForm.loggedPass.value;
+                      
+try {
+      const res = await fetch('/login', { 
+        method: 'POST', 
+        body: JSON.stringify({ email, password }),
+        headers: {'Content-Type': 'application/json'}
+      });
+      const data = await res.json();
+      console.log(data);
+      if (data.errors) {
+                emailError.textContent = "Email or password is incorrect!";
+
+        // emailError.textContent = data.errors.email;
+        // passwordError.textContent = data.errors.password;
+      }
+      if (data.user) {
+        location.assign('/');
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  });
+                      
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
 </body>
 </html>

@@ -4,8 +4,8 @@
   "description": "As the coronavirus pandemic has set in, it's important for us as a community to be together while maintaining social distance. For many, this is a tough time, and so by creating this website, my aim is to: - Get the youth in our community to share their projects that they are working on, anything they would like to collaborate on - Support those that may need any help - Most importantly, to preserve our culture through gallery of our village, traditions, and tibetan musical instruments.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,21 +18,33 @@
   },
   "homepage": "https://github.com/taktukt01/Mustang-Community-Web#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "cloudinary": "^1.23.0",
+    "cookie-parser": "^1.4.5",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
     "jquery.scrollto": "^2.1.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
     "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^4.0.0",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth": "^2.0.0",
     "passport-google-oauth20": "^2.0.0",
-    "stripe": "^8.86.0"
+    "randomstring": "^1.1.5",
+    "stripe": "^8.86.0",
+    "validator": "^13.1.17"
   },
   "devDependencies": {
+    "@types/validator": "^13.1.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5"
   }

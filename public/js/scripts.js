@@ -7,30 +7,16 @@
     "use strict"; // Start of use strict
   
     // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: (target.offset().top - 71)
-          }, 1000, "easeInOutExpo");
-          return false;
-        }
-      }
-    });
+
+
+
   
+// For Gallery
+    // $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
 
-    $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
 
 
-
-    $(".donate-btn").click(function(){
-
-      window.location.href = "http://localhost:5000/payment";
-      
-    });
-  
+   
     // $('.executiveMembers').click(function(){
 // $(this).hide();
 
@@ -107,21 +93,9 @@ return code;
     document.getElementById("newMember").innerHTML += addExecMember("Dechen Wangmo","","","");
     document.getElementById("newMember").innerHTML += addExecMember("Karma Dhundup","","","");
 
-    // Scroll to top button appear
-    $(document).scroll(function() {
-      var scrollDistance = $(this).scrollTop();
-      if (scrollDistance > 100) {
-        $('.scroll-to-top').fadeIn();
-      } else {
-        $('.scroll-to-top').fadeOut();
-      }
-    });
   
-    // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function() {
-      $('.navbar-collapse').collapse('hide');
-    });
   
+ 
     // Activate scrollspy to add active class to navbar items on scroll
     $('body').scrollspy({
       target: '#mainNav',
@@ -158,18 +132,6 @@ removeModal();
   });
 
 
-    // Collapse Navbar
-    var navbarCollapse = function() {
-      if ($("#mainNav").offset().top > 100) {
-        $("#mainNav").addClass("navbar-shrink");
-      } else {
-        $("#mainNav").removeClass("navbar-shrink");
-      }
-    };
-    // Collapse now if page is not at top
-    navbarCollapse();
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
   
     // Floating label headings for the contact form
     $(function() {
