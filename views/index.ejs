@@ -841,13 +841,17 @@ Insert About Us Section here -->
 
         </span>
        
+        <div data-netlify-recaptcha="true">
           <div class="mx-auto" style="width: 750px">
 
-        <form method="post"  action='/upload' 
-        enctype="multipart/form-data" >
+        <form method="post" id = "uploadForm" name="uploadFile" 
+     data-netlify= "true" >
             <input type='file' name='imageUpload' multiple />
             <input type='submit' value='Upload'/>
           </form>
+
+          </div>
+
 </div>
 
         </section>
@@ -885,6 +889,16 @@ Insert About Us Section here -->
 <script>
 
 baguetteBox.run('.tz-gallery');
+
+$("#uploadForm").submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    alert("Thank you!");
+  });
+});
+
 
   
   </script>
