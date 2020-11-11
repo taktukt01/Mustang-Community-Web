@@ -10,6 +10,8 @@ require('dotenv').config()
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
+const jokesController = require('./routes/jokes');
+
 
 const mongoose = require('mongoose');
 // const bcrypt = require('bcryptjs');
@@ -84,6 +86,8 @@ app.use(cors());
 app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
+app.use(jokesController);
+
 
 app.get('*' , userLoggedIn);
 
