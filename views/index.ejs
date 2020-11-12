@@ -62,10 +62,22 @@ display Logout , welcome message-->
         href="/login">Login</a>
 
 <% } else{ %>
+  <!--  if admin ... show a different view -->
+<% if(user.email == "taktukgg@gmail.com"){ %>
+        <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
+        href="/admin">Admin Panel</a>
+        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
+            href="/logout">Logout</a>
+
+    <% }else{%>
     <p class = "welcomeMessage">Hello, <%= user.email %> </p>
     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
         href="/logout">Logout</a>
 <% } %>
+
+<% } %>
+
 
         
     

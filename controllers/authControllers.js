@@ -172,3 +172,28 @@ module.exports.logout = async (req,res)=>{
   res.redirect("/");
 }
 
+
+module.exports.admin_get = async(req,res)=>{
+//  I can pass in queried data to admin..
+/*
+ the find() method returns all the documents when an empty object is passed. 
+*/
+let data = "";
+
+ User.find({}, (err,result)=>{
+  if(err){
+    console.log(err);
+  } 
+   data = result;
+});
+
+console.log("data..." + data);
+  res.render("admin" , {
+    data: data,
+  }); 
+}
+
+
+// module.exports.admin_post= async(req,res)=>{
+
+// }

@@ -27,8 +27,31 @@ const userLoggedIn = (req, res, next) => {
       next();
     }
   };
+
+
+  const isAdmin  = (req,res,next)=>{
+    const token = req.cookies.jwt;
+    if (token) {
+      jwt.verify(token, jwt_secret, async (err, decodedToken) => {
+        
+        if (err) {
+          res.redirect("/");
+        } else {
+          let user = await User.findById(decodedToken.id);
+          console.log(user.email);
+          if(user.email !== "taktukgg@gmail.com"){
+            res.redirect("/");
+          }
+          next();
+        
+        }
+      });
+    } else {
+    res.redirect("/");
+    }
+  }
   
 
 
 
-  module.exports = {userLoggedIn};
+  module.exports = {userLoggedIn ,isAdmin};

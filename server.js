@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
 
 
 var bodyParser = require('body-parser');
-const {userLoggedIn} = require("./middleware/users");
+const {userLoggedIn , isAdmin} = require("./middleware/users");
 // parse application/x-www-form-urlencoded
 var cookieParser = require('cookie-parser')
 app.use(cookieParser());
@@ -90,6 +90,7 @@ app.use(jokesController);
 
 
 app.get('*' , userLoggedIn);
+
 
 
 app.get('/'  , (req,res)=>{
