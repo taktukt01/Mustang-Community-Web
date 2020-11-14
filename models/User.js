@@ -66,8 +66,18 @@ registrationSchema.statics.loginUser = async function(email, password){
   throw Error('incorrect email' + email);
 };
 
-//Create model
-const User = mongoose.model('user', registrationSchema);
+const adminSchema = new mongoose.Schema({
+
+
+  email: {
+    type: String, 
+    required: true ,
+  }
+});
+
+const User = mongoose.model('User' , registrationSchema);
+const Admin = mongoose.model('Admin' , adminSchema);
+
 
 //export our User model
-module.exports = User;
+module.exports = {User , Admin} ;

@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const {User, Admin} = require('../models/User');
 
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
@@ -178,19 +178,21 @@ module.exports.admin_get = async(req,res)=>{
 /*
  the find() method returns all the documents when an empty object is passed. 
 */
-let data = "";
 
  User.find({}, (err,result)=>{
   if(err){
-    console.log(err);
+    res.json(err);
   } 
-   data = result;
-});
-
-console.log("data..." + data);
+  //result is an array of objects... 
   res.render("admin" , {
-    data: data,
-  }); 
+    data: result ,    
+  }); });
+
+
+
+// console.log("data..." + data);
+
+//   res.json(data);
 }
 
 
