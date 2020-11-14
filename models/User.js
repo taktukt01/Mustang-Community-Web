@@ -72,8 +72,10 @@ const adminSchema = new mongoose.Schema({
   email: {
     type: String, 
     required: true ,
+    unique: true , 
   }
 });
+
 
 const User = mongoose.model('User' , registrationSchema);
 const Admin = mongoose.model('Admin' , adminSchema);

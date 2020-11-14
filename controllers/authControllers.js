@@ -35,6 +35,11 @@ const handleErrors = (err) => {
   return errors;
 }
 
+
+// intiially, only taktukgg@gmail.com is admin. later on he can promote other regular members
+
+
+
 /*
 
 
@@ -73,8 +78,6 @@ const createToken = (id)=>{
 
   module.exports.login_post = async (req,res)=>{
   
-  console.log("req..body");
-    console.log(req.body);
 
     const email = req.body.email;
     const password =req.body.password;
@@ -143,7 +146,6 @@ module.exports.register_post = async (req,res)=>{
    email, password
    
        });
-console.log("user.." , user);
        const token = createToken(user._id);
        //res.cookie(NAME, value , options)
        res.cookie('jwt',token,{
@@ -179,13 +181,26 @@ module.exports.admin_get = async(req,res)=>{
  the find() method returns all the documents when an empty object is passed. 
 */
 
+
+let adminsEmail = [];
+Admin.find({}, (err,result)=>{      //grab all admins
+  if(err){res.send(err)}
+
+  for(let i = 0 ; i< result.length ; i++){  
+    adminsEmail.push(result[i].email);
+  }
+
+});
+console.log(adminsEmail);
+
  User.find({}, (err,result)=>{
   if(err){
     res.json(err);
   } 
   //result is an array of objects... 
   res.render("admin" , {
-    data: result ,    
+    data: result , 
+    admins : adminsEmail,    
   }); });
 
 
