@@ -21,10 +21,19 @@
 // $(this).hide();
 
     // });
+    function notNull(value) {
+      var elem = document.getElementById(value);
+      if(typeof elem !== 'undefined' && elem !== null) {
+      return true;
+      }
+    }
 
     
      
     function addExecMember(name, email,phone,fbLink){
+
+     if(notNull(name) && notNull(email) && notNull(phone) && notNull(fbLink)){
+
       var code =`<li class="list-group-item"><strong> ` + name + `</strong>
       <ul>
       <li>
@@ -41,9 +50,11 @@
       <a class="btn btn-outline-dark btn-social mx-1" href=`+email+`><i class="fab fa-fw fa-facebook-f"></i></a>
       
       </li>`
-      ;
-      
-return code;
+      return code;
+     }else{
+       return "";
+     }
+
     }
 
     // This is a shortcut. 
