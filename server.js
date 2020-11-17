@@ -10,7 +10,7 @@ require('dotenv').config()
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
-const jokesController = require('./routes/jokes');
+// const jokesController = require('./routes/jokes');
 
 
 const mongoose = require('mongoose');
@@ -86,7 +86,7 @@ app.use(cors());
 app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
-app.use(jokesController);
+// app.use(jokesController);
 
 
 app.get('*' , userLoggedIn);
@@ -101,7 +101,7 @@ app.get('/'  , (req,res)=>{
 
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5500;
 app.listen(port, () => {
   console.log('Listening on port', port);
 });

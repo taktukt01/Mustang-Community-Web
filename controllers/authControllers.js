@@ -203,14 +203,23 @@ console.log(adminsEmail);
     admins : adminsEmail,    
   }); });
 
-
-
-// console.log("data..." + data);
-
-//   res.json(data);
 }
 
 
-// module.exports.admin_post= async(req,res)=>{
+module.exports.admin_post= async(req,res)=>{
+// console.log(req.body);
 
-// }
+
+const user = User.findById(req.body.data ,  function(err,result){
+  if(result){
+const dataNeeded = result.email;
+console.log(dataNeeded);
+// await Admin.create({
+//   email: dataNeeded ,
+// });
+
+  }
+});
+
+// res.json(user);
+}
