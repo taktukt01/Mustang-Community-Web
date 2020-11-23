@@ -1,4 +1,4 @@
-const {User} = require("../models/User.js");
+const {User,Admin} = require("../models/User.js");
 const jwt = require('jsonwebtoken');
 const jwt_secret = process.env.JWT_SECRET;
 
@@ -38,17 +38,18 @@ const userLoggedIn = (req, res, next) => {
           res.redirect("/");
         } else {
           let user = await User.findById(decodedToken.id);
-          console.log(user.email);
-          if(user.email !== "taktukgg@gmail.com"){
+
+          if(!user.isAdmin){
             res.redirect("/");
           }
-          next();
-        
+          // console.log(user.email);        
         }
       });
     } else {
     res.redirect("/");
     }
+    next();
+
   }
   
 

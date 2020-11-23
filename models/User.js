@@ -19,6 +19,11 @@ const registrationSchema = new mongoose.Schema({
 //         type: String,
 //         required: [true, 'Please enter your last name']
 //     },
+firstName: {
+  type: String, 
+  required: [true, "Please enter your first name"],
+  
+},
 
 email: {
     type: String,
@@ -31,10 +36,24 @@ email: {
     type: String,
     required: [true, 'Please enter a password'],
     minlength: [6, 'Minimum password length is 6 characters'],
-  }
+  } ,
+
+  isAdmin :{
+    type: Boolean ,
+    required: false
+  } ,
 
 
-});
+
+
+
+},{
+timestamps : {
+  createdAt : 'created_at' ,
+}
+}
+
+);
 
 
 

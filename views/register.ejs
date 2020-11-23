@@ -52,6 +52,9 @@
 
             <div class = "lastNameError">
             </div> -->
+
+            <input type="text" name="firstName" class="form-control" placeholder="First Name" autofocus="">
+
             <input type="email" name="email" class="form-control" placeholder="Email address" autofocus="">
 
 
@@ -100,13 +103,14 @@ const emailError = document.querySelector('.emailError');
     // get values
     const email = form.email.value;
     const password = form.password.value;
+    const firstName = form.firstName.value;
     // const firstName= form.firstName.value;
     // const lastName= form.lastName.value;
 
     try {
       const res = await fetch('/register', { 
         method: 'POST', 
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password , firstName }),
         headers: {'Content-Type': 'application/json'}
       });
       const data = await res.json();

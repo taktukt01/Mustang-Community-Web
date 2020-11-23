@@ -72,8 +72,12 @@ const createToken = (id)=>{
 
   
 
-  module.exports.login_get = (req,res)=>{
-      res.render('login');
+  module.exports.login_get =  (req,res)=>{
+  //   const r = await User.find({
+  //   "email": "taktukg2g@gmail.com"
+  //   }).update({"isAdmin": true});
+  //  await r.save();
+    res.render('login');
   }
 
   module.exports.login_post = async (req,res)=>{
@@ -82,26 +86,29 @@ const createToken = (id)=>{
     const email = req.body.email;
     const password =req.body.password;
 
-
-    
-
-
-
   try{
+
+
+
+  
    const user = await User.loginUser(email,password);
+   const isAdmin = await Admin.findById(user.id);   // returns Obj or null
+   console.log(isAdmin);
    const token = createToken(user._id);
+   
        //res.cookie(NAME, value , options)
        res.cookie('jwt',token,{
         httpOnly: true,
         expires: new Date(Date.now() + 7200000)  // 7,200,000ms = 120 min = 2 hours
-       })
-   res.status(200).json({ user: user._id });
+       });
+   res.status(200).json( {user});
+      }
   // res.redirect("/");
 
   //  res.render('register' , {
   //    user: user._id ,
   //  })
-  }catch(err){
+  catch(err){
     const errors = handleErrors(err);
     res.status(400).json({ errors });}
    
@@ -139,13 +146,23 @@ module.exports.register_post = async (req,res)=>{
     // const last = req.body.lastName;
     const email = req.body.email;
     const password = req.body.password;
+    const firstName = req.body.firstName;
+
+ 
 
   const user =  await User.create({
-  //  firstName : first,
-  //  lastName : last ,
-   email, password
+
+   email,
    
-       });
+  password ,
+   isAdmin : false,
+    firstName
+   
+  });
+
+
+  
+
        const token = createToken(user._id);
        //res.cookie(NAME, value , options)
        res.cookie('jwt',token,{
@@ -180,46 +197,36 @@ module.exports.admin_get = async(req,res)=>{
 /*
  the find() method returns all the documents when an empty object is passed. 
 */
-
-
-let adminsEmail = [];
-Admin.find({}, (err,result)=>{      //grab all admins
-  if(err){res.send(err)}
-
-  for(let i = 0 ; i< result.length ; i++){  
-    adminsEmail.push(result[i].email);
-  }
-
-});
-console.log(adminsEmail);
-
- User.find({}, (err,result)=>{
+ await User.find({"isAdmin": false}, (err,result)=>{
   if(err){
     res.json(err);
   } 
-  //result is an array of objects... 
+  // result is an array of objects... 
   res.render("admin" , {
-    data: result , 
-    admins : adminsEmail,    
-  }); });
+    data: result,  
 
+  });
+
+});
 }
 
-
 module.exports.admin_post= async(req,res)=>{
-// console.log(req.body);
+console.log(req.body.id);
 
+if(req.body.action == "delete"){
 
-const user = User.findById(req.body.data ,  function(err,result){
+  const user = await User.findByIdAndDelete(req.body.id);
+
+}
+else if(req.body.action == "promote"){
+//req.body.data is our _id
+const user = await User.findById(req.body.id , async function(err,result){
   if(result){
-const dataNeeded = result.email;
-console.log(dataNeeded);
-// await Admin.create({
-//   email: dataNeeded ,
-// });
-
+   result.isAdmin = true;
+    await result.save();
+    res.json(200).json(user);
   }
-});
-
-// res.json(user);
+    res.status(404).json(err);
+  });
+}
 }

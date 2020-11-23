@@ -4,6 +4,9 @@
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
     */
     (function($) {
+
+
+
     "use strict"; // Start of use strict
   
     // Smooth scrolling using jQuery easing
@@ -21,6 +24,11 @@
 // $(this).hide();
 
     // });
+
+  
+
+
+
     function notNull(value) {
       var elem = document.getElementById(value);
       if(typeof elem !== 'undefined' && elem !== null) {
@@ -29,6 +37,7 @@
     }
 
     
+
      
     function addExecMember(name, email,phone,fbLink){
 

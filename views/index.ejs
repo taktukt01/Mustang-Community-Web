@@ -8,8 +8,7 @@
     <meta name="author" />
     <title>Official Lonyamship Website</title>
     <!-- Favicon-->
-    <!-- <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" /> -->
-
+    <link rel="shortcut icon" href="#" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -25,6 +24,7 @@
     <!-- BaguetteBox for gallery: 
     :Simple and easy to use lightbox script written in pure JavaScript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+
 
 
     
@@ -47,7 +47,12 @@
             href="#contact">Contact</a>
     
 
-<!-- If jwt == NULL :
+        
+    
+                    <a class="btn btn-success" href="/payment">Donate</a>
+
+
+                    <!-- If jwt == NULL :
 display LOGIN REGISTER
 
 else
@@ -62,26 +67,23 @@ display Logout , welcome message-->
         href="/login">Login</a>
 
 <% } else{ %>
+
   <!--  if admin ... show a different view -->
-<% if(user.email == "taktukgg@gmail.com"){ %>
-        <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+<% if( user.isAdmin ){ %>
+        <p class = "welcomeMessage">Hello, <%= user.firstName %> </p>
         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
         href="/admin">Admin Panel</a>
         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
             href="/logout">Logout</a>
 
     <% }else{%>
-    <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+    <p class = "welcomeMessage">Hello, <%= user.firstName %> </p>
     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
         href="/logout">Logout</a>
 <% } %>
 
 <% } %>
 
-
-        
-    
-                    <a class="btn btn-success" href="/payment">Donate</a>
     
         </div>
       </nav>
@@ -96,6 +98,7 @@ display Logout , welcome message-->
     
 
     <section class="page-section p-3 mb-2 bg-primary">
+        <div class = "regularDiv"></div>
 
 
 
@@ -389,6 +392,7 @@ Insert About Us Section here -->
                 <div class="row">
 
 
+
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
                             <a class="lightbox" href="images/kyidug12.jpg">
@@ -400,332 +404,17 @@ Insert About Us Section here -->
                     </div>
 
 
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug7.jpg">
-                                <img class="img-thumbnail" src="images/kyidug7.jpg" alt="Card image" style="width:100%">
-                            </a>
 
-                        </div>
-                    </div>
+                
 
 
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug31.jpg">
-                                <img class="img-thumbnail" src="images/kyidug31.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug1.jpg">
-                                <img class="img-thumbnail" src="images/kyidug1.jpg" alt="Card image" style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <!-- <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug2.jpg">
-                        <img class = "img-thumbnail" src="images/kyidug2.jpg" alt="Tuneel">
-                    </a>
                    
-                </div>
-            </div> -->
-
-
-
-
-
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug3.jpg">
-                                <img class="img-thumbnail" src="images/kyidug3.jpg" alt="Coast">
-                            </a>
-
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug4.jpg">
-                                <img class="img-thumbnail" src="images/kyidug4.jpg" alt="Rails">
-                            </a>
-
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug5.jpg">
-                                <img class="img-thumbnail" src="images/kyidug5.jpg" alt="Traffic">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug6.jpg">
-                                <img class="img-thumbnail" src="images/kyidug6.jpg" alt="Card image" style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
 
 
 
 
 
                     <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug8.jpg">
-                                <img class="img-thumbnail" src="images/kyidug8.jpg" alt="Card image" style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug9.jpg">
-                                <img class="img-thumbnail" src="images/kyidug9.jpg" alt="Card image" style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug10.jpg">
-                                <img class="img-thumbnail" src="images/kyidug10.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug11.jpg">
-                                <img class="img-thumbnail" src="images/kyidug11.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug13.jpg">
-                                <img class="img-thumbnail" src="images/kyidug13.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug14.jpg">
-                                <img class="img-thumbnail" src="images/kyidug14.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug15.jpg">
-                                <img class="img-thumbnail" src="images/kyidug15.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug16.jpg">
-                                <img class="img-thumbnail" src="images/kyidug16.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug17.jpg">
-                                <img class="img-thumbnail" src="images/kyidug17.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug18.jpg">
-                                <img class="img-thumbnail" src="images/kyidug18.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug19.jpg">
-                                <img class="img-thumbnail" src="images/kyidug19.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <!-- <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/kyidug20.jpg">
-                        <img class="img-thumbnail" src="images/kyidug20.jpg" alt="Card image" style="width:100%">
-                    </a>
-                  
-                </div>
-            </div> -->
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug21.jpg">
-                                <img class="img-thumbnail" src="images/kyidug21.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug22.jpg">
-                                <img class="img-thumbnail" src="images/kyidug22.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug23.jpg">
-                                <img class="img-thumbnail" src="images/kyidug23.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug24.jpg">
-                                <img class="img-thumbnail" src="images/kyidug24.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug25.jpg">
-                                <img class="img-thumbnail" src="images/kyidug25.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug26.jpg">
-                                <img class="img-thumbnail" src="images/kyidug26.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug27.jpg">
-                                <img class="img-thumbnail" src="images/kyidug27.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug28.jpg">
-                                <img class="img-thumbnail" src="images/kyidug28.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug29.jpg">
-                                <img class="img-thumbnail" src="images/kyidug29.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug30.jpg">
-                                <img class="img-thumbnail" src="images/kyidug30.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <a class="lightbox" href="images/lomanthang.jpg">
                         <img class = "img-thumbnail" src="images/lomanthang.jpg" alt="Traffic">
@@ -734,8 +423,7 @@ Insert About Us Section here -->
                 </div>
             
             </div>
-
-        -->
+       
 
                 </div>
 
@@ -744,7 +432,6 @@ Insert About Us Section here -->
 
             </div>
         </div>
-
         <!-- /.container -->
     </section>
 
@@ -853,12 +540,12 @@ Insert About Us Section here -->
         
 
         </span>
-       
-        <div data-netlify-recaptcha="true">
+
+
           <div class="mx-auto" style="width: 750px">
 
-        <form method="post" id = "uploadForm" name="uploadFile" 
-     data-netlify= "true" >
+        <form method="post"  name="uploadFile" 
+        enctype="multipart/form-data" action = "/uploadFile" >
             <input type='file' name='imageUpload' multiple />
             <input type='submit' value='Upload'/>
           </form>
@@ -902,18 +589,11 @@ Insert About Us Section here -->
 
 baguetteBox.run('.tz-gallery');
 
-$("#uploadForm").submit(function(e) {
-  e.preventDefault();
-
-  var $form = $(this);
-  $.post($form.attr("action"), $form.serialize()).then(function() {
-    alert("Thank you!");
-  });
-});
 
 
   
   </script>
+
 
 
 <script src="./js/scripts.js"></script>
