@@ -81,8 +81,8 @@ mongoose.connection
 
 
 //This is our root path now!
-// app.use(express.static('public'));
-express.static(path.join(__dirname, '/public'));
+app.use(express.static('public'));
+// express.static(path.join(__dirname, '/public'));
 
 app.set('view engine', 'ejs')
 app.use(morgan('tiny'));
@@ -104,35 +104,35 @@ app.get('/'  , async (req,res)=>{
 // var fullLink= [];
 // var l = [];
 
+// The fs module provides a lot of very useful functionality to access and interact with the file system.
+// files ->  The callback gets two arguments (err, files) 
+//where files is an array of the names of the files in the directory excluding '.' and '..'.
+
   fs.readdir(__dirname +"/public/images/" , (err, files)=>{
 
     if(err){
       res.end("ERROR!");
     }
 
-   for(let i =0; i< files.length ; i++){
-    //  var partialLink = path.join(__dirname , "/public/images/" , files[i]);
-     files[i] = path.join("/public/images/" , files[i]) ;
-   }
-   console.log(files);
-
-
+    console.log(files);
    res.render('index',{
 
     link : files,
-    // galleryFiles :   files ,
+  //   // galleryFiles :   files ,
   });
 
+});
+
+
 
   });
 
-  console.log(fullLink);
 // if jwt exists, check
 // req.cookies
 //isAdmin : Admin.find({jwt})
- 
 
-});
+// res.render('index');
+ 
 
 
 

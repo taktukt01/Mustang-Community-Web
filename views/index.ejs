@@ -391,38 +391,19 @@ Insert About Us Section here -->
 
                 <div class="row">
 
-
-
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <a class="lightbox" href="images/kyidug12.jpg">
-                                <img class="img-thumbnail" src="images/kyidug12.jpg" alt="Card image"
-                                    style="width:100%">
-                            </a>
-
-                        </div>
+            <% for(var i = 0 ; i< link.length ; i++){ %>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a class="lightbox" href="./images/<%= link[i] %>">
+                            <img class = "img-thumbnail" src="./images/<%= link[i] %>" alt="Traffic" style="width:100%">
+                        </a>
+                       
                     </div>
-
-
-
                 
-
-
-                   
-
-
-
-
-
-                    <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a class="lightbox" href="images/lomanthang.jpg">
-                        <img class = "img-thumbnail" src="images/lomanthang.jpg" alt="Traffic">
-                    </a>
-                   
                 </div>
-            
-            </div>
+            <%}%>
+
+
        
 
                 </div>
