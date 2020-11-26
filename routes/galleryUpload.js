@@ -5,7 +5,7 @@ const router = express.Router();
 const multer = require("multer");
 // var upload = multer({ dest: 'uploads/' });
 var path = require('path');
-
+const {userLoggedIn} = require("../middleware/users");
 
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -40,14 +40,18 @@ Multer adds a body object and a file or files object to the request object.
 var upload = multer({ storage : storage , fileFilter: fileFilter }).array('imageUpload',100);
 
 
-router.post('/uploadFile', function (req, res) {
+router.post('/uploadFile', userLoggedIn, function (req, res) {
+
+  if(res.locals.user){   //checking to see if user logged in
     upload(req,res,function(err) {
-        console.log(req.body);
         console.log(req.files);
         if(err) {
             return res.end("Error uploading file. Max upload size is 100.");
         }
-        res.redirect(req.get('referer')); 
+        res.redirect(req.get('referer'));  // refreshes the page
       });
+    }
+// PopUp Register page
+res.redirect("/register");
   });
 module.exports = router;

@@ -9,6 +9,7 @@ const jwt_secret = process.env.JWT_SECRET;
 This middleware checks to see.. 
 */
 // check current user
+// if not logged in, locally stored variable user is null.
 const userLoggedIn = (req, res, next) => {
     const token = req.cookies.jwt;
     if (token) {
