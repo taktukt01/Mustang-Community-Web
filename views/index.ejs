@@ -36,7 +36,7 @@
 
     <!-- Logo here -->
         <a class="navbar-brand" href="/">
-            <img src="./images/ogLogo.jpg" alt="">
+            <img src="./images/logo.jpg" alt="">
           </a>
         <!-- Navbar content -->
        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
@@ -45,20 +45,10 @@
             href="#gallery">Gallery</a>
     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
             href="#contact">Contact</a>
-    
+     <a class="btn btn-success" href="/payment">Donate</a>
 
-        
-    
-                    <a class="btn btn-success" href="/payment">Donate</a>
-
-
-                    <!-- If jwt == NULL :
-display LOGIN REGISTER
-
-else
-
-display Logout , welcome message-->
-
+     
+<!-- If user not logged in,  -->
 <% if(!user){ %>
     <a class="nav-link navbar-right py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
     href="/register">Register</a>
@@ -68,7 +58,8 @@ display Logout , welcome message-->
 
 <% } else{ %>
 
-  <!--  if admin ... show a different view -->
+  <!--  If admin ... show a different view -->
+  <!-- https://griva.in/node.js/2019/12/05/how-to-convert-excel-to-json-with-nodejs/ -->
 <% if( user.isAdmin ){ %>
         <p class = "welcomeMessage">Hello, <%= user.firstName %> </p>
         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
@@ -93,14 +84,11 @@ display Logout , welcome message-->
 </head>
 
   
-<body class ="bg-primary">
 
-    
+<body class ="bg-primary">
 
     <section class="page-section p-3 mb-2 bg-primary">
         <div class = "regularDiv"></div>
-
-
 
         <!-- Masthead-->
             <div class="container d-flex align-items-center flex-column">
@@ -110,23 +98,17 @@ display Logout , welcome message-->
                 <!-- Masthead Heading-->
                 <div class="divider-custom divider-light">
                 </div>
-                <!-- 
-Insert About Us Section here -->
 
-                <!-- About Section Heading-->
-
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pm6qy_9E0rY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                <h1 class="display-3 text-light">About Lonyamship</h1>
+                <!-- <h1 class="display-3 text-light">About Lonyamship</h1> -->
 
                 <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
+                <!-- <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
-                </div>
+                </div> -->
 
-
+                        <!-- Image slideshow -->
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleDark" data-slide-to="0" class="active"></li>
@@ -160,19 +142,7 @@ Insert About Us Section here -->
                     </a>
                   </div>
 
-
-
-                <!-- About Section Content-->
-                <!-- <div class = "row">
-         
-
-      <div style="float: left; width: 50%">
-          Lo-Nyamship Kyidug USA is a non-profit organization established primarily to help the people of
-          Upper Mustang community in the USA and also living in Nepal.        
-           -->
-
-
-                <!-- </div> -->
+                  <!-- About Us -->
 
                 <div class="float-container">
 

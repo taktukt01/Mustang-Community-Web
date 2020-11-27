@@ -1,23 +1,26 @@
 const express = require("express");
 const router = express.Router();
-// const fileUpload = require("express-fileupload");
-// const imgUploadController = require('../controllers/imgUploadControllers');
 const multer = require("multer");
-// var upload = multer({ dest: 'uploads/' });
-var path = require('path');
 const {userLoggedIn} = require("../middleware/users");
 
+
+
+/*
+Multer allows us to access our files via req.files and values of form using req.body
+Each function gets passed both the request (req) and some information about the file (file) to aid with the decision.
+*/
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
       callback(null, './public/images');
     },
+
     filename: function (req, file, callback) {
       // callback(null, file.fieldname + '-' + Date.now() + '.jpg');
       callback(null, file.originalname ); //Appending extension
     }
   });
 
-
+// Filters such that only jpg/png files are accepted.
   const fileFilter = (req, file, cb) => {
     if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' || file.mimetype == 'image/jpg') {
         cb(null, true);
@@ -27,16 +30,9 @@ var storage = multer.diskStorage({
 }
 
 
-/*
-
-
-Multer adds a body object and a file or files object to the request object.
- The body object contains the values of the text fields of the form,
-  the file or files object contains the files uploaded via the form.
-*/
-
-// router.use(fileUpload());
-// .any() -> Accepts all files that comes over the wire. An array of files will be stored in req.files.
+// alternatively:  .any() -> Accepts all files that comes over the wire. An array of files will be stored in req.files.
+// We are telling multer WHERE to store the uploaded files and WHAT to name them, and we are storing the result
+// req.files will be an array of (up to 100 files )
 var upload = multer({ storage : storage , fileFilter: fileFilter }).array('imageUpload',100);
 
 
@@ -44,14 +40,15 @@ router.post('/uploadFile', userLoggedIn, function (req, res) {
 
   if(res.locals.user){   //checking to see if user logged in
     upload(req,res,function(err) {
-        console.log(req.files);
         if(err) {
             return res.end("Error uploading file. Max upload size is 100.");
         }
+        console.log("files..." , req.files);
         res.redirect(req.get('referer'));  // refreshes the page
       });
     }
-// PopUp Register page
+// PopUp Register page if user is not logged in.
 res.redirect("/register");
   });
+
 module.exports = router;

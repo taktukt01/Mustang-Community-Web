@@ -13,8 +13,8 @@ res.render('payment', {
 
 })};
 
-
-
+// Stripe's API allows users to make payment to our website.
+//  I want to grab user's input (donation amount) and enter it to unit_amount.
 module.exports.payment_post = async (req,res)=>{
 
    const session = await stripe.checkout.sessions.create({
