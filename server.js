@@ -13,6 +13,7 @@ const path = require('path');
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
+const fbAuth = require('./routes/passport.facebook');
 // const jokesController = require('./routes/jokes');
 
 const fs = require('fs');
@@ -93,6 +94,7 @@ app.use(cors());
 app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
+app.use(fbAuth);
 // app.use(jokesController);
 
 

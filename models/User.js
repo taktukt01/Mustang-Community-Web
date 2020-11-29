@@ -9,16 +9,7 @@ const { isEmail } = require('validator');
 
 // Create schema
 const registrationSchema = new mongoose.Schema({
-//     firstName: {
-//         type:String,
-//         required: [true, 'Please enter your first name'],
 
-//     }
-// ,
-//     lastName:{
-//         type: String,
-//         required: [true, 'Please enter your last name']
-//     },
 firstName: {
   type: String, 
   required: [true, "Please enter your first name"],
@@ -85,20 +76,11 @@ registrationSchema.statics.loginUser = async function(email, password){
   throw Error('incorrect email' + email);
 };
 
-const adminSchema = new mongoose.Schema({
 
-
-  email: {
-    type: String, 
-    required: true ,
-    unique: true , 
-  }
-});
 
 
 const User = mongoose.model('User' , registrationSchema);
-const Admin = mongoose.model('Admin' , adminSchema);
 
 
 //export our User model
-module.exports = {User , Admin} ;
+module.exports = {User } ;
