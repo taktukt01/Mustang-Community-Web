@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 
@@ -42,3 +43,23 @@ router.get('/auth/facebook/callback',
 
 
 module.exports = router;
+=======
+// COming soon!
+
+
+// var passport = require('passport')
+//   , FacebookStrategy = require('passport-facebook').Strategy;
+
+// passport.use(new FacebookStrategy({
+//     clientID: FACEBOOK_APP_ID,
+//     clientSecret: FACEBOOK_APP_SECRET,
+//     callbackURL: "http://www.example.com/auth/facebook/callback"
+//   },
+//   function(accessToken, refreshToken, profile, done) {
+//     User.findOrCreate(..., function(err, user) {
+//       if (err) { return done(err); }
+//       done(null, user);
+//     });
+//   }
+// ));
+>>>>>>> 4135f7e4b501790db3a07683a4bb021ba1aca2b7
