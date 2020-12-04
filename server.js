@@ -64,7 +64,7 @@ app.get('*' , userLoggedIn);
 
 
 app.get('/'  , async (req,res)=>{
-
+console.log(req.body);
 // The fs module provides a lot of very useful functionality to access and interact with the file system.
 // @parameter files : The callback gets two arguments (err, files) 
 //where files is an array of the names of the files in the directory excluding '.' and '..'.

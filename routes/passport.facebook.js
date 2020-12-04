@@ -17,7 +17,7 @@ var passport = require('passport')
       callbackURL: "http://localhost:5000/auth/facebook/callback"
     },
     function(accessToken, refreshToken, profile, done) {
-      return done(null, profile);
+      return done(null, profile.displayName);
     }
   ));
   

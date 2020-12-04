@@ -208,10 +208,6 @@ module.exports.admin_get = async(req,res)=>{
 });
 }
 
-module.exports.admin_deleteUser = async(req,res)=>{
-
-
-}
 module.exports.admin_post= async(req,res)=>{
 
 if(req.body.action == "delete"){
@@ -225,4 +221,11 @@ const user = await User.findByIdAndUpdate(req.body.id , {
   isAdmin: true,
 });
 }
+}
+
+
+module.exports.adminHome_get = async(req,res)=>{
+
+res.render("adminHome");
+
 }
