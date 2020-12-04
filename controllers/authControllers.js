@@ -1,4 +1,4 @@
-const {User, Admin} = require('../models/User');
+const User = require('../models/User');
 
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
@@ -86,14 +86,12 @@ const createToken = (id)=>{
     const email = req.body.email;
     const password =req.body.password;
 
+
   try{
 
-
-
-  
    const user = await User.loginUser(email,password);
-   const isAdmin = await Admin.findById(user.id);   // returns Obj or null
-   console.log(isAdmin);
+  //  const isAdmin = await Admin.findById(user.id);   // returns Obj or null
+  //  console.log(isAdmin);
    const token = createToken(user._id);
    
        //res.cookie(NAME, value , options)
@@ -193,7 +191,7 @@ module.exports.logout = async (req,res)=>{
 
 
 module.exports.admin_get = async(req,res)=>{
-//  I can pass in queried data to admin..
+//  Used to return all the regular members
 /*
  the find() method returns all the documents when an empty object is passed. 
 */
@@ -210,8 +208,11 @@ module.exports.admin_get = async(req,res)=>{
 });
 }
 
+module.exports.admin_deleteUser = async(req,res)=>{
+
+
+}
 module.exports.admin_post= async(req,res)=>{
-console.log(req.body.id);
 
 if(req.body.action == "delete"){
 
@@ -220,13 +221,8 @@ if(req.body.action == "delete"){
 }
 else if(req.body.action == "promote"){
 //req.body.data is our _id
-const user = await User.findById(req.body.id , async function(err,result){
-  if(result){
-   result.isAdmin = true;
-    await result.save();
-    res.json(200).json(user);
-  }
-    res.status(404).json(err);
-  });
+const user = await User.findByIdAndUpdate(req.body.id , {
+  isAdmin: true,
+});
 }
 }

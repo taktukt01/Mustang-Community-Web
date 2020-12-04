@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
 
-
     
 <!-- NavBar -->
 
@@ -61,7 +60,7 @@
   <!--  If admin ... show a different view -->
   <!-- https://griva.in/node.js/2019/12/05/how-to-convert-excel-to-json-with-nodejs/ -->
 <% if( user.isAdmin ){ %>
-        <p class = "welcomeMessage">Hello, <%= user.firstName %> </p>
+        <p class = "welcomeMessage">Hello, <%= user.email %> </p>
         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
         href="/admin">Admin Panel</a>
         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
@@ -117,7 +116,7 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active" data-interval="10000">
-                        <img src="./images/kyidug1.jpg" class = "img-fluid" alt="...">
+                        <img src="./images/kyidug1.jpg" class = "img-fluid w-100" alt="...">
                         <!-- <div class="carousel-caption d-none d-md-block">
                           <h5>First slide label</h5>
                           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

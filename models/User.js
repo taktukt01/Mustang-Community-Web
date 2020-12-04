@@ -6,7 +6,6 @@ var bcrypt = require('bcryptjs');
 const { isEmail } = require('validator');
 
 
-
 // Create schema
 const registrationSchema = new mongoose.Schema({
 
@@ -76,11 +75,27 @@ registrationSchema.statics.loginUser = async function(email, password){
   throw Error('incorrect email' + email);
 };
 
+// registrationSchema.statics.findOrCreate = async function(id){
+
+//   //find 
+//   //or create
+
+//     const user = await this.findById(id , function(err,result){ //returns document
+
+//       if(err){ // no users found, then create
+//         return this.create({id: id});  
+//       }
+
+//       return user;
 
 
+//     });
+
+
+// }
 
 const User = mongoose.model('User' , registrationSchema);
 
 
 //export our User model
-module.exports = {User } ;
+module.exports = User ;

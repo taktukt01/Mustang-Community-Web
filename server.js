@@ -5,17 +5,13 @@ const morgan = require('morgan');
 const app = express();
 require('dotenv').config()
 const jwt = require('jsonwebtoken');
-const {User, Admin} = require("./models/User")
+const {User} = require("./models/User")
 const path = require('path');
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
-<<<<<<< HEAD
 const fbAuth = require('./routes/passport.facebook');
-// const jokesController = require('./routes/jokes');
 
-=======
->>>>>>> 4135f7e4b501790db3a07683a4bb021ba1aca2b7
 const fs = require('fs');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
@@ -60,6 +56,9 @@ app.use(imgUploadControllers);
 app.use(fbAuth);
 // app.use(jokesController);
 
+var cookieSession = require('cookie-session');
+
+// app.use(cookieSession());
 // for every route, use middleware to check if user is logged in.
 app.get('*' , userLoggedIn);
 
@@ -74,14 +73,19 @@ app.get('/'  , async (req,res)=>{
     if(err){
       res.end("ERROR!");
     }
-   res.render('index',{
 
+    console.log(req.user);
+   res.render('index',{
+    // user: req.user[displayName] ,
     link : files,
   });
 
 });
 
   });
+
+
+  
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
