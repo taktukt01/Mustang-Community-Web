@@ -4,26 +4,42 @@ const morgan = require('morgan');
 // const fetch = require('node-fetch');
 const app = express();
 require('dotenv').config()
-const jwt = require('jsonwebtoken');
-const {User} = require("./models/User")
-const path = require('path');
+const fs = require('fs');
+const mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+const {userLoggedIn } = require("./middleware/users");
+var cookieParser = require('cookie-parser');
+const excelToJson = require('convert-excel-to-json');
+
+
+
+// Importing Controllers
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
 const fbAuth = require('./routes/passport.facebook');
 
-const fs = require('fs');
-const mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-const {userLoggedIn , isAdmin} = require("./middleware/users");
 
-// parse application/x-www-form-urlencoded
-var cookieParser = require('cookie-parser');
-// const { join } = require("path");
+
+
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
-// parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+//This is our root path now!
+app.use(express.static('public'));
+// express.static(path.join(__dirname, '/public'));
+
+app.set('view engine', 'ejs')
+app.use(morgan('tiny'));
+app.use(cors());
+
+
+// defined Controllers
+app.use(authControllers);
+app.use(donationControllers);
+app.use(imgUploadControllers);
+app.use(fbAuth);
 
 
 // Connection to Mongoose
@@ -40,31 +56,34 @@ mongoose.connection
 
 
 
-//This is our root path now!
-app.use(express.static('public'));
-// express.static(path.join(__dirname, '/public'));
 
-app.set('view engine', 'ejs')
-app.use(morgan('tiny'));
-app.use(cors());
+app.get("/" , async (req,res)=>{
+    // EXCEL TO JSON
+
+const result = excelToJson({
+  sourceFile: "Members.xlsx", 
+});
+(result.Sheet1.forEach((val,index)=>{
+  if(index != 0){     //ignore the first row
+    console.log(val);
+  }
+}));
+
+// fs.writeFile(FILE , content , callback)
+ 
+// fs.writeFile("members" , result , (err)=>{
+//   res.json(err);
+// });
 
 
-// defined Controllers
-app.use(authControllers);
-app.use(donationControllers);
-app.use(imgUploadControllers);
-app.use(fbAuth);
-// app.use(jokesController);
+});
 
-var cookieSession = require('cookie-session');
-
-// app.use(cookieSession());
-// for every route, use middleware to check if user is logged in.
 app.get('*' , userLoggedIn);
 
-
 app.get('/'  , async (req,res)=>{
-console.log(req.body);
+
+
+
 // The fs module provides a lot of very useful functionality to access and interact with the file system.
 // @parameter files : The callback gets two arguments (err, files) 
 //where files is an array of the names of the files in the directory excluding '.' and '..'.
@@ -84,8 +103,6 @@ console.log(req.body);
 
   });
 
-
-  
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
