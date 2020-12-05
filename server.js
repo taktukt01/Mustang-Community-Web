@@ -57,32 +57,60 @@ mongoose.connection
 
 
 
-app.get("/" , async (req,res)=>{
-    // EXCEL TO JSON
+function extractExcelExec(file){
+  const result = excelToJson({
+    sourceFile: file,  //"Members.xlsx"
+    header: 
+    { 
+      rows: 1,            //row to be skipped
+    },
+  
+    columnToKey: {    // renaming the columns 
+  A : 'Name' ,
+  B  : 'Title',
+  C  : 'Phone',
+  D  : 'Email', 
+  E  : 'Facebook',
+  
+    }
+  });
+  return result.Sheet1; // array of objects
+}
 
-const result = excelToJson({
-  sourceFile: "Members.xlsx", 
+
+function extractExcel(file){
+  const result = excelToJson({
+    sourceFile: file,  //"Members.xlsx"
+    header: 
+    { 
+      rows: 1,            //row to be skipped
+    },
+  
+    columnToKey: {    // renaming the columns 
+  A : 'Name' ,
+  B  : 'Phone',
+  C  : 'Email', 
+  D  : 'Facebook',
+  
+    }
+  });
+  return result.Sheet1; // array of objects
+}
+app.get("/api/test", (req,res)=>{
+  const executiveMembers = extractExcelExec("Members.xlsx");
+  executiveMembers.forEach(element,idx =>{
+    console.log(element);
+  });
+    res.json(executiveMembers);
 });
-(result.Sheet1.forEach((val,index)=>{
-  if(index != 0){     //ignore the first row
-    console.log(val);
-  }
-}));
 
-// fs.writeFile(FILE , content , callback)
- 
-// fs.writeFile("members" , result , (err)=>{
-//   res.json(err);
-// });
-
-
-});
 
 app.get('*' , userLoggedIn);
 
 app.get('/'  , async (req,res)=>{
 
-
+ 
+  const executiveMembers = extractExcelExec("Members.xlsx");
 
 // The fs module provides a lot of very useful functionality to access and interact with the file system.
 // @parameter files : The callback gets two arguments (err, files) 
@@ -97,6 +125,11 @@ app.get('/'  , async (req,res)=>{
    res.render('index',{
     // user: req.user[displayName] ,
     link : files,
+    execMembers :  executiveMembers ,
+    // executiveMembers :  ,
+    // boardMembers : 
+    // newMembers :   ,
+
   });
 
 });
