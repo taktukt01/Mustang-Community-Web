@@ -7,77 +7,15 @@
     <meta name="description"  />
     <meta name="author" />
     <title>Official Lonyamship Website</title>
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="#" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css" />
-
-<!-- Bootstrap -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <!-- also styling with css  -->
+    
+<%- include('partials/headerPlugIns') %>
     <link href="./css/styles.css" rel="stylesheet" />
-
-    <!-- BaguetteBox for gallery: 
-    :Simple and easy to use lightbox script written in pure JavaScript -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-
 
     
 <!-- NavBar -->
 
-<nav class="navbar sticky-top navbar-dark bg-primary">
-        
-    <div class="container-fluid">
 
-    <!-- Logo here -->
-        <a class="navbar-brand" href="/">
-            <img src="./images/logo.jpg" alt="">
-          </a>
-        <!-- Navbar content -->
-       <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="#portfolio">Board Members</a>
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="#gallery">Gallery</a>
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="#contact">Contact</a>
-     <a class="btn btn-success" href="/payment">Donate</a>
-
-     
-<!-- If user not logged in,  -->
-<% if(!user){ %>
-    <a class="nav-link navbar-right py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-    href="/register">Register</a>
-
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-        href="/login">Login</a>
-
-<% } else{ %>
-
-  <!--  If admin ... show a different view -->
-  <!-- https://griva.in/node.js/2019/12/05/how-to-convert-excel-to-json-with-nodejs/ -->
-<% if( user.isAdmin ){ %>
-        <p class = "welcomeMessage">Hello, <%= user.email %> </p>
-        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-        href="/adminHome">Admin Panel</a>
-        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="/logout">Logout</a>
-
-    <% }else{%>
-    <p class = "welcomeMessage">Hello, <%= user.firstName %> </p>
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-        href="/logout">Logout</a>
-<% } %>
-
-<% } %>
-
-    
-        </div>
-      </nav>
-
+<%- include('partials/navBar') %>
 
 
 </head>

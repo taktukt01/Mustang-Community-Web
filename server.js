@@ -7,17 +7,19 @@ require('dotenv').config()
 const fs = require('fs');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-const {userLoggedIn } = require("./middleware/users");
 var cookieParser = require('cookie-parser');
 const excelToJson = require('convert-excel-to-json');
 
 
 
-// Importing Controllers
+// Importing Controllers to be used
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
 const fbAuth = require('./routes/passport.facebook');
+const videos = require('./routes/youtubeApi');
+
+const {userLoggedIn } = require("./middleware/users");
 
 
 
@@ -40,6 +42,7 @@ app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
 app.use(fbAuth);
+app.use(videos);
 
 
 // Connection to Mongoose
@@ -48,10 +51,10 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true, useCr
 mongoose.promise = global.promise
 mongoose.connection
 .on('connected', () => {
-    console.log(`mongooose conncetion open on ${process.env.DB_TITLE}`);
+    console.log(`Mongooose connection open on ${process.env.DB_TITLE} , have a good day!`);
 })
 .on('error', (err) => {
-    console.log(`connection error ${err.message}`)
+    console.log(`Connect error: ${err.message}`)
 })
 
 
@@ -96,6 +99,9 @@ function extractExcel(file){
   });
   return result.Sheet1; // array of objects
 }
+
+
+
 app.get("/api/test", (req,res)=>{
   const executiveMembers = extractExcelExec("Members.xlsx");
   executiveMembers.forEach(element,idx =>{
@@ -112,7 +118,6 @@ app.get('/'  , async (req,res)=>{
  
   const executiveMembers = extractExcelExec("Members.xlsx");
 
-// The fs module provides a lot of very useful functionality to access and interact with the file system.
 // @parameter files : The callback gets two arguments (err, files) 
 //where files is an array of the names of the files in the directory excluding '.' and '..'.
   fs.readdir(__dirname +"/public/images/" , (err, files)=>{
@@ -125,8 +130,7 @@ app.get('/'  , async (req,res)=>{
    res.render('index',{
     // user: req.user[displayName] ,
     link : files,
-    execMembers :  executiveMembers ,
-    // executiveMembers :  ,
+    executiveMembers,
     // boardMembers : 
     // newMembers :   ,
 
