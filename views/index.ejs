@@ -145,8 +145,28 @@
                                             <ul class="list-group" id="execMember">
 
 
+                                                <% executiveMembers.forEach( (member) =>{ %>
+                                                    
+
+%>
+                                                <li class="list-group-item"><strong>  <%= member.Name %></strong>
+                                                    <li>
+                                                        </li>
+                                                    
+                                                    <li>
+                                                    Email address: <%= member.Email %>
+                                                    
+                                                    </li>
+                                                    
+                                                    <li>
+                                                    
+                                                    <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                    
+                                                    </li>
 
                                             </ul>
+
+                                        <% });  %>
 
 
 
@@ -193,7 +213,6 @@
 
 
 
-
                                             </ul>
 
 
@@ -213,7 +232,7 @@
 
                     </div>
                 </div>
-                <!-- New Members Modal -->
+                // <!-- New Members Modal -->
 
                 <div class="col">
 

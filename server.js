@@ -59,7 +59,7 @@ mongoose.connection
 
 
 
-
+// Grabbing excel data.
 function extractExcelExec(file){
   const result = excelToJson({
     sourceFile: file,  //"Members.xlsx"
@@ -102,21 +102,19 @@ function extractExcel(file){
 
 
 
-app.get("/api/test", (req,res)=>{
-  const executiveMembers = extractExcelExec("Members.xlsx");
-  executiveMembers.forEach(element,idx =>{
-    console.log(element);
-  });
-    res.json(executiveMembers);
-});
+// app.get("/api/test", (req,res)=>{
+//   const executiveMembers = extractExcelExec("Members.xlsx");
+//     res.json(executiveMembers);
+// });
 
 
 app.get('*' , userLoggedIn);
 
 app.get('/'  , async (req,res)=>{
 
- 
   const executiveMembers = extractExcelExec("Members.xlsx");
+
+  console.log(executiveMembers);
 
 // @parameter files : The callback gets two arguments (err, files) 
 //where files is an array of the names of the files in the directory excluding '.' and '..'.
