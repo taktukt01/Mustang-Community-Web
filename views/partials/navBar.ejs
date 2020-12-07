@@ -1,53 +1,51 @@
-<nav class="navbar sticky-top navbar-dark bg-primary">
-        
-    <div class="container-fluid">
-
-    <!-- Logo here -->
-        <a class="navbar-brand" href="/">
-            <img src="./images/logo.jpg" alt="No Luck!">
-          </a>
-        <!-- Navbar content -->
-       <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="#portfolio">Board Members</a>
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="#gallery">Gallery</a>
-
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="/videos/Losar">Losar Videos</a>
+<div class="navbar navbar-expand-lg  float-left">
+    <div class="collapse navbar-collapse sticky-top justify-content-md-end">
+        <ul class="navbar-nav navbar-mobile mr-0">
+            <li class="nav-item active"><a class="nav-link" href="#">
+                <img src="./images/logo.jpg" alt="No Luck!">
+            </a></li>
+            <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/videos/Losar">Videos</a></li>
+            <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="#about">About Us</a></li>
+            <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="#contact">Contact Us</a></li>
+            <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/payment">Donate</a></li>
 
 
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="#contact">Contact</a>
-     <a class="btn btn-success" href="/payment">Donate</a>
 
-     
 <!-- If user not logged in,  -->
 <% if(!locals.user){ %>
-    <a class="nav-link navbar-right py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-    href="/register">Register</a>
+    <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/register">Register</a></li>
 
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-        href="/login">Login</a>
+
+    <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/login">Log in</a></li>
+
 
 <% } else{ %>
 
   <!--  If admin ... show a different view -->
   <!-- https://griva.in/node.js/2019/12/05/how-to-convert-excel-to-json-with-nodejs/ -->
 <% if( user.isAdmin ){ %>
-        <p class = "welcomeMessage">Hello, <%= user.email %> </p>
-        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-        href="/adminHome">Admin Panel</a>
-        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-            href="/logout">Logout</a>
+
+                   <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/adminHome">Admin Panel</a></li>
+
+                   <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
+
+
+            <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+
 
     <% }else{%>
-    <p class = "welcomeMessage">Hello, <%= user.firstName %> </p>
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white btn btn-info"
-        href="/logout">Logout</a>
-<% } %>
+        <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
+
+
+        <p class = "welcomeMessage">Hello, <%= user.firstName %> </p>
 
 <% } %>
 
-    
-        </div>
-      </nav>
+<% } %>
+
+
+
+        </ul>
+    </div>
+</div>

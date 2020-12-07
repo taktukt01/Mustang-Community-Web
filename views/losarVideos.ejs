@@ -6,29 +6,44 @@
     <title>Losar Videos</title>
 
     <%- include('partials/headerPlugIns') %>
+    <link rel="stylesheet" href="/css/videos.css">
 
 
-    <%- include('partials/navBar') %>
+
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+<a class = "btn btn-primary" href="/">
+  Home
+</a>
+
+<%- include('partials/loggedIn') %>
+</nav>
+
+
+
 </head>
 <body>
 
 
-
-    <!-- Videos displayed here! --> 
   <% for(var video of losarVideos) { %>
-    <div class = "videoTab">
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed?v=<%=video.snippet.resourceId.videoId %>"frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="card text-center container-fluid mb-3" style="width: 560px">
+    <iframe class="card-img-top" width="560" height="315" src="https://www.youtube.com/embed/<%=video.snippet.resourceId.videoId %>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <h2> <%= video.snippet.title %> </h2>
-    <p> <%= video.snippet.description %></p>
-    <p>Published at: <%=video.snippet.publishedAt %> </p>
-
+    <div class="card-body">
+      <h5 class="card-title">  <%= video.snippet.title %>   </h5>
+      <p class="card-text">Published at: <%=video.snippet.publishedAt %></p>
     </div>
+  </div>
+
+
+  <!-- Videos displayed here! --> 
+
     
 
   <%} %>
     
+
 </body>
 
 

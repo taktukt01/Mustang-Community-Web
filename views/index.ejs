@@ -24,26 +24,13 @@
 
 <body class ="bg-primary">
 
-    <section class="page-section p-3 mb-2 bg-primary">
-        <div class = "regularDiv"></div>
-
         <!-- Masthead-->
             <div class="container d-flex align-items-center flex-column">
-                <!-- <h5 class="masthead-heading">About Us </h1> -->
-
-                <!-- Masthead Avatar Image-->
-                <!-- Masthead Heading-->
                 <div class="divider-custom divider-light">
-                </div>
-
-                <!-- <h1 class="display-3 text-light">About Lonyamship</h1> -->
-
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
-                </div> -->
+                </div>
 
                         <!-- Image slideshow -->
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-ride="carousel">
@@ -79,7 +66,12 @@
                     </a>
                   </div>
 
+            </div>
+
                   <!-- About Us -->
+
+                  <section class="page-section p-3 mb-2 bg-primary" id="about">
+
 
                 <div class="float-container">
 
@@ -115,9 +107,6 @@
 
                 </div>
 
-
-
-            </div>
 
 
     </section>
@@ -322,6 +311,7 @@
         <!-- /.container -->
     </section>
 
+    <button onclick="topFunction()" id="scrollToTop" title="Go to top">Back to Top</button>
 
     <!-- Upload Images Section! -->
 
@@ -468,9 +458,20 @@
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Core theme JS-->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
 
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+      </script>
+<script>
 
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 
 <script>
 
