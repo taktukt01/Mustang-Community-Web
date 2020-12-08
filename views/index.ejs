@@ -73,7 +73,7 @@
                   <section class="page-section p-3 mb-2 bg-primary" id="about">
 
 
-                <div class="float-container">
+                <div class="container float-container">
 
                     <div class="float-child">
                         <div class="green">
@@ -148,21 +148,18 @@
                                                 <% executiveMembers.forEach( (member) =>{ %>
                                                     
 
-%>
-                                                <li class="list-group-item"><strong>  <%= member.Name %></strong>
-                                                    <li>
-                                                        </li>
-                                                    
-                                                    <li>
-                                                    Email address: <%= member.Email %>
-                                                    
-                                                    </li>
-                                                    
-                                                    <li>
-                                                    
-                                                    <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
-                                                    
-                                                    </li>
+                                                    <div class="card" style="width: 18rem;">
+                                                        <img class="card-img-top" src="..." alt="Card image cap">
+                                                        <div class="card-body mb-5">
+                                                          <h5 class="card-title"> <%= member.Name %>+", "<%= member.Title %></h5>
+                                                          <p class="card-text"><%=member.Email %>
+
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+
+
+                                                        </div>
+                                                      </div>
+
 
                                             </ul>
 
@@ -232,7 +229,7 @@
 
                     </div>
                 </div>
-                // <!-- New Members Modal -->
+                <!-- New Members Modal -->
 
                 <div class="col">
 
@@ -294,7 +291,7 @@
         <!-- Page Content -->
 
 
-        <div class="fluid-container gallery-container">
+        <div class="container gallery-container">
 
             <h1 class="text-center text-lg-center mt-4 mb-0 photo-gall-heading text-dark">Photo Gallery</h1>
 
@@ -306,10 +303,10 @@
                 <div class="row">
 
             <% for(var i = 0 ; i< link.length ; i++){ %>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+                <div class="col-xs-6 col-md-4">
+                <div class="thumbnail">
                         <a class="lightbox" href="./images/<%= link[i] %>">
-                            <img class = "img-thumbnail" src="./images/<%= link[i] %>" alt="Traffic" style="width:100%">
+                            <img class = "img-thumbnail img-responsive" src="./images/<%= link[i] %>" alt="Traffic" style="width:100%">
                         </a>
                        
                     </div>
@@ -334,7 +331,7 @@
 
     <!-- Upload Images Section! -->
 
-    <section class="page-section bg-white" id="contact">
+    <section class="container page-section bg-white" id="contact">
         <div class="mx-auto" style="width: 750px">
             <!-- Contact Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-auto">Contact Us!</h2>

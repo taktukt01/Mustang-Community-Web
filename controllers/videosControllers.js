@@ -111,17 +111,22 @@ function getChannel(auth) {
     auth: auth,
     part: 'snippet',
     playlistId: 'PLq0KjKjR7nOxUefgQDoXiFxs9Ze3bLPxN',
+    maxResults: 4,
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
       return;
     }
-    
+
+//     console.log(response);
+//     if(response.data.prevPageToken){
+// return ;
+//     }
 
     for (var i = 0; i < response.data.items.length; i++) {
       losarVideos[i] = response.data.items[i];
     }
-
+// console.log(losarVideos);
 
     // now i have the playlist items... [ {} , {} , ...]
     // I want to grab... 

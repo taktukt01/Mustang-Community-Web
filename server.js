@@ -114,7 +114,7 @@ app.get('/'  , async (req,res)=>{
 
   const executiveMembers = extractExcelExec("Members.xlsx");
 
-  console.log(executiveMembers);
+  // console.log(executiveMembers);
 
 // @parameter files : The callback gets two arguments (err, files) 
 //where files is an array of the names of the files in the directory excluding '.' and '..'.

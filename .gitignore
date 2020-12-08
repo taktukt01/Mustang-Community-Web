@@ -6,3 +6,4 @@ Gemfile
 .vscode
 _config.yml
 public/images
+.env

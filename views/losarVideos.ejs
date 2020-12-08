@@ -24,10 +24,15 @@
 </head>
 <body>
 
+  <div id="container">
+
+
+
+
 
   <% for(var video of losarVideos) { %>
 
-  <div class="card text-center container-fluid mb-3" style="width: 560px">
+  <div class="card container-fluid mb-3 box" style="width: 560px">
     <iframe class="card-img-top" width="560" height="315" src="https://www.youtube.com/embed/<%=video.snippet.resourceId.videoId %>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     <div class="card-body">
@@ -42,6 +47,8 @@
     
 
   <%} %>
+
+  </div>
     
 
 </body>
