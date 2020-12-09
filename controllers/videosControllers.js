@@ -111,7 +111,7 @@ function getChannel(auth) {
     auth: auth,
     part: 'snippet',
     playlistId: 'PLq0KjKjR7nOxUefgQDoXiFxs9Ze3bLPxN',
-    maxResults: 4,
+    maxResults: 100,
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
