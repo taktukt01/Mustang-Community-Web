@@ -223,6 +223,7 @@ var service = google.youtube('v3');
   service.playlistItems.list({
     auth: oAuth2Client,
     part: 'snippet',
+    channelId: 'UC2SNlDbjU5MJv2u6CcCwvmA',
     playlistId: 'PLq0KjKjR7nOxUefgQDoXiFxs9Ze3bLPxN',
     maxResults: 100,
 
