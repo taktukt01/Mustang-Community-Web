@@ -330,6 +330,33 @@
     <button onclick="topFunction()" id="scrollToTop" title="Go to top">Back to Top</button>
 
     <!-- Upload Images Section! -->
+    <section class="page-section bg-white" id="upload-image">
+
+
+        <span class="border border-success">
+            <div class="mx-auto" style="width: 200px;">
+                <h1 class="display-4 ">Upload your images to gallery!</h1>
+                </div>
+        
+
+        </span>
+
+
+          <div class="mx-auto" style="width: 750px">
+
+        <form method="post"  name="uploadFile" 
+        enctype="multipart/form-data" action = "/uploadFile" >
+            <input type='file' name='imageUpload' multiple />
+            <input type='submit' value='Upload'/>
+          </form>
+
+          </div>
+
+</div>
+
+        </section>
+
+            
 
     <section class="container page-section bg-white" id="contact">
         <div class="mx-auto" style="width: 750px">
@@ -423,31 +450,7 @@
 
 
 
-    <section class="page-section bg-white" id="upload-image">
-
-
-        <span class="border border-success">
-            <div class="mx-auto" style="width: 200px;">
-                <h1 class="display-4 ">Upload your images to gallery!</h1>
-                </div>
-        
-
-        </span>
-
-
-          <div class="mx-auto" style="width: 750px">
-
-        <form method="post"  name="uploadFile" 
-        enctype="multipart/form-data" action = "/uploadFile" >
-            <input type='file' name='imageUpload' multiple />
-            <input type='submit' value='Upload'/>
-          </form>
-
-          </div>
-
-</div>
-
-        </section>
+   
         
 
 

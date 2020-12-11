@@ -17,7 +17,7 @@ const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
 const fbAuth = require('./routes/passport.facebook');
-const videos = require('./routes/youtubeApi');
+// const videos = require('./routes/youtubeApi');
 
 const {userLoggedIn } = require("./middleware/users");
 
@@ -42,7 +42,7 @@ app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
 app.use(fbAuth);
-app.use(videos);
+// app.use(videos);
 
 
 // Connection to Mongoose
@@ -56,6 +56,7 @@ mongoose.connection
 .on('error', (err) => {
     console.log(`Connect error: ${err.message}`)
 })
+
 
 
 
@@ -137,6 +138,117 @@ app.get('/'  , async (req,res)=>{
 });
 
   });
+
+
+  // const express = require('express');
+// const Router = express.Router();
+// var fs = require('fs');
+var {google} = require('googleapis');
+const Oauth2Data = require('./client_secret.json');
+
+const CLIENT_ID = Oauth2Data.installed.client_id;
+const CLIENT_SECRET = Oauth2Data.installed.client_secret;
+const REDIRECT_URL = Oauth2Data.installed.redirect_uris[0];
+
+const oAuth2Client = new google.auth.OAuth2(
+  CLIENT_ID,
+  CLIENT_SECRET,
+  REDIRECT_URL
+);
+var authed = false;
+
+var losarVideos = []
+
+var SCOPES = ['https://www.googleapis.com/auth/youtube.readonly'];
+
+/*
+
+OAuth2 - This allows you to make API calls on behalf of a given user. 
+In this model, the user visits your application, 
+signs in with their Google account, and provides your application with authorization against a set of scopes
+
+*/
+app.get("/authPage", (req, res) => {
+    if (!authed) {
+      // Generate an OAuth URL and redirect there
+      var url = oAuth2Client.generateAuthUrl({
+        access_type: "offline",
+        scope: SCOPES,
+      });
+      res.render("youtubeAuth", { url: url });
+    } else {
+      var oauth2 = google.oauth2({
+        auth: oAuth2Client,
+        version: "v2",
+
+      });
+      res.redirect("/videos/losar");
+    }
+    });
+
+    // Implement pagination...
+    // 
+    app.get("/videos/losar", (req,res)=>{
+      console.log("HEllo   ", losarVideos);
+
+        res.render("losarVideos" , {
+          losarVideos : app.get('losarVideos'),
+        });
+            });
+
+
+    app.get("/google/callback", function (req, res) {
+        const code = req.query.code;
+        if (code) {
+          // Get an access token based on our OAuth code
+          oAuth2Client.getToken(code, function (err, tokens) {
+            if (err) {
+              console.log("Error authenticating");
+              console.log(err);
+            } else {
+              console.log("Successfully authenticated");
+              console.log(tokens);
+              oAuth2Client.setCredentials(tokens);
+      
+              authed = true;
+            
+                    // do some fancy shit here
+
+                    /*
+
+This example retrieves playlists owned by the YouTube channel that the request's channelId parameter identifies.
+We need to be able to grab this from ANY google account.
+                    */
+var service = google.youtube('v3');
+  service.playlistItems.list({
+    auth: oAuth2Client,
+    part: 'snippet',
+    playlistId: 'PLq0KjKjR7nOxUefgQDoXiFxs9Ze3bLPxN',
+    maxResults: 100,
+
+  }, function(err, response) {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      res.json(err);
+    }
+    
+console.log("data returned from API..." + response.data.items);
+    for (var i = 0; i < response.data.items.length; i++) {
+      losarVideos[i] = response.data.items[i];
+    }
+    app.set('losarVideos' , losarVideos);
+    res.redirect("/videos/losar");
+
+            });
+        }
+      });
+    }
+});
+
+
+
+
+
 
 
 const port = process.env.PORT || 5000;
