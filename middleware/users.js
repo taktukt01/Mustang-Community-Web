@@ -29,6 +29,27 @@ const userLoggedIn = (req, res, next) => {
     }
   };
 
+  const galleryUserLogIn = (req, res, next) => {
+    const token = req.cookies.jwt;
+    if (token) {
+      jwt.verify(token, jwt_secret, async (err, decodedToken) => {
+        if (err) {
+          res.locals.user = null;
+          next();
+        } else {
+          let user = await User.findById(decodedToken.id);
+          res.locals.user = user;
+          next();
+        }
+      });
+    } else {
+      res.locals.user = null;
+      res.redirect("/register");
+    }
+  };
+
+  
+
 
   const isAdmin  = (req,res,next)=>{
     const token = req.cookies.jwt;
@@ -57,4 +78,4 @@ const userLoggedIn = (req, res, next) => {
 
 
 
-  module.exports = {userLoggedIn ,isAdmin};
+  module.exports = {userLoggedIn ,isAdmin,galleryUserLogIn};

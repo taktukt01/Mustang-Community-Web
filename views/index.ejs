@@ -149,12 +149,18 @@
                                                     
 
                                                     <div class="card" style="width: 18rem;">
-                                                        <img class="card-img-top" src="..." alt="Card image cap">
+                                                        <img class="card-img-top" src="./images/helloWorld.png" alt="Card image cap">
                                                         <div class="card-body mb-5">
-                                                          <h5 class="card-title"> <%= member.Name %>+", "<%= member.Title %></h5>
-                                                          <p class="card-text"><%=member.Email %>
+                                                          <h5 class="card-title"> <%= member.Name %> 
+                                                             <br>
+                                                             <b> <%= member.Title %> </b></h5>
+                                                          <p class="card-text">Email: <%=member.Email %> </p>
+                                                          <p class="card-text">Contact: <%=member.Phone %> </p>
+
+
 
                                                             <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
 
 
                                                         </div>
@@ -210,6 +216,30 @@
 
 
 
+                                                <% boardMembers.forEach( (member) =>{ %>
+                                                    
+
+                                                    <div class="card" style="width: 18rem;">
+                                                        <img class="card-img-top" src="./images/helloWorld.png" alt="Card image cap">
+                                                        <div class="card-body mb-5">
+                                                          <h5 class="card-title"> <%= member.Name %> </h5>
+                                                          <p class="card-text">Email: <%=member.Email %> 
+                                                            <p>Contact: <%=member.Phone %> </p>
+
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
+
+
+                                                        </div>
+                                                      </div>
+
+
+                                            </ul>
+
+                                        <% });  %>
+
+
+
                                             </ul>
 
 
@@ -257,9 +287,24 @@
 
                                             <ul class="list-group" id="newMember">
 
+                                                <% newMembers.forEach( (member) =>{ %>
 
 
+                                                <div class="card" style="width: 18rem;">
+                                                    <img class="card-img-top" src="./images/helloWorld.png" alt="Card image cap">
+                                                    <div class="card-body mb-5">
+                                                      <h5 class="card-title"> <%= member.Name %> </h5>
+                                                      <p class="card-text">Email: <%=member.Email %> 
+                                                        <p>Contact: <%=member.Phone %> </p>
 
+                                                        <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                        <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
+
+
+                                                    </div>
+                                                  </div>
+
+                                                <% }); %>
                                             </ul>
 
 

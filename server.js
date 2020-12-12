@@ -58,10 +58,69 @@ mongoose.connection
 })
 
 
+String.prototype.capitalize = function() {
+  return this.charAt(0).toUpperCase() + this.slice(1);
+}
 
+
+//if first or last name is not upper case, then capitalize it
+function namesCapitalized(name){
+  var names = name.split(" ");    // ['first' , 'last']
+  var ret ="";
+  names.forEach( (val , idx)=>{
+
+    if(val.charAt(0) == val.charAt(0).toLowerCase()){ //if first/last name lowercase
+      if(idx == 0 ){
+        ret += val.capitalize() + " ";  // "Bob ";
+      }else{
+        ret += val.capitalize();
+      }
+ 
+    }
+
+  });
+
+  return ret;
+  } // ["First", "Last"]
+
+/*
+
+some verifications for excel ..
+1. If Name not capitalized, "Bob dylan" ->  "Bob Dylan"
+2. Make sure phone number is valid
+3. Make sure email is valid
+*/
+
+//@param : array of objects
+//@returns a fresh array of object with corrections, if needed.
+
+const { isEmail , isMobilePhone} = require('validator');
+
+
+function excelVerifications(excel){
+  for(var members in excel){
+  var name = members.Name;
+  var phone = members.Phone;
+  var email = members.Email;
+  
+  members.Name = namesCapitalized(name);
+  if(!isEmail(email)){
+    members.Email = "";
+  }
+
+  if(!isMobilePhone(phone)){
+    members.Phone = "";
+  }
+
+
+
+
+  }
+  return excel;
+}
 
 // Grabbing excel data.
-function extractExcelExec(file){
+function extractExcelExecutive(file){
   const result = excelToJson({
     sourceFile: file,  //"Members.xlsx"
     header: 
@@ -78,7 +137,7 @@ function extractExcelExec(file){
   
     }
   });
-  return result.Sheet1; // array of objects
+  return excelVerifications(result.Sheet1); // array of objects
 }
 
 
@@ -98,7 +157,7 @@ function extractExcel(file){
   
     }
   });
-  return result.Sheet1; // array of objects
+  return excelVerifications(result.Sheet1); // array of objects
 }
 
 
@@ -113,25 +172,25 @@ app.get('*' , userLoggedIn);
 
 app.get('/'  , async (req,res)=>{
 
-  const executiveMembers = extractExcelExec("Members.xlsx");
+  const executiveMembers = extractExcelExecutive("excel/ExecutiveMembers.xlsx");
+  const boardMembers = extractExcel("excel/BoardMembers.xlsx");
+  const newMembers = extractExcel("excel/NewMembers.xlsx");
 
-  // console.log(executiveMembers);
 
-// @parameter files : The callback gets two arguments (err, files) 
-//where files is an array of the names of the files in the directory excluding '.' and '..'.
-  fs.readdir(__dirname +"/public/images/" , (err, files)=>{
+// @link : src for each photo to be used for photo gallery
+  //@ executiveMembers,board,members => parsed excel data -> array of json objects containing information about members 
+fs.readdir(__dirname +"/public/images/" , (err, files)=>{
+
 
     if(err){
       res.end("ERROR!");
     }
 
-    console.log(req.user);
    res.render('index',{
-    // user: req.user[displayName] ,
     link : files,
     executiveMembers,
-    // boardMembers : 
-    // newMembers :   ,
+    boardMembers ,
+    newMembers ,
 
   });
 
@@ -140,9 +199,8 @@ app.get('/'  , async (req,res)=>{
   });
 
 
-  // const express = require('express');
-// const Router = express.Router();
-// var fs = require('fs');
+
+  // Authentication flow for Youtube API.
 var {google} = require('googleapis');
 const Oauth2Data = require('./client_secret.json');
 
@@ -189,7 +247,6 @@ app.get("/authPage", (req, res) => {
     // Implement pagination...
     // 
     app.get("/videos/losar", (req,res)=>{
-      console.log("HEllo   ", losarVideos);
 
         res.render("losarVideos" , {
           losarVideos : app.get('losarVideos'),
