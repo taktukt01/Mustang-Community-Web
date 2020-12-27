@@ -58,30 +58,30 @@ mongoose.connection
 })
 
 
-String.prototype.capitalize = function() {
-  return this.charAt(0).toUpperCase() + this.slice(1);
-}
+// String.prototype.capitalize = function() {
+//   return this.charAt(0).toUpperCase() + this.slice(1);
+// }
 
 
 //if first or last name is not upper case, then capitalize it
-function namesCapitalized(name){
-  var names = name.split(" ");    // ['first' , 'last']
-  var ret ="";
-  names.forEach( (val , idx)=>{
+// function namesCapitalized(name){
+//   var names = name.split(" ");    // ['first' , 'last']
+//   var ret ="";
+//   names.forEach( (val , idx)=>{
 
-    if(val.charAt(0) == val.charAt(0).toLowerCase()){ //if first/last name lowercase
-      if(idx == 0 ){
-        ret += val.capitalize() + " ";  // "Bob ";
-      }else{
-        ret += val.capitalize();
-      }
+//     if(val.charAt(0) == val.charAt(0).toLowerCase()){ //if first/last name lowercase
+//       if(idx == 0 ){
+//         ret += val.capitalize() + " ";  // "Bob ";
+//       }else{
+//         ret += val.capitalize();
+//       }
  
-    }
+//     }
 
-  });
+//   });
 
-  return ret;
-  } // ["First", "Last"]
+//   return ret;
+//   } // ["First", "Last"]
 
 /*
 
@@ -94,30 +94,31 @@ some verifications for excel ..
 //@param : array of objects
 //@returns a fresh array of object with corrections, if needed.
 
-const { isEmail , isMobilePhone} = require('validator');
+// const { isEmail , isMobilePhone} = require('validator');
 
 
-function excelVerifications(excel){
-  for(var members in excel){
-  var name = members.Name;
-  var phone = members.Phone;
-  var email = members.Email;
+// function excelVerifications(excel){
+//   console.log(excel);
+//   for(var members in excel){
+//   var name = members.Name;
+//   var phone = members.Phone;
+//   var email = members.Email;
   
-  members.Name = namesCapitalized(name);
-  if(!isEmail(email)){
-    members.Email = "";
-  }
+//   members.Name = namesCapitalized(name);
+//   if(!isEmail(email)){
+//     members.Email = "";
+//   }
 
-  if(!isMobilePhone(phone)){
-    members.Phone = "";
-  }
-
-
+//   if(!isMobilePhone(phone)){
+//     members.Phone = "";
+//   }
 
 
-  }
-  return excel;
-}
+
+
+//   }
+//   return excel;
+// }
 
 // Grabbing excel data.
 function extractExcelExecutive(file){
@@ -137,7 +138,7 @@ function extractExcelExecutive(file){
   
     }
   });
-  return excelVerifications(result.Sheet1); // array of objects
+  return result.Sheet1; // array of objects
 }
 
 
@@ -157,7 +158,7 @@ function extractExcel(file){
   
     }
   });
-  return excelVerifications(result.Sheet1); // array of objects
+  return result.Sheet1; // array of objects
 }
 
 
@@ -172,10 +173,9 @@ app.get('*' , userLoggedIn);
 
 app.get('/'  , async (req,res)=>{
 
-  const executiveMembers = extractExcelExecutive("excel/ExecutiveMembers.xlsx");
+  const executiveMembers = extractExcelExecutive("excel/ExecutiveMembers.xlsx");  //getting excel data about executive members
   const boardMembers = extractExcel("excel/BoardMembers.xlsx");
   const newMembers = extractExcel("excel/NewMembers.xlsx");
-
 
 // @link : src for each photo to be used for photo gallery
   //@ executiveMembers,board,members => parsed excel data -> array of json objects containing information about members 

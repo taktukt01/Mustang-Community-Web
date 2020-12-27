@@ -9,7 +9,7 @@
     <title>Official Lonyamship Website</title>
     
 <%- include('partials/headerPlugIns') %>
-    <link href="./css/styles.css" rel="stylesheet" />
+<!-- <link rel="stylesheet" href="./css/styles.css"> -->
 
     
 <!-- NavBar -->
@@ -148,8 +148,8 @@
                                                 <% executiveMembers.forEach( (member) =>{ %>
                                                     
 
-                                                    <div class="card" style="width: 18rem;">
-                                                        <img class="card-img-top" src="./images/helloWorld.png" alt="Card image cap">
+                                                    <div class="card w-100" >
+                                                        <img class="card-img-top img-thumbnail" src="./images/cat.jpg" alt="Card image cap">
                                                         <div class="card-body mb-5">
                                                           <h5 class="card-title"> <%= member.Name %> 
                                                              <br>
@@ -169,7 +169,7 @@
 
                                             </ul>
 
-                                        <% });  %>
+                                        <% }); %>
 
 
 
@@ -219,8 +219,8 @@
                                                 <% boardMembers.forEach( (member) =>{ %>
                                                     
 
-                                                    <div class="card" style="width: 18rem;">
-                                                        <img class="card-img-top" src="./images/helloWorld.png" alt="Card image cap">
+                                                    <div class="card w-100">
+                                                        <img class="card-img-top img-thumbnail" src="./images/cat.jpg" alt="Card image cap">
                                                         <div class="card-body mb-5">
                                                           <h5 class="card-title"> <%= member.Name %> </h5>
                                                           <p class="card-text">Email: <%=member.Email %> 
@@ -290,8 +290,8 @@
                                                 <% newMembers.forEach( (member) =>{ %>
 
 
-                                                <div class="card" style="width: 18rem;">
-                                                    <img class="card-img-top" src="./images/helloWorld.png" alt="Card image cap">
+                                                <div class="card w-100">
+                                                    <img class="card-img-top img-thumbnail" src="./images/cat.jpg" alt="Card image cap">
                                                     <div class="card-body mb-5">
                                                       <h5 class="card-title"> <%= member.Name %> </h5>
                                                       <p class="card-text">Email: <%=member.Email %> 
@@ -368,7 +368,7 @@
 
 
             </div>
-        </div>
+        </div> <!-- gallery close-->
         <!-- /.container -->
     </section>
 

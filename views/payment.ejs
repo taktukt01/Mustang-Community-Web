@@ -7,39 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://js.stripe.com/v3/"></script>
     <link rel="stylesheet" href="./css/checkout.css">
-<a href= "/">Home</a>
+<%-include('partials/headerPlugIns') %>
+<%-include('partials/navBar') %>
+
 
 
   </head>
 
   <body>
 
-    <style>
+<div class="container">
 
 
 
 
 
+    <div class="mx-auto" style="width: 200px;">
 
+            <button type="button" class="btn btn-primary mb-5 mt-5" id="checkout-button">Checkout</button>
 
-
-    </style>
-          
-          <!-- <label for="amountDonate">Donate</label> -->
-          <!-- <input type="text" class="form-control" name="amountDonate" id="amountDonate" placeholder="Amount to Donate"> -->
-
-          <div class = "container">
-
-
-            <div class="center-button">
-
-            <button type="button" id="checkout-button">Checkout</button>
-
-            </div>
-
-          </div>
-
-
+              </div>
 
 
     
@@ -84,10 +71,14 @@
 
 
 
+<%- include('partials/footer') %>  <!-- need this here , so footer is at bottom of page.-->
+
+
+</div> <!-- end container-->
+
   </body>
 
 
-  <%- include('partials/footer') %>
 
 
 </html>

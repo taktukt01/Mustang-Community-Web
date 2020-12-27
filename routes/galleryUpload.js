@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const {userLoggedIn, isAdmin , galleryUserLogIn} = require("../middleware/users");
-
+const fs = require('fs');
 
 
 /*
@@ -50,5 +50,47 @@ router.post('/uploadFile', userLoggedIn, function (req, res) {
 // PopUp Register page if user is not logged in.
 // res.redirect("/register");
   // });
+
+
+
+  router.get("/gallery", (req,res)=>{
+    fs.readdir(__dirname +"/../public/images/" , (err, files)=>{
+
+      if(err){
+        res.end("ERROR!");
+      }
+
+res.render("gallery", {
+link : files,
+
+});
+
+  });
+
+});
+
+router.post("/gallery", (req,res)=>{
+  // get iTH index
+const indexToDelete = req.body.index;
+
+fs.readdir(__dirname +"/../public/images/" , (err, files)=>{
+
+  // console.log( files[indexToDelete] );    //filename.jpg
+
+
+  
+  fs.unlink(__dirname +"/../public/images/"+files[indexToDelete] , (err)=>{
+    console.log(err);
+  })
+// wonder if i can get the file dir of files[i]
+});
+
+res.redirect("/gallery");
+// refresh 
+// res.redirect('back');
+});
+
+
+  
 
 module.exports = router;

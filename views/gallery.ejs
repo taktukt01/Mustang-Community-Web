@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit / View Gallery</title>
+
+
+    <%-include('partials/adminNav') %>
+    <%- include('partials/headerPlugIns') %>
+
+</head>
+<body>
+    
+
+    <div class="container gallery-container">
+
+        <h1 class="text-center text-lg-center mt-4 mb-0 photo-gall-heading text-dark">Photo Gallery</h1>
+
+        <hr class="mt-2 mb-5">
+
+
+        <div class="tz-gallery">
+
+            <div class="row">
+
+
+                <!-- attach a delete button with each image, if clciked, then will remove from fs -->
+        <% for(var i = 0 ; i< link.length ; i++){ %>
+            <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                        <img class = "img-thumbnail img-responsive" src="./images/<%= link[i] %>" alt="Traffic" style="width:100%">
+                   
+                        <button class="btn btn-danger remove-image" data-key= <%= i %> >Delete</button>
+                   
+                   
+                   
+                </div>
+            
+            </div>
+        <%}%>
+
+
+   
+
+            </div>
+
+
+
+
+        </div>
+    </div> <!-- gallery close-->
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script> -->
+
+
+
+<script>
+    // baguetteBox.run('.tz-gallery');
+</script>
+
+<script>
+
+$('.remove-image').click(function(){
+
+    var data = $.parseJSON($(this).attr('data-key'));
+  
+
+    $.post("/gallery",
+    {
+        index:  data  
+    }).done(function(data){
+      setTimeout(function(){
+           location.reload(); 
+      }, 1000); 
+   });
+    })
+
+
+</script>
+</body>
+
+
+<%- include('partials/footer') %>
+</html>

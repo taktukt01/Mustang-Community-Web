@@ -17,6 +17,8 @@ res.render('payment', {
 //  I want to grab user's input (donation amount) and enter it to unit_amount.
 module.exports.payment_post = async (req,res)=>{
 
+console.log(req.body);
+
    const session = await stripe.checkout.sessions.create({
     submit_type: 'donate',
     payment_method_types: ["card"],
@@ -26,7 +28,7 @@ module.exports.payment_post = async (req,res)=>{
         product_data: {
           name: "Donation"
         },
-        unit_amount: 2000,
+        unit_amount: 2000
       },
       quantity: 1,
     }, ],
@@ -39,8 +41,13 @@ module.exports.payment_post = async (req,res)=>{
   res.json({
     id: session.id
   });
+
 }
 
+
+module.exports.amountDonate = (req,res)=>{
+  
+}
 
 module.exports.payment_success = (req,res)=>{
     res.render('paymentSuccess');
