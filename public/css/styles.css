@@ -276,3 +276,6 @@ ul li a{
      width: 100%;
    }
 }
+.carousel-inner img {
+  margin: auto;
+}
