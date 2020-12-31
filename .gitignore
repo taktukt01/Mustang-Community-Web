@@ -1,8 +1,4 @@
 node_modules
 .DS_Store
-.ruby-version
-netlify.toml
-Gemfile
 .vscode
-_config.yml
 .env

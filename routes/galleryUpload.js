@@ -41,14 +41,14 @@ router.post('/uploadFile', userLoggedIn, function (req, res) {
   if(res.locals.user){
     upload(req,res,function(err) {
         if(err) {
-            return res.end("Error uploading file. Max upload size is 100.");
+            res.end("Error uploading file. Max upload size is 100.");
         }
-        console.log("files..." , req.files);
         res.redirect(req.get('referer'));  // refreshes the page
       });
-  }
+  }else{
 // PopUp Register page if user is not logged in.
 res.redirect("/login");
+  }
   });
 
 
