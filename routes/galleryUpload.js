@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const {userLoggedIn} = require("../middleware/users");
+const {userLoggedIn ,galleryUserLogIn} = require("../middleware/users");
 const fs = require('fs');
 
 
@@ -36,19 +36,24 @@ var storage = multer.diskStorage({
 var upload = multer({ storage : storage , fileFilter: fileFilter }).array('imageUpload',100);
 
 
-router.post('/uploadFile', userLoggedIn, function (req, res) {
+router.post('/uploadFile', galleryUserLogIn, function (req, res) {
 
   if(res.locals.user){
     upload(req,res,function(err) {
         if(err) {
-            res.end("Error uploading file. Max upload size is 100.");
+      res.end("Error uploading file. Max upload size is 100.");
+        }else{
+        console.log("files..." , req.files);
+       res.redirect(req.get('referer'));  // refreshes the page
         }
-        res.redirect(req.get('referer'));  // refreshes the page
+
       });
   }else{
-// PopUp Register page if user is not logged in.
+
 res.redirect("/login");
+
   }
+
   });
 
 

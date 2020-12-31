@@ -44,7 +44,7 @@ const userLoggedIn = (req, res, next) => {
       });
     } else {
       res.locals.user = null;
-      res.redirect("/register");
+      next();
     }
   };
 
