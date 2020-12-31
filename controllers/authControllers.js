@@ -135,6 +135,17 @@ const createToken = (id)=>{
     res.render('register');
 }
 
+/*
+
+const createToken = (id)=>{
+
+  return jwt.sign({id} , jwt_secret , {
+    expiresIn: 2 * 60 * 60
+  });
+}
+
+*/
+
 module.exports.register_post = async (req,res)=>{
 
    //need to handle errors ( minlength, duplicate email, etc)
@@ -200,7 +211,7 @@ module.exports.admin_get = async(req,res)=>{
     res.json(err);
   } 
   // result is an array of objects... 
-  res.render("admin" , {
+  res.render("admin/admin" , {
     data: result,  
 
   });
@@ -208,24 +219,22 @@ module.exports.admin_get = async(req,res)=>{
 });
 }
 
-module.exports.admin_post= async(req,res)=>{
-
-if(req.body.action == "delete"){
+module.exports.admin_post_delete= async(req,res)=>{
 
   const user = await User.findByIdAndDelete(req.body.id);
 
+
 }
-else if(req.body.action == "promote"){
-//req.body.data is our _id
-const user = await User.findByIdAndUpdate(req.body.id , {
-  isAdmin: true,
-});
-}
+
+module.exports.admin_post_update= async(req,res)=>{
+  const user = await User.findByIdAndUpdate(req.body.id , {
+      isAdmin: true,
+    });
 }
 
 
 module.exports.adminHome_get = async(req,res)=>{
 
-res.render("adminHome");
+res.render("admin/adminHome");
 
 }
