@@ -6,7 +6,7 @@ const stripe = require('stripe')(secret_key_stripe)
 
 module.exports.payment_get = (req,res)=>{
 
-res.render('stripe/payment', {
+res.render('payment', {
     //data here
     publish_key: publishable_key,
     amountDonate: 0,
@@ -50,10 +50,10 @@ module.exports.amountDonate = (req,res)=>{
 }
 
 module.exports.payment_success = (req,res)=>{
-    res.render('stripe/paymentSuccess');
+    res.render('paymentSuccess');
 }
 
 
 module.exports.payment_failed = (req,res)=>{
-    res.render('stripe/failed');
+    res.render('failed');
 }

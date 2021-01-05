@@ -3,12 +3,15 @@ const cors = require('cors');
 const morgan = require('morgan');
 // const fetch = require('node-fetch');
 const app = express();
-require('dotenv').config()
+require('dotenv').config({
+  silent: process.env.NODE_ENV === 'production' 
+})
 const fs = require('fs');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 const excelToJson = require('convert-excel-to-json');
+const path = require('path');
 
 
 
@@ -33,6 +36,12 @@ app.use(express.static('public'));
 // express.static(path.join(__dirname, '/public'));
 
 app.set('view engine', 'ejs')
+
+app.set('views', [
+  path.join(__dirname,'views'),
+
+  path.join(__dirname,'views/stripe/'),
+]);
 app.use(morgan('tiny'));
 app.use(cors());
 
@@ -240,13 +249,13 @@ app.get("/authPage", (req, res) => {
         version: "v2",
 
       });
-      res.redirect("/videos/losar");
+      res.redirect("losar");
     }
     });
 
     // Implement pagination...
     // 
-    app.get("/videos/losar", (req,res)=>{
+    app.get("losar", (req,res)=>{
 
         res.render("losarVideos" , {
           losarVideos : app.get('losarVideos'),
@@ -269,9 +278,7 @@ app.get("/authPage", (req, res) => {
       
               authed = true;
             
-                    // do some fancy shit here
-
-                    /*
+              /*
 
 This example retrieves playlists owned by the YouTube channel that the request's channelId parameter identifies.
 We need to be able to grab this from ANY google account.
@@ -290,13 +297,12 @@ var service = google.youtube('v3');
       res.json(err);
     }
     
-console.log("data returned from API..." + response.data.items);
     for (var i = 0; i < response.data.items.length; i++) {
       losarVideos[i] = response.data.items[i];
     }
+    // losarVideos = list of URL of videos in playlist
     app.set('losarVideos' , losarVideos);
-    res.redirect("/videos/losar");
-
+    res.redirect("losar");
             });
         }
       });
@@ -309,7 +315,11 @@ console.log("data returned from API..." + response.data.items);
 
 
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log('Listening on port', port);
+// const port = process.env.PORT || 5000;
+// app.listen(port, () => {
+//   console.log('Listening on port', port);
+// });
+var server = app.listen(process.env.PORT || 5000, function () {
+  var port = server.address().port;
+  console.log("Express is working on port " + port);
 });
