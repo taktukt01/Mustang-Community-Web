@@ -252,7 +252,7 @@ app.get("/authPage", (req, res) => {
         version: "v2",
 
       });
-      res.redirect("losar");
+      res.redirect("losarVideos");
     }
     });
 
@@ -305,7 +305,7 @@ var service = google.youtube('v3');
     }
     // losarVideos = list of URL of videos in playlist
     app.set('losarVideos' , losarVideos);
-    res.redirect("losar");
+    res.redirect("losarVideos");
             });
         }
       });
