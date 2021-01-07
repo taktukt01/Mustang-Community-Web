@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authControllers');
 const mongoose = require('mongoose');
-const {userLoggedIn, isAdmin} = require("../middleware/users");
+const {isAdmin} = require("../middleware/users");
 
 
 
