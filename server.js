@@ -295,8 +295,8 @@ var service = google.youtube('v3');
     }
     // losarVideos -> list of URL of videos in playlist
     app.set('losarVideos' , losarVideos);
-    // res.redirect("https://mustang-community-website.herokuapp.com/losar");
-        res.redirect("/losar");
+    res.redirect("https://mustang-community-website.herokuapp.com/losar");
+        // res.redirect("/losar");
 
             });
         }
