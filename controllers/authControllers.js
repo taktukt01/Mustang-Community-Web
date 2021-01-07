@@ -73,10 +73,6 @@ const createToken = (id)=>{
   
 
   module.exports.login_get =  (req,res)=>{
-  //   const r = await User.find({
-  //   "email": "taktukg2g@gmail.com"
-  //   }).update({"isAdmin": true});
-  //  await r.save();
     res.render('login');
   }
 
