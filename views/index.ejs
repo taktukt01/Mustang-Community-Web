@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"  />
     <meta name="author" />
     <title>Official Lonyamship Website</title>
     
 <%- include('partials/headerPlugIns') %>
-<!-- <link rel="stylesheet" href="./css/styles.css"> -->
+<link rel="stylesheet" href="./css/styles.css">
 
     
 <!-- NavBar -->
@@ -18,13 +18,23 @@
 <%- include('partials/navBar') %>
 
 
+<div class="container-fluid mt-3">
+    <h1 class="display-4 text-uppercase text-secondary text-center">Lonyamship Assocation</h1>
+    <p class="lead text-center"> A community website showcasing our different events and festivals </p>
+    <div class="row justify-content-center">
+        <a class ="btn btn-primary text-center" href ="#carousel-section">Go to slideshow</a>
+
+    </div>
+  </div>
+
 </head>
 
   
 
 <body class="bg-light">
 
-    <h1 class="mt-3 mb-3 text-center">Lonyamship Community </h1>
+
+    <section class="page-section mt-5" id="carousel-section">
 
     <!-- Image slideshow -->
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-ride="carousel">
@@ -62,12 +72,17 @@
 
             </div>
 
+            </section>
+
                   <!-- About Us -->
 
-                  <section class="page-section p-3 mb-2" id="about">
+                  <section class="page-section p-3 mb-2 mt-5" id="about">
 
 
                 <div class="container float-container">
+                    <div class="h1 text-white text-dark text-center">
+                        Our Mission
+                    </div>
 
                     <div class="float-child">
                         <div class="green">
@@ -106,7 +121,7 @@
     </section>
     <!--end of front page -->
     <!-- MEMBERS Section-->
-    <section class="page-section portfolio bg-dark" id="portfolio">
+    <section class="page-section portfolio bg-light" id="portfolio">
 
 
         <h1 class="text-center text-lg-center mt-4 mb-5 photo-gall-heading text-light">Members</h1>

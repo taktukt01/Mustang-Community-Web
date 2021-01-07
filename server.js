@@ -210,12 +210,13 @@ fs.readdir(__dirname +"/public/images/" , (err, files)=>{
 
 
   // Authentication flow for Youtube API.
+  // https://github.com/googleapis/google-api-nodejs-client#authentication-and-authorization
 var {google} = require('googleapis');
 const Oauth2Data = require('./client_secret.json');
 
-const CLIENT_ID = Oauth2Data.installed.client_id;
-const CLIENT_SECRET = Oauth2Data.installed.client_secret;
-const REDIRECT_URL = Oauth2Data.installed.redirect_uris[0];
+const CLIENT_ID = Oauth2Data.web.client_id;
+const CLIENT_SECRET = Oauth2Data.web.client_secret;
+const REDIRECT_URL = Oauth2Data.web.redirect_uris[0];
 
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
@@ -235,6 +236,8 @@ In this model, the user visits your application,
 signs in with their Google account, and provides your application with authorization against a set of scopes
 
 */
+
+// authPage --> button that redirects to google sign in
 app.get("/authPage", (req, res) => {
     if (!authed) {
       // Generate an OAuth URL and redirect there
@@ -261,10 +264,10 @@ app.get("/authPage", (req, res) => {
           losarVideos : app.get('losarVideos'),
         });
             });
-
+// 
 
     app.get("/google/callback", function (req, res) {
-        const code = req.query.code;
+        const code = req.query.code; //error here...
         if (code) {
           // Get an access token based on our OAuth code
           oAuth2Client.getToken(code, function (err, tokens) {

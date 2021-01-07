@@ -225,6 +225,8 @@ width: 50%;
 
   font-family:Times New Roman;
   font-weight: bold;
+  color:white;
+  margin-right:2rem;
 }
 
 
@@ -278,4 +280,15 @@ ul li a{
 }
 .carousel-inner img {
   margin: auto;
+}
+
+.navbar-brand {
+  width:150px;
+  font-size: 24px;
+}
+.navbar-brand img {
+  height: 50px;
+  /* put value of image height as your need */
+  float: left;
+  margin-right: 7px;
 }
