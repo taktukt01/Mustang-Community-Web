@@ -252,13 +252,13 @@ app.get("/authPage", (req, res) => {
         version: "v2",
 
       });
-      res.redirect("losarVideos");
+      res.redirect("losar");
     }
     });
 
     // Implement pagination...
     // 
-    app.get("losar", (req,res)=>{
+    app.get("/losar", (req,res)=>{
 
         res.render("losarVideos" , {
           losarVideos : app.get('losarVideos'),
@@ -303,9 +303,9 @@ var service = google.youtube('v3');
     for (var i = 0; i < response.data.items.length; i++) {
       losarVideos[i] = response.data.items[i];
     }
-    // losarVideos = list of URL of videos in playlist
+    // losarVideos -> list of URL of videos in playlist
     app.set('losarVideos' , losarVideos);
-    res.redirect("losarVideos");
+    res.redirect("losar");
             });
         }
       });
