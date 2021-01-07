@@ -13,8 +13,6 @@ var cookieParser = require('cookie-parser');
 const excelToJson = require('convert-excel-to-json');
 const path = require('path');
 
-
-
 // Importing Controllers to be used
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
@@ -23,9 +21,6 @@ const fbAuth = require('./routes/passport.facebook');
 // const videos = require('./routes/youtubeApi');
 
 const {userLoggedIn } = require("./middleware/users");
-
-
-
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -171,13 +166,6 @@ function extractExcel(file){
 }
 
 
-
-// app.get("/api/test", (req,res)=>{
-//   const executiveMembers = extractExcelExec("Members.xlsx");
-//     res.json(executiveMembers);
-// });
-
-
 app.get('*' , userLoggedIn);
 
 app.get('/'  , async (req,res)=>{
@@ -311,11 +299,6 @@ var service = google.youtube('v3');
       });
     }
 });
-
-
-
-
-
 
 
 // const port = process.env.PORT || 5000;
