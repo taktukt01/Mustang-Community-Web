@@ -204,7 +204,9 @@ const Oauth2Data = require('./client_secret.json');
 
 const CLIENT_ID = Oauth2Data.web.client_id;
 const CLIENT_SECRET = Oauth2Data.web.client_secret;
+// const REDIRECT_URL = Oauth2Data.web.redirect_uris[2];
 const REDIRECT_URL = Oauth2Data.web.redirect_uris[0];
+
 
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
@@ -240,7 +242,7 @@ app.get("/authPage", (req, res) => {
         version: "v2",
 
       });
-      res.redirect("losar");
+      res.redirect("/losar");
     }
     });
 
@@ -293,7 +295,9 @@ var service = google.youtube('v3');
     }
     // losarVideos -> list of URL of videos in playlist
     app.set('losarVideos' , losarVideos);
-    res.redirect("https://mustang-community-website.herokuapp.com/losar");
+    // res.redirect("https://mustang-community-website.herokuapp.com/losar");
+        res.redirect("/losar");
+
             });
         }
       });
