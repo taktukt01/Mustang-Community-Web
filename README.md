@@ -6,7 +6,6 @@ For many, this is a tough time, and so by creating this website, my aim is to:
 - Support those that may need any help
 - Most importantly, to preserve our culture through gallery of our village, traditions, and tibetan musical instruments.
 
-## Visit our website at: https://lokyidug.xyz/
 
 **This is not a final product, I am working to add more features in the coming future.**
 
