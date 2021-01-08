@@ -62,6 +62,13 @@ mongoose.connection
 })
 
 
+
+// EJS LINT
+
+const ejsLint = require('ejs-lint');
+
+ejsLint("losarVideos");
+
 // String.prototype.capitalize = function() {
 //   return this.charAt(0).toUpperCase() + this.slice(1);
 // }
