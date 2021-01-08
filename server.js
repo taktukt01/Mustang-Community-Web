@@ -242,7 +242,7 @@ app.get("/authPage", (req, res) => {
         version: "v2",
 
       });
-      res.redirect("/losar");
+      res.redirect("losar");
     }
     });
 
@@ -254,7 +254,6 @@ app.get("/authPage", (req, res) => {
           losarVideos : app.get('losarVideos'),
         });
             });
-// 
 
     app.get("/google/callback", function (req, res) {
         const code = req.query.code; //error here...
