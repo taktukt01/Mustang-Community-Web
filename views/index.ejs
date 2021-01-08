@@ -452,9 +452,7 @@
             </div>
 
 
-
-            <form name="simple-contact-form" accept-charset="utf-8" class="col-lg-6 offset-lg-3" action="https://formspree.io/taktukgg@gmail.com"
-            method="post">
+            <form action="https://formspree.io/f/xaylaody" method="POST" id="contact-form">
             <div class="form-row justify-content-center">
                     <label for="inputName">Full Name</label>
                     <input type="text" class="form-control" id="inputName" name="fullName" placeholder="Enter Full Name">    
@@ -483,7 +481,9 @@
     
             <div class="form-row justify-content-center">
 
-            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            <button type="submit" id="submit-form" class="btn btn-primary mt-3">Submit</button>
+            <p class ="lead text-success" id="status-form"></p>
+
             </div>
     
         </form>
@@ -530,7 +530,7 @@
             (formbutton.q = formbutton.q || []).push(arguments)
         };
         formbutton("create", {
-            action: "https://formspree.io/taktukgg@gmail.com"
+            action: "https://formspree.io/f/xaylaody" 
         });
     </script>
 
