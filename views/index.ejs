@@ -25,17 +25,13 @@
 <%- include('partials/navBar') %>
 
 
-<div class="container-fluid mt-3">
-    <h1 class="display-4 text-uppercase text-secondary text-center">Lonyamship Assocation</h1>
-    <p class="lead text-center"> A community website showcasing our different events and festivals </p>
-    <div class="row justify-content-center">
-        <a class ="btn btn-primary text-center" href ="#carousel-section">Go to slideshow</a>
-
-    </div>
+<div class="container-fluid mt-5">
+    <h1 class="display-4 text-uppercase text-center font-weight-bold">Lonyamship Assocation</h1>
+    
   </div>
   
 
-    <section class="page-section mt-5" id="carousel-section">
+    <section class="page-section carousel-section" id="carousel-section">
 
     <!-- Image slideshow -->
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-ride="carousel">
@@ -80,42 +76,45 @@
                   <section class="page-section p-3 mb-2 mt-5" id="about">
 
 
-                <div class="container float-container">
-                    <div class="h1 text-white text-dark text-center">
+                    <div class="h1 text-white text-dark text-center mb-5">
                         Our Mission
                     </div>
 
-                    <div class="float-child">
-                        <div class="green">
+                    <div>  <!-- upper about text-->
+<p class="text-left mb-5">
 
-                            <p class="lead mt-5" style = "border-style:groove">
+    Lo-Nyamship Kyidug USA is a non-profit organization established primarily to help the
+    people of
+    Upper Mustang community in the USA and also living in Nepal.
 
-                                Lo-Nyamship Kyidug USA is a non-profit organization established primarily to help the
-                                people of
-                                Upper Mustang community in the USA and also living in Nepal.
+    Its main objective is to preserve Mustang culture and traditions and bringing everyone
+    under one
+    roof to celebrate.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quidem quas necessitatibus praesentium similique nesciunt, laborum hic saepe ad consectetur nostrum magni magnam fugit nam, repellat consequatur molestiae ut? Suscipit!
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse a corrupti mollitia nihil delectus possimus at. Magnam, nobis laudantium. Distinctio officia dolor eligendi corrupti nam. Quisquam perferendis iusto sequi placeat!
+  
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, enim? Debitis earum iure deleniti at eveniet, temporibus obcaecati, quis beatae ipsam consequuntur sint iste aspernatur? Deserunt iure natus reprehenderit optio?
 
-                                Its main objective is to preserve Mustang culture and traditions and bringing everyone
-                                under one
-                                roof to celebrate.
-
-                                </p>
+</p>
+ 
+                             
                         </div>
-                    </div>
 
-                    <div class="float-child">
-                        <div class="blue">
-                            <p class="lead" style = "border-style:groove">
-                                We achieve this by gathering and celebrating our traditions even though we are far from
-                                home.
-                                The association aims to preserve our culture through community
-                                programs that allow people of different age groups to share their knowledge to the
-                                coming
-                                generation.
-                            </p>
+                    <div>
+                        <p class="text-left">
+
+                            We achieve this by gathering and celebrating our traditions even though we are far from
+                            home.
+                            The association aims to preserve our culture through community
+                            programs that allow people of different age groups to share their knowledge to the
+                            coming
+                            generation.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta voluptas excepturi eaque accusantium, sed numquam, eligendi ullam quam aliquid assumenda eveniet alias nihil, non iste explicabo sunt distinctio inventore doloremque.
+
+                        </p>
+                               
                         </div>
-                    </div>
 
-                </div>
 
 
 
@@ -125,17 +124,19 @@
     <section class="page-section portfolio bg-light" id="portfolio">
 
 
-        <h1 class="text-center text-lg-center mt-4 mb-5 photo-gall-heading text-light">Members</h1>
+        <h1 class="text-center text-lg-center mt-4 mb-5 photo-gall-heading text-dark">Member Services</h1>
 
         <div class="container">
             <div class="row">
+
+                <!-- First Modal -->
                 <div class="col">
-                    <div class="card mx-auto border-primary float-left" style="width:150px">
-                        <div class="card-body">
-                            <h5 class="card-title">Executive Members</h5>
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                    <div class="card mx-auto  float-left" style="width:150px">
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title">Executive Members</h5> -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                                 data-target="#executiveMembersToggle">
-                                See Members
+                                Executive Members
                             </button>
 
 
@@ -194,18 +195,18 @@
 
 
 
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
 
                 <div class="col">
 
-                    <div class="card mx-auto border-primary float-left" style="width:150px">
-                        <div class="card-body">
-                            <h5 class="card-title">Board Members</h5>
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                    <div class="card mx-auto float-left" style="width:150px">
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title">Board Members</h5> -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                                 data-target="#boardMembersToggle">
-                                See Members
+                                Board Members
                             </button>
 
 
@@ -265,7 +266,7 @@
 
 
                             </div>
-                        </div>
+                        <!-- </div> -->
 
                     </div>
                 </div>
@@ -273,12 +274,12 @@
 
                 <div class="col">
 
-                    <div class="card mx-auto border-primary float-left" style="width:150px">
-                        <div class="card-body">
-                            <h5 class="card-title">New Members</h5>
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                    <div class="card mx-auto  float-left" style="width:150px">
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title">New Members</h5> -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                                 data-target="#newMembersToggle">
-                                See Members
+                               New Members
                             </button>
 
 
@@ -288,7 +289,7 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Members</h5>
+                                            <!-- <h5 class="modal-title" id="exampleModalLongTitle">Members</h5> -->
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
                                                 <span aria-hidden="true">&times;</span>
@@ -330,10 +331,45 @@
 
 
                             </div>
-                        </div>
+                        <!-- </div> -->
 
                     </div>
                 </div>
+
+
+                <div class="col">
+
+                    <div class="card mx-auto  float-left" style="width:150px">
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title">New Members</h5> -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#newMembersToggle">
+                              Sunday School
+                            </button>
+
+                            </div>
+
+
+                </div>
+
+
+                <div class="col">
+
+                    <div class="card mx-auto  float-left" style="width:150px">
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title">New Members</h5> -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#newMembersToggle">
+                              Mane Tsokpa
+                            </button>
+
+                            </div>
+
+
+                </div>
+
+
+
             </div>
         </div>
 
@@ -384,6 +420,9 @@
 
     <button onclick="topFunction()" id="scrollToTop" title="Go to top">Back to Top</button>
 
+    <% if( locals.user  && user.isAdmin){ %>
+
+ <!-- Only admins can see -->
     <!-- Upload Images Section! -->
     <section class="page-section bg-white" id="upload-image">
 
@@ -412,6 +451,12 @@
 </div>
 
         </section>
+
+
+
+<% } %>
+
+   
 
             
 

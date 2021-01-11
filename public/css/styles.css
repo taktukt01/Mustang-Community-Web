@@ -78,16 +78,7 @@ a:hover {
   
 }
 
-.lead-left{
-float: left;
-width: 50%;
-size: 50;
-}
 
-.lead-right{
-  float:right;
-width: 50%;
-}
 
 .display-1 {
   font-size: 6rem;
@@ -291,4 +282,20 @@ ul li a{
   /* put value of image height as your need */
   float: left;
   margin-right: 7px;
+}
+
+
+
+
+p{
+  font-family: 'Poppins', sans-serif !important;
+  line-height: 1.9em;
+    margin: 0 auto 0.7em;
+    font-size: 17px !important;
+    font-weight: 400;
+}
+
+.carousel-section{
+  position:relative;
+  bottom: ;
 }
