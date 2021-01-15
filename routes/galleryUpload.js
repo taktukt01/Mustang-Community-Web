@@ -74,10 +74,13 @@ link : files,
 
 });
 
+// When 
 router.post("/gallery", (req,res)=>{
   // get iTH index
 const indexToDelete = req.body.index;
 
+// go to(read from) this directory
+// grab all files as String[]
 fs.readdir(__dirname +"/../public/images/" , (err, files)=>{
 
   // console.log( files[indexToDelete] );    //filename.jpg
