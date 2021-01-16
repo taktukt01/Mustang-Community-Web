@@ -42,11 +42,11 @@
 
                         <!-- image 1 -->
                       <div class="carousel-item active" data-interval="1000">
-                        <img src="./images/kyidug1.jpg" class="carousel-img rounded" style="width:100vw; height:35vw" alt="...">
+                        <img src="./images/kyidug1.jpg" class="carousel-img rounded" style="width:100vw; height:38vw" alt="...">
                        
-                        <div class="carousel-caption d-none d-md-block">
-                         <h1 class="display-1 text-warning text-center">Lonyamship</h1>
-                          <!-- <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+                        <div class="carousel-caption d-none d-md-block carouselCaption">
+                         <h1 class="display-1 text-warning">Lonyamship</h1>
+                          <p class="h3">Showcasing our community website </p>
                         </div>
                       </div>
                       <div class="carousel-item" data-interval="1000">
@@ -201,19 +201,16 @@
                     </div>
                 </div>
 
-                <div class="col">
-
-                    <div class="card mx-auto float-left" style="width:150px">
                         <!-- <div class="card-body"> -->
                             <!-- <h5 class="card-title">Board Members</h5> -->
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                            <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                                 data-target="#boardMembersToggle">
                                 Board Members
-                            </button>
+                            </button> -->
 
 
                             <!-- Modal for Board Members -->
-                            <div class="modal fade" id="boardMembersToggle" tabindex="-1" role="dialog"
+                            <!-- <div class="modal fade" id="boardMembersToggle" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -229,18 +226,18 @@
 
 
 
-                                                <% boardMembers.forEach( (member) =>{ %>
+                                                <%# boardMembers.forEach( (member) =>{  %>
                                                     
 
                                                     <div class="card w-100">
                                                         <img class="card-img-top img-thumbnail" src="./images/cat.jpg" alt="Card image cap">
                                                         <div class="card-body mb-5">
-                                                          <h5 class="card-title"> <%= member.Name %> </h5>
-                                                          <p class="card-text">Email: <%=member.Email %> 
-                                                            <p>Contact: <%=member.Phone %> </p>
+                                                          <h5 class="card-title"> <%# member.Name %> </h5>
+                                                          <p class="card-text">Email: <%#member.Email %> 
+                                                            <p>Contact: <%# member.Phone %> </p>
 
-                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
-                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%# member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%# member.Facebook %>"><i class="fas fa-envelope"></i> </a>
 
 
                                                         </div>
@@ -249,8 +246,9 @@
 
                                             </ul>
 
-                                        <% });  %>
+                                        <%# });  %>
 
+                                        
 
 
                                             </ul>
@@ -268,10 +266,10 @@
 
 
                             </div>
-                        <!-- </div> -->
+                        </div>
 
                     </div>
-                </div>
+                </div> -->
                 <!-- New Members Modal -->
 
                 <div class="col">
@@ -373,7 +371,44 @@
 
 
             </div>
-        </div>
+
+            <!-- Second row -->
+            <div class="row mt-2 ml-2">
+
+                <div class="col">
+
+                <a href="" class="href">Learn more</a>  <!--Exec-Members Page-->
+                </div>
+
+                <div class="col">
+
+                    <a href="" class="href"></a>
+                    </div>
+
+                <div class="col">
+
+                    <a href="" class="href">Learn more</a>  <!-- Sunday School Page-->
+                    </div>
+
+                    <div class="col">
+
+                        <a href="" class="href">Learn more</a>      <!-- Mane Tsokpa page-->
+                        </div>
+
+            </div>
+
+            <!-- <div class="col">
+
+                <a href="" class="href"></a>
+                </div> -->
+
+
+            <!-- </div> -->
+            
+
+
+            </div>
+
 
     </section>
 
@@ -581,6 +616,7 @@
         });
     </script>
 
+<!--script we are using for our gallery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 
     <%- include('partials/scripts.ejs'); %>

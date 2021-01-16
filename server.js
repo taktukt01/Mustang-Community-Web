@@ -302,6 +302,7 @@ var service = google.youtube('v3');
     // losarVideos -> list of URL of videos in playlist
     app.set('losarVideos' , losarVideos);
     res.redirect("/losar");
+    // https://lonyamship.herokuapp.com/losar
         // res.redirect("/losar");
 
             });
