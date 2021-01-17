@@ -18,6 +18,8 @@ const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
 const fbAuth = require('./routes/passport.facebook');
+
+const members = require('./routes/members');
 // const videos = require('./routes/youtubeApi');
 
 const {userLoggedIn } = require("./middleware/users");
@@ -27,7 +29,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 //This is our root path now!
-app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname +'/public')));
+app.use(express.static(__dirname + '/public'));
+
 // express.static(path.join(__dirname, '/public'));
 
 app.set('view engine', 'ejs')
@@ -46,6 +50,7 @@ app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
 app.use(fbAuth);
+app.use('/members', members);
 // app.use(videos);
 
 
@@ -178,7 +183,7 @@ app.get('*' , userLoggedIn);
 app.get('/'  , async (req,res)=>{
 
   const executiveMembers = extractExcelExecutive("excel/ExecutiveMembers.xlsx");  //getting excel data about executive members
-  const boardMembers = extractExcel("excel/BoardMembers.xlsx");
+  // const boardMembers = extractExcel("excel/BoardMembers.xlsx");
   const newMembers = extractExcel("excel/NewMembers.xlsx");
 
 // @link : src for each photo to be used for photo gallery
@@ -193,7 +198,6 @@ fs.readdir(__dirname +"/public/images/" , (err, files)=>{
    res.render('index',{
     link : files,
     executiveMembers,
-    boardMembers ,
     newMembers ,
 
   });

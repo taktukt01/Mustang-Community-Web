@@ -1,0 +1,89 @@
+<!-- <link href="./css/styles.css" rel="stylesheet" />   -->
+
+<!-- <div class="container-fluid bg-dark sticky-top"> -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1D1D1F;">
+
+    <!-- <div class="container-fluid sticky-top"> -->
+       
+                <a class = "navbar-brand" href="#">
+                <img src="logo.jpg" alt="No Luck!">
+            </a>
+
+            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-mobile mr-0">
+
+            <li class="nav-item"><a class="nav-link text-light " href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class=" nav-link text-light" href="#about">About Us</a></li>
+
+
+
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle text-light shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Our Work
+                </a>
+              
+                <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item text-light" href="/members/sundaySchool">Youth Cultural Development</a>
+                  <a class="dropdown-item text-light" href="#">Mane Tsokpa</a>
+                  <a class="dropdown-item text-light" href="#">Something Bhomo</a>
+
+
+                </div>
+              </div>
+
+
+
+            <li class="nav-item"><a class="nav-link text-light" href="#contact">Contact Us</a></li>
+
+
+            <!-- DropDown -- Youtube Videos// Soccer Videos // Etc -->
+            <li class="nav-item"><a class="nav-link text-light " href="/authPage">Videos</a></li>
+
+<li class="nav-item"><a class=" nav-link text-light" href="/payment">Donate</a></li>
+
+
+
+
+
+<!-- If user not logged in,  -->
+<% if(!locals.user){ %>
+    <li class="nav-item"><a class="nav-link text-light " href="/register">Register</a></li>
+    <li class="nav-item"><a class=" nav-link text-light" href="/login">Log in</a></li>
+
+
+<% } else{ %>
+
+  <!--  If admin ... show a different view -->
+  <!-- https://griva.in/node.js/2019/12/05/how-to-convert-excel-to-json-with-nodejs/ -->
+<% if( user.isAdmin ){ %>
+
+                   <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/adminHome">Admin Panel</a></li>
+
+                   <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
+
+
+            <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+
+
+    <% }else{%>
+        <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
+
+
+        <p class="mt-2 float-right text-light">Hello, <%= user.firstName %> </p>
+
+<% } %>
+
+<% } %>
+
+
+        </ul>
+
+
+</div>
+</nav>
+    <!-- </div> -->
+<!-- </div> -->
