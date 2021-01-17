@@ -33,6 +33,10 @@ email: {
     required: false
   } ,
 
+  // paidMembershipFee:{
+  //   type:Boolean,
+  //   required: false
+  // }
 
 
 

@@ -14,40 +14,74 @@ res.render('payment', {
 })};
 
 // Stripe's API allows users to make payment to our website.
-//  I want to grab user's input (donation amount) and enter it to unit_amount.
+//  I want to grab user's input (donation amount) and enter it to unit_amount.\
+
+// Membership Fee
+
+/*
+Route path: /flights/:from-:to
+Request URL: http://localhost:3000/flights/LAX-SFO
+req.params: { "from": "LAX", "to": "SFO" }
+
+http://expressjs.com/en/guide/routing.html#route-parameters
+*/
 module.exports.payment_post = async (req,res)=>{
 
-console.log(req.body);
+  // fixed  --> Fixed $50 payment
+  // custom  --> User input donation amount
 
-   const session = await stripe.checkout.sessions.create({
-    submit_type: 'donate',
-    payment_method_types: ["card"],
-    line_items: [{
-      price_data: {
-        currency: "usd",
-        product_data: {
-          name: "Donation"
+
+  switch(req.params.paymentType){
+    case("fixed"):
+    const session = await stripe.checkout.sessions.create({
+      submit_type: 'donate',
+      payment_method_types: ["card"],
+      line_items: [{
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: "Donation"
+          },
+          unit_amount: 50000
         },
-        unit_amount: 2000
-      },
-      quantity: 1,
-    }, ],
-    mode: "payment",
-    success_url: "http://localhost:5000/paymentSuccess",
-    cancel_url: "https://example.com/cancel",
-  });
-
+        quantity: 1,
+      }, ],
+      mode: "payment",
+      // success_url: "localhost:5000/paymentSuccess",
+      // cancel_url: "localhost:5000/failed",
+  
+    });
+    break;
+    case("custom"):
+    const session2 = await stripe.checkout.sessions.create({
+      submit_type: 'donate',
+      payment_method_types: ["card"],
+      line_items: [{
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: "Donation"
+          },
+          unit_amount: req.body.donationAmount * 1000
+        },
+        quantity: 1,
+      }, ],
+      mode: "payment",
+      // success_url: "localhost:5000/paymentSuccess",
+      // cancel_url: "localhost:5000/failed",
+  
+    });
+break;
+}
 
   res.json({
-    id: session.id
+    id: session.id,
+    id2: session2.id
+
   });
 
 }
 
-
-module.exports.amountDonate = (req,res)=>{
-  
-}
 
 module.exports.payment_success = (req,res)=>{
     res.render('paymentSuccess');
