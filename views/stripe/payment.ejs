@@ -21,13 +21,31 @@
 
 
 
+<!-- 
 
+1. Add controller 
+
+
+
+ -->
 
     <div class="mx-auto" style="width: 200px;">
 
-            <button type="button" class="btn btn-primary mb-5 mt-5" id="checkout-button">Checkout</button>
+            <button type="button" class="btn btn-primary mb-5 mt-5" id="checkout-button">Membership Fee</button>
 
               </div>
+
+              <p class="h3 mb-3">OR</p>
+
+              <form action="/payment/custom">
+              
+                <div class="form-group">
+                  <input type="number" class="form-control" id="donationAmount" placeholder="Amount to donate">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+              </form>
 
 
     
@@ -43,7 +61,7 @@
       checkoutButton.addEventListener('click', function() {
 
 
-        fetch('/payment', {
+        fetch('/payment/fixed', {
           method: 'POST',
         })
         .then(function(response) {
@@ -66,6 +84,9 @@
           console.error('Error:', error);
         });
       });
+
+
+
 
 
     </script>
