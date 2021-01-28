@@ -1,61 +1,129 @@
+<!-- <link href="./css/styles.css" rel="stylesheet" />   -->
 
 <!-- <div class="container-fluid bg-dark sticky-top"> -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1D1D1F;">
+  <nav class="navbar navbar-expand-lg navbar-sunday">
 
     <!-- <div class="container-fluid sticky-top"> -->
        
-                <a class = "navbar-brand" href="/">
-                <img src="./logo.jpg" alt="No Luck!">
+                <a class = "navbar-brand float" href="/">
+                <img src="/logo.jpg" alt="No Luck!">
             </a>
 
-            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler float-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon "></span>
               </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <ul class="navbar-nav navbar-mobile mr-0">
 
 
-<li class="nav-item"><a class="btn btn-primary nav-link text-light" href="/payment">Donate</a></li>
+
+<li class="nav-item float-left">
+      <div class="dropdown show">
+              
+<a class="btn dropdown-toggle text-light shadow-none text-light h5" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Our Work
+</a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <!-- <a class="dropdown-item text-dark h5" href="/members/sundaySchool">Youth Cultural Development</a> -->
+                  <a class="dropdown-item text-dark h5" href="#">Mane Tsokpa</a>
+                  <a class="dropdown-item text-dark h5" href="#">Something Bhomo</a>
+
+
+                </div>
+              </div>
+            </li>
 
 
 
+
+
+            <!-- DropDown -- Youtube Videos// Soccer Videos // Etc -->
+            <li class="nav-item float-left"><a class="nav-link  text-light h5 " href="/authPage">Videos</a></li>
+
+<li class="nav-item float-left"><a class=" nav-link text-light h5" href="/payment">Donate</a></li>
+
+
+<li class="nav-item facebook-icon">
+
+  <i class="fab fa-facebook fa-3x"></i>
+</li>
+
+<li class="nav-item youtube-icon">
+
+  <i class="fab fa-youtube fa-3x"></i>
+
+  
+</li>
 
 
 <!-- If user not logged in,  -->
-<% if(!locals.user){ %>
-    <li class="nav-item"><a class="btn btn-dark nav-link text-light " href="/register">Register</a></li>
-    <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/login">Log in</a></li>
+<%# if(!locals.user){ %>
+    <!-- <li class="nav-item"><a class="nav-link text-light " href="/register">Register</a></li>
+    <li class="nav-item"><a class=" nav-link text-light" href="/login">Log in</a></li> -->
 
 
-<% } else{ %>
+<%# } else{ %>
 
+  <!-- <li class="nav-item">
+  <div class="dropdown">
+   <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img class = "rounded img-thumbnail " alt="Profile Picture" src="./icons/chinampa.png" width="45" height="45">
+      </a>  -->
+
+    <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/settings">Settings</a>
+     
+    </div> -->
+  </div>
+  </li>
+<!-- 
+  <li class="nav-item">
+  <a class="float-right " href="https://www.facebook.com/lonyamship.kyiduk"><i class="fab fa-fw fa-facebook-f"> </i></a>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="float-right" href="https://www.youtube.com/channel/UCm-XlyipdfDoStx3d222yuQ">
+       <i class="fab fa-youtube"></i>
+    </a>
+
+    </li> -->
+
+ 
   <!--  If admin ... show a different view -->
   <!-- https://griva.in/node.js/2019/12/05/how-to-convert-excel-to-json-with-nodejs/ -->
-<% if( user.isAdmin ){ %>
+  
+<%# if( user.isAdmin ){ %>
 
-                   <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/adminHome">Admin Panel</a></li>
+                   <!-- <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/adminHome">Admin Panel</a></li>
 
                    <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
 
 
-            <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+            <p class = "welcomeMessage">Hello, <%#= user.email %> </p>
 
 
-    <% }else{%>
+    <%# }else{%>
         <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
 
 
-        <p class="mt-2 float-right text-light">Hello, <%= user.firstName %> </p>
+        <p class="mt-2 float-right text-light">Hello, <%#= user.firstName %> </p>
 
-<% } %>
+<%# } %>
 
-<% } %>
-
-
-        </ul>
+<%# } %> -->
 
 
+
+
+        <!-- </ul> -->
+
+
+            <!-- <li class="nav-item"><a class=" nav-link text-light h5" href="#about">About Us</a></li> -->
+                </ul>
 </div>
 </nav>
     <!-- </div> -->

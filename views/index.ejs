@@ -25,7 +25,7 @@
 <%- include('partials/homePageNav') %>
 
 
-    <!-- <section class="page-section carousel-section" id="carousel-section"> -->
+    <section class="page-section carousel-section" id="carousel-section">
 
     <!-- Image slideshow -->
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-ride="carousel">
@@ -42,19 +42,19 @@
 
                         <!-- image 1 -->
                       <div class="carousel-item active" data-interval="1000">
-                        <img src="./images/kyidug1.jpg" class="carousel-img rounded" style="width:100%; height:38vw" alt="...">
+                        <img src="./images/kyidug1.jpg" class="carousel-img rounded" style="width:80%; height:38vw" alt="...">
                        
                         <div class="carousel-caption d-none d-md-block carouselCaption">
-                         <h1 class="display-1 text-warning">Lonyamship</h1>
-                          <p class="h3">Showcasing our community website </p>
+                         <!-- <h1 class="display-1 text-warning">Lonyamship</h1> -->
+                          <!-- <p class="h1">Showcasing our community website </p> -->
                         </div>
                       </div>
                       <div class="carousel-item" data-interval="1000">
-                        <img src="./images/kyidug14.jpg" class ="carousel-img rounded" style="height:38vw; width:100vw" alt="...">
+                        <img src="./images/kyidug14.jpg" class ="carousel-img rounded" style="height:38vw; width:80%" alt="...">
                        
                       </div>
                       <div class="carousel-item">
-                        <img src="./images/kyidug15.jpg"  class = "carousel-img rounded" style="height:38vw; width:100vw" alt="...">
+                        <img src="./images/kyidug15.jpg"  class = "carousel-img rounded" style="height:38vw; width:80%" alt="...">
                        
                       </div>
                     </div>
@@ -71,7 +71,7 @@
 
             </div>
 
-            <!-- </section> -->
+            </section>
 
                   <!-- About Us -->
 
@@ -123,20 +123,22 @@
     </section>
     <!--end of front page -->
     <!-- MEMBERS Section-->
-    <section class="page-section bg-light" id="portfolio">
+    <section class="page-section" id="portfolio">
 
 
-        <h1 class="text-center text-lg-center mt-4 mb-5 photo-gall-heading text-dark">Member Services</h1>
+        <h1 class="text-center text-lg-center mt-4 mb-5 photo-gall-heading">Member Services</h1>
 
         <div class="container">
-            <div class="row">
+
+
+            <div class="d-flex justify-content-center">
+
 
                 <!-- First Modal -->
-                <div class="col sm-3 md-3 lg-3 xl-3">
-                    <div class="card mx-auto  float-left">
+                    <div class="card p-2 shadow"  id="card-buttons">
                         <!-- <div class="card-body"> -->
                             <!-- <h5 class="card-title">Executive Members</h5> -->
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#executiveMembersToggle">
                                 Executive Members
                             </button>
@@ -194,12 +196,10 @@
                                     </div>
                                 </div>
                             </div>
-
+</div>
 
 
                         <!-- </div> -->
-                    </div>
-                </div>
 
                         <!-- <div class="card-body"> -->
                             <!-- <h5 class="card-title">Board Members</h5> -->
@@ -272,12 +272,11 @@
                 </div> -->
                 <!-- New Members Modal -->
 
-                <div class="col sm-3 md-3 lg-3 xl-3">
 
-                    <div class="card mx-auto  float-left">
+                    <div class="card p-2 shadow "  id="card-buttons">
                         <!-- <div class="card-body"> -->
                             <!-- <h5 class="card-title">New Members</h5> -->
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#newMembersToggle">
                                New Members
                             </button>
@@ -334,44 +333,40 @@
                         <!-- </div> -->
 
                     </div>
-                </div>
-
-
-                <div class="col sm-3 md-3 lg-3 xl-3">
-
-                    <div class="card mx-auto  float-left" >
-                        <!-- <div class="card-body"> -->
-                            <!-- <h5 class="card-title">New Members</h5> -->
-                            <button type="button" class="btn btn-primary btn-lg sm-3 md-3 lg-3 xl-3" data-toggle="modal"
-                                data-target="#newMembersToggle">
-                              Sunday School
-                            </button>
-
-                            </div>
-
-
-                </div>
-
-
-                <div class="col sm-3 md-3 lg-3 xl-3">
-
-                    <div class="card mx-auto  float-left">
-                        <!-- <div class="card-body"> -->
-                            <!-- <h5 class="card-title">New Members</h5> -->
-                            <button type="button" class="btn btn-primary btn-lg sm-3 md-3 lg-3 xl-3" data-toggle="modal"
-                                data-target="#newMembersToggle">
-                              Mane Tsokpa
-                            </button>
-
-                            </div>
-
-
-                </div>
 
 
 
-            </div>
-</div>
+                        <div class="card p-2 shadow"  id="card-buttons" >
+                            <!-- <div class="card-body"> -->
+                                <!-- <h5 class="card-title">New Members</h5> -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#newMembersToggle">
+                                  Sunday School
+                                </button>
+    
+                                </div>
+    
+    
+    
+    
+    
+                        <div class="card p-2 shadow" id="card-buttons">
+                            <!-- <div class="card-body"> -->
+                                <!-- <h5 class="card-title">New Members</h5> -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#newMembersToggle">
+                                  Mane Tsokpa
+                                </button>
+    
+                                </div>
+    
+    </div>
+
+    </div>
+           
+
+
+
 
             <!-- <div class="col">
 
@@ -430,7 +425,7 @@
         <!-- /.container -->
     </section>
 
-    <button onclick="topFunction()" id="scrollToTop" title="Go to top">Back to Top</button>
+    <button id="scrollToTop" title="Go to top">Back to Top</button>
 
     <% if( locals.user  && user.isAdmin){ %>
 
@@ -473,7 +468,7 @@
             
 
     <section class="container page-section bg-white" id="contact">
-        <div class="mx-auto" style="width: 750px">
+        <div class="mx-auto">
             <!-- Contact Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-auto">Contact Us!</h2>
             <!-- Icon Divider-->
@@ -484,7 +479,7 @@
             </div>
             <!-- Contact Section Form-->
 
-            <div class="shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded text-center">
 
                 <p class="lead text-center font-weight-bold">
 
@@ -509,36 +504,40 @@
             </div>
 
 
-            <form action="https://formspree.io/f/xaylaody" method="POST" id="contact-form">
-            <div class="form-row justify-content-center">
-                    <label for="inputName">Full Name</label>
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-6">
+            <form action="https://formspree.io/f/xaylaody" method="POST" id="contact-form" >
+            <div class="form-group col-md-">
+                    <label for="inputName" class="font-weight-bold">Full Name</label>
                     <input type="text" class="form-control" id="inputName" name="fullName" placeholder="Enter Full Name">    
             </div>
     
-            <div class="form-row justify-content-center">
-                    <label for="inputEmail4">Email</label>
+            <div class="form-group">
+                    <label for="inputEmail4" class="font-weight-bold ">Email</label>
                     <input type="email" class="form-control" id="inputEmail4" name="_replyto" placeholder="Email"
                         required="">
     
             </div>
     
-            <div class="form-row justify-content-center">
-                    <label for="inputSubject">Subject</label>
+            <div class="form-group ">
+                    <label for="inputSubject" class="font-weight-bold ">Subject</label>
                     <input type="text" class="form-control" id="inputSubject" name="_subject" placeholder="Subject"
                         required="">
             </div>
     
-            <div class="form-row justify-content-center">
-                    <label for="message">Message</label>
+            <div class="form-group">
+                    <label for="message" class="font-weight-bold ">Message</label>
                     <textarea class="form-control" id="message" rows="3" name="message"
                         placeholder="Enter Message here..."></textarea>
     
     
             </div>
     
-            <div class="form-row justify-content-center">
-
-            <button type="submit" id="submit-form" class="btn btn-primary mt-3">Submit</button>
+            <div class="form-group ">
+            <button type="submit" id="submit-form" class="btn btn-primary mt-3 font-weight-bold">Submit</button>
             <p class ="lead text-success" id="status-form"></p>
 
             </div>
@@ -548,6 +547,7 @@
         <br>
     
     
+        </div>
         </div>
 
 
@@ -597,25 +597,11 @@
     <%- include('partials/scripts.ejs'); %>
 
 
-    <script>
-        var scroll = new SmoothScroll('a[href*="#"]');
-      </script>
-<script>
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
 
 <script>
-
 baguetteBox.run('.tz-gallery');
 
-
-
-  
   </script>
 
 

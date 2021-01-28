@@ -47,8 +47,8 @@ module.exports.payment_post = async (req,res)=>{
         quantity: 1,
       }, ],
       mode: "payment",
-      // success_url: "localhost:5000/paymentSuccess",
-      // cancel_url: "localhost:5000/failed",
+      success_url: "localhost:5000/paymentSuccess",
+      cancel_url: "localhost:5000/failed",
   
     });
     break;
@@ -67,7 +67,7 @@ module.exports.payment_post = async (req,res)=>{
         quantity: 1,
       }, ],
       mode: "payment",
-      // success_url: "localhost:5000/paymentSuccess",
+      success_url: "localhost:5000/paymentSuccess",
       // cancel_url: "localhost:5000/failed",
   
     });

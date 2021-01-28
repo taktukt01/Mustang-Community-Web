@@ -1,26 +1,23 @@
 /* CSS forked from : https://bootsnipp.com/snippets/z8aQr */
 
+html,body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 
 .emailError{
     color:red;
 }
 
-.login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
 .login-form-1{
-    padding: 5%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-1 h3{
     text-align: center;
     color: #333;
 }
-.login-container form{
-    padding: 10%;
-}
+
 .btnSubmit
 {
     width: 50%;

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+
+    <%- include ('partials/headerPlugIns')%>
+    <%- include ('partials/navBar')%>
+
+    <link rel="stylesheet" href="./css/settings.css">
+
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <p class="h1 text-center">Account Access</p>
+            <p class="lead text-center">Settings to help you keep your account secure</p>
+
+
+            <!-- Accordion Items  -->
+<!-- Item 1-- change passwrod
+
+Enter Current Password
+Enter New Password
+Confirm New Password
+
+-->
+
+<div id="accordion">
+
+
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-dark settingsButton" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Change Password
+          </button>
+          <p class="text-secondary">
+          Choose a unique password to protect your account
+          </p>
+        </h5>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+
+            <!-- Display Form for changing password -->
+            <!-- UPDATE  -->
+
+
+            <form action="/updatePassword" method="post" class="passwordChangeForm">
+
+                <div class="form-group">
+            <label for="#currentPassword">Current Password</label>
+            <input type="password" class="form-control" id="currentPassword" name="currentPassword">
+            
+            </div>
+
+            <div class="form-group">
+                <label for="#newPassword">New Password</label>
+                <input type="password" class="form-control" id="newPassword" name="newPassword">
+                
+                </div>
+        
+
+                <div class="form-group">
+                    <label for="#confirmPassword">New Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                    
+                    </div>
+            
+<button type="submit" class="btn btn-primary updatePassword">Submit</button>
+
+            
+            </form>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- UPDATE email -->
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-dark collapsed settingsButton" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Change Email Address
+          </button>
+          <p class="text-secondary"> Update your email address on your account </p>
+
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+
+            <!-- Contents for Change Email password -->
+        <!-- Display Current Email IN BOLD -->
+        <!-- Change EMAIL? NP. -->
+
+        <p class="h2">Current Email: </p>
+
+        <form action="/updateEmail" method="post" class="updateEmailForm">
+
+            <div class="form-group">
+        <label for="#newEmail">Email Address</label>
+        <input type="text" class="form-control" id="newEmail" name="newEmail">
+        
+        </div>
+        <button type="submit" class="btn btn-primary updateEmail">Submit</button>
+        <!-- In the "Future" Have this button instead be a "Send Verification" button and verify by email before submitting -->
+
+        </form>
+
+</div>
+      </div>
+    </div>
+
+    <!-- UPDATE/SET PROFILE PICTURE -->
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-dark collapsed settingsButton" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Upload Profile Picture
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+
+
+<!-- Upload icon -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+        
+        
+        </div>
+      </div>
+
+
+
+    <%- include ('partials/scripts')%>
+
+    <script type="text/javascript" src="./js/settings.js" ></script>
+
+
+
+</body>
+
+<%- include ('partials/footer')%>
+
+</html>

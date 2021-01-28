@@ -21,30 +21,46 @@
 
 
 
-    <div class="container login-container">
-                <div class="row">
-                    <div class="col-md-6 login-form-1">
-                        <h3>Login</h3>
+    <div class="container-fluid login-container  d-flex justify-content-center mb-5">
+                    <div class="login-form-1 p-5">
 
+                      <div class="text-center p-3">
+                        <img src="./logo3.jpg"  alt="image not found">
+                      </div>
 
+                        <h3 class="text-center">Lonyamship Account</h3>
+                        <p class="text-secondary text-center">Sign in to continue</p>
 
                         <!--                 Form                       -->
-
-                        <form method = "POST" action= "/login"> 
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="loggedEmail" placeholder="Your Email *" value="" />
+                        <form method = "POST" action= "/login" > 
+                                                        <!-- <label class="font-weight-bold" for="email">Enter your email</label> -->
+                            <div class="form-group row">
+                              <div class="col-2">
+                                <img src="./images/svg/person-svg.svg" class="" alt="svg not loaded" >
+                              </div>
+                              <div class="col-10">
+                                <input type="text" id ="email" class="form-control" name="loggedEmail" placeholder="Your Email *" value="" />
+                              </div>
+                            
                             </div>
 
                             <div class="emailError"></div>
 
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="loggedPass" placeholder="Your Password *" value="" />
+                            <div class="form-group row">
+                              <!-- <label class="font-weight-bold" for="password">Enter your password</label> -->
+                              <div class="col-2">
+                                  <img src="./images/svg/pw-svg.svg" alt="svg not loaded">
+                              </div>
+                              <div class="col-10">
+                                <input type="password" id="password" class="form-control" name="loggedPass" placeholder="Your Password *" value="" />
+
+                              </div>
                             </div>
 
 
                             <div class="passwordError"></div>
 
-                            <div class="form-group">
+                            <div class="form-group row col-md-8 offset-4">
                                 <input type="submit" class="btnSubmit" value="Login" />
                             </div>
                            <!-- <div class="form-group">
@@ -58,7 +74,6 @@
                         </form>
 
 
-                    </div>
                   
                     </div>
                 </div>
