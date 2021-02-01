@@ -1,10 +1,10 @@
 const User = require('../models/User');
+
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const jwt_secret = process.env.JWT_SECRET;
-// var bcrypt = require('bcryptjs');
 
-const mongoose = require('mongoose');
+const jwt_secret = process.env.JWT_SECRET;
+var bcrypt = require('bcryptjs');
 
 
 
@@ -78,7 +78,7 @@ const createToken = (id)=>{
 
   module.exports.login_post = async (req,res)=>{
   
-// grab form data
+
     const email = req.body.email;
     const password =req.body.password;
 
@@ -118,6 +118,14 @@ const createToken = (id)=>{
 
   }
 
+//expiresIn: expressed in seconds or a string describing a time span zeit/ms.
+
+
+
+
+// (Asynchronous) If a callback is supplied, the callback is called with the err or the JWT.
+
+
 
   module.exports.register_get = (req,res)=>{
     res.render('register');
@@ -134,14 +142,13 @@ const createToken = (id)=>{
 
 */
 
-
-// In our browser cookie, it contains our JWT 
 module.exports.register_post = async (req,res)=>{
 
    //need to handle errors ( minlength, duplicate email, etc)
      try {
 
-    //grab form data
+    // const first = req.body.firstName;
+    // const last = req.body.lastName;
     const email = req.body.email;
     const password = req.body.password;
     const firstName = req.body.firstName;
@@ -149,12 +156,16 @@ module.exports.register_post = async (req,res)=>{
  
 
   const user =  await User.create({
+
    email,
+   
   password ,
    isAdmin : false,
-  firstName
+    firstName
    
   });
+
+
   
 
        const token = createToken(user._id);
@@ -221,41 +232,5 @@ module.exports.admin_post_update= async(req,res)=>{
 module.exports.adminHome_get = async(req,res)=>{
 
 res.render("admin/adminHome");
-
-}
-
-module.exports.settings_get = async(req,res)=>{
-  res.render("settings");
-}
-
-
-module.exports.update_password = async(req,res)=>{
-
-  
-
-}
-
-
-module.exports.update_email = async(req,res)=>{
-
-  // string representation of ObjectId
-  /*
-
-  */
-  let userId = req.cookies.jwt;
-
-  // string --> mongoose ObjectId
-  let id = mongoose.Types.ObjectId(userId);
-
-//returns our Query object if Email is valid 
-  const user = await User.findById(id);
-  console.log(user);
-
-  // if(user){
-  //   User.updateOne({
-  //     email: req.body.newEmail
-  //   });
-  // }
-
 
 }

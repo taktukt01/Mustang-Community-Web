@@ -18,7 +18,7 @@ const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
 const fbAuth = require('./routes/passport.facebook');
-// sunday school views/controllers
+
 const members = require('./routes/members');
 // const videos = require('./routes/youtubeApi');
 
@@ -38,6 +38,7 @@ app.set('view engine', 'ejs')
 
 app.set('views', [
   path.join(__dirname,'views'),
+
   path.join(__dirname,'views/stripe/'),
 ]);
 app.use(morgan('tiny'));
