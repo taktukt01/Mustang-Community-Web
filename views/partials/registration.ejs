@@ -1,0 +1,31 @@
+
+<!-- If user not logged in,  -->
+<% if(!locals.user){ %>
+    <li class="nav-item"><a class="btn btn-dark nav-link text-light " href="/register">Register</a></li>
+    <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/login">Log in</a></li>
+
+
+<% } else{ %>
+
+  <!--  If admin ... show a different view -->
+  <!-- https://griva.in/node.js/2019/12/05/how-to-convert-excel-to-json-with-nodejs/ -->
+<% if( user.isAdmin ){ %>
+
+                   <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/adminHome">Admin Panel</a></li>
+
+                   <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
+
+
+            <p class = "welcomeMessage">Hello, <%= user.email %> </p>
+
+
+    <% }else{%>
+        <li class="nav-item"><a class="btn btn-dark nav-link text-light" href="/logout">Log out</a></li>
+
+
+        <p class="mt-2 float-right text-light">Hello, <%= user.firstName %> </p>
+
+<% } %>
+
+<% } %>
+

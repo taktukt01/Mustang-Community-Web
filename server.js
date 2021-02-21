@@ -38,7 +38,6 @@ app.set('view engine', 'ejs')
 
 app.set('views', [
   path.join(__dirname,'views'),
-
   path.join(__dirname,'views/stripe/'),
 ]);
 app.use(morgan('tiny'));
@@ -205,6 +204,10 @@ fs.readdir(__dirname +"/public/images/" , (err, files)=>{
 });
 
   });
+
+  app.get('/contact', (req,res)=>{
+    res.render("contact");
+  })
 
 
 

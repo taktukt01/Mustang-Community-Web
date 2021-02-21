@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,167 +8,456 @@
     <link rel="stylesheet" type="text/css" href="/css/sundaySchool.css">
 
     <%- include('./partials/headerPlugIns') %>
-<%-include('./partials/navBar') %>
+    <%-include('./partials/navBar') %>
 </head>
+
 <body class="bg-light">
-    <!-- 100vw image  -->
 
 
-    <p class="h1 text-center  font-weight-bold">Preserving our culture, teaching the youth</p>
 
-    
-    <!-- <p class="text-center">Teaching youth the Tibetan Alphabets</p> -->
-    <!-- ka kha ga  -->
+    <!-- Sidebar menu -->
+    <div class="wrapper">
 
-    <!-- <div class="row text-center"> -->
-
-
-  <!-- </div> -->
-
-    <p class="font-weight-bold text-center">Teaching youth how to play variety of Tibetan Instruments</p>
-    <!-- card of instruments -->
-
-    <div class="row">
-      <div class="col offset-md-3">
-          <div class="card ml-5 shadow" style="width: 18rem;">
-            
-            <img class="card-img-top " src="https://images.is.ed.ac.uk/MediaManager/srvr?mediafile=/Size4/UoEart~2~2/268/0035113c-0009.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text font-weight-bold text-center">Dramyin</p>
-              <!-- On hover, show description -->
-              <!-- <p class="instrument-back">
-
-
-                The dramyin or dranyen is a traditional Himalayan folk music lute with six strings, used primarily as an accompaniment to singing in the Drukpa Buddhist culture and society in Bhutan, as well as in Tibet, Sikkim and Himalayan West Bengal. 
-
-              </p> -->
+        <nav id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <p class="h2">Sunday Lopta</p>
             </div>
-    
-          </div>
+
+            <!-- Sidebar Links -->
+            <ul class="list-unstyled components">
+                <li class="active"><a href="#aboutUs">Lo-Nyamship Cultural School</a></li>
+                <li><a href="#gallery">Photos</a></li>
+                <li>
+                    <!-- Link with dropdown items -->
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Committee Members/Staff</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a class="font-weight-bold" href="#2014commitee">2014-2015 Committee Members/Staff</a></li>
+                        <li><a class="font-weight-bold" href="#2016commitee">2016-2017 Committee Members </a></li>
+                        <li><a class="font-weight-bold" href="#2018commitee">2018-2019 Committee Members </a></li>
+                        <li><a class="font-weight-bold" href="#2019commitee">2019-2020 Committee Members </a></li>
+                        <li><a class="font-weight-bold" href="#2020commitee">2020-Present Committee Members </a></li>
+                        <br>
+
+                    </ul>
+                <li><a href="#volunteerPerformers">Songs/Dance Volunteers</a></li>
+                <!-- Can link to a pdf! -->
+                <li><a href="#policies"> Lo-Nyamship Association’s Cultural School
+                        Rules and Policies
+                    </a></li>
+                <li><a href="#curriculum">Curriculum and program</a></li>
+                <li><a href="#dramyin">Dramyin learning resources</a></li>
+            </ul>
+        </nav>
+
+
+        <div id="content">
+            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+
+
+
+        <div class="container-fluid pageDetails">
+            <section id="aboutUs">
+                <p class="h2 text-center font-weight-bold">
+                    Lo-Nyamship Cultural School
+                    Est June 2014
+
+                </p>
+
+                <p class="text-left">
+                    Lo-Nyamship Cultural School was established in June 2014 with the common interests of certain
+                    members of the community. The need for community learning centers and cultural and language
+                    preservation was necessary at the heat of the rising immigrant from the Himalayan regions of Nepal.
+                    Community members informally discussed the importance of starting a program that will help children
+                    of our community to come together as one in one space and take the progress from there.
+
+                    <!-- More info -- opens more details -->
+                    <!-- Button trigger modal -->
+                    <br>
+                    <button type="button" class="btn btn-primary mt-3" data-toggle="modal"
+                        data-target="#sundaySchoolHistory">
+                        More Info
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="sundaySchoolHistory" tabindex="-1" role="dialog"
+                        aria-labelledby="sundaySchoolHistory" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="sundaySchoolHistory">Lo-nyamship Cultural School History
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- details -->
+                                    <p>
+                                        Lo-Nyamship Cultural School was established in June 2014 with the common
+                                        interests of certain members of the community. The need for community learning
+                                        centers and cultural and language preservation was necessary at the heat of the
+                                        rising immigrant from the Himalayan regions of Nepal. Community members
+                                        informally discussed the importance of starting a program that will help
+                                        children of our community to come together as one in one space and take the
+                                        progress from there. There was not any common space or program that could bind
+                                        these newly arrived children from the homeland or children who were born and
+                                        raised in a foreign land. Few people from the community raised the idea of
+                                        starting a program where these children will come together, learn together and
+                                        grow together with the same cultural, language and religious background. When
+                                        Lo-Nyamship Cultural School started, Rapsang Bista, being the sole in charge and
+                                        other members Pema Tsamdhu and ______ initiated the program right away with
+                                        limited resources, logistic but with greater passion and commitment. The school
+                                        was decided to run with parent committee members, volunteers and important
+                                        members of the community. The terms of serving the school are two years for
+                                        parents starting from Phakying and Losar. Parents will take turns alternatively
+                                        starting either from Losar or Phyakying and will serve for two years.
+
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </p>
+
+        </div>
 
 
     </div>
-  
+
+    <section class="page-section bg-white text-dark mb-0 " id="gallery">
 
 
-      <div class="col">
-        <div class="card ml-5 mt-3 mb-5 shadow" style="width: 18rem;">
-          <img class="card-img-top " src="https://images.is.ed.ac.uk/MediaManager/srvr?mediafile=/Size4/UoEart~2~2/268/0035113c-0009.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text font-weight-bold text-center">Yanjin</p>
-            <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut eius mollitia eum iure dolor. Consequuntur cum, minima ducimus id eligendi quisquam unde, nostrum iste corporis a nemo distinctio. Harum, sint.</p> -->
+        <div class="container gallery-container">
 
-          </div>
-         </div>
+            <h1 class="text-center text-lg-center mt-4 mb-0 photo-gall-heading text-dark">Photo Gallery</h1>
 
-      </div>
-   
+            <hr class="mt-2 mb-5">
 
 
+            <div class="tz-gallery">
 
-    </div>
+                <div class="row">
 
-
-    <p class="h1 mt-5 text-center text-dark ">Teaching youth cultural dances</p>
-    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ratione expedita illo asperiores id aut assumenda laboriosam facere odio nam. Earum natus quod ratione assumenda. Blanditiis eius in sed reprehenderit! -->
-
-
-
-<section class="bg-dark">
-
-
-
-
-    <!-- images of past dances-->
-    <!-- Or Videos of past dances -->
-
-
-<!-- Meet the teachers -->
-
-<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
-
-<div class="container py-5">
-    
-    <div class="row">
-        <p class="font-weight-bold h2 text-light text-xs-center mb-5 ml-5">Meet our teachers</p>
-    </div>
+                    <!-- Change this to work for this page. -->
+                    <%# for(var i = 0 ; i< link.length ; i++){ %>
+                    <!-- <div class="col-xs-6 col-md-4">
+                <div class="thumbnail">
+                        <a class="lightbox" href="./images/<%#= link[i] %>">
+                            <img class = "img-thumbnail img-responsive" src="./images/<%#= link[i] %>" alt="Traffic" style="width:100%">
+                        </a>
+                       
+                    </div>
+                
+                </div> -->
+                    <%#}%>
 
 
 
-    <div class="row text-center">
 
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4 "><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Manuella Nevoresky</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="www.stackoverflow.com" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="www.stackoverflow.com" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End-->
+                </div>
 
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Samuel Hardy</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End-->
 
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Tom Sunderland</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End-->
 
-      <!-- Team item-->
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">John Tarly</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End-->
 
-      
+            </div>
+        </div> <!-- gallery close-->
+        <!-- /.container -->
+    </section>
 
-    </div>
-  </div>
+    <section id="2014commitee">
 
-  </section>
-    
+        <p class="font-weight-bold text-center mt-5">
+            2014-2015 Committee Members/Staff
+        </p>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item  ">Rapsang Bista (Advisor)</li>
+            <li class="list-group-item ">Pema (Active Member)
+            </li>
+            <li class="list-group-item">Chhimi Rinzin (Advisor)
+            </li>
+            <li class="list-group-item">Karma Samdup (Active Member)
+            </li>
+            <li class="list-group-item">Lhakpa (Volunteer)
+            </li>
+            <li class="list-group-item">Rinzen Wangmo (Language Teacher)
+
+            </li>
+            <li class="list-group-item">Wongdue Lama (Language Teacher)
+
+            </li>
+            <li class="list-group-item">Tashi Tsering (Music Teacher)
+
+            </li>
+
+
+
+        </ul>
+
+    </section>
+
+
+    <section id="2016commitee">
+        <!-- Rapsang Bista (Advisor)
+Pema Samdup (Active Member)
+Wangchuk (Active Member)
+Sonam Dhukey (Active Member)
+Lhakpa (Volunteer)
+Rinzen Wangmo (Language Teacher)
+Phurba Gyalsten (Language Teacher) -->
+
+        <p class="font-weight-bold text-center mt-5">
+            2016-2017 Committee Members/Staff
+        </p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item  ">Rapsang Bista (Advisor)</li>
+            <li class="list-group-item"> Pema Samdup (Active Member)</li>
+            <li class="list-group-item"> Wangchuk (Active Member) </li>
+            <li class="list-group-item"> Sonam Dhukey (Active Member)</li>
+            <li class="list-group-item"> Lhakpa (Volunteer)</li>
+            <li class="list-group-item">Rinzen Wangmo (Language Teacher)</li>
+            <li class="list-group-item"> Phurba Gyalsten (Language Teacher)</li>
+        </ul>
+
+    </section>
+
+
+    <section id="2018commitee">
+        <!-- Sonam Dhukey (Active Member/ Advisor)
+Wangchuk (Active Member)
+Tamdin (Active Member)
+Lhamo Tsering (Active Member)
+Lhakpa (Volunteer)
+Rinzen Wangmo (Language Teacher)
+Phurba Gyalsten (Language Teacher)
+Raju (Language Teacher)
+Tashi Tsering (Music Teacher) -->
+        <p class="font-weight-bold text-center mt-5">
+            2018-2019 Committee Members/Staff
+        </p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item  "> Sonam Dhukey (Active Member/ Advisor)</li>
+            <li class="list-group-item"> Wangchuk (Active Member)</li>
+            <li class="list-group-item"> Tamdin (Active Member)</li>
+            <li class="list-group-item"> Lhamo Tsering (Active Member)/li>
+            <li class="list-group-item"> Lhakpa (Volunteer)</li>
+            <li class="list-group-item">Rinzen Wangmo (Language Teacher)</li>
+            <li class="list-group-item"> Phurba Gyalsten (Language Teacher)</li>
+            <li class="list-group-item"> Raju (Language Teacher)</li>
+            <li class="list-group-item">Tashi Tsering (Music Teacher) </li>
+        </ul>
+
+    </section>
+
+    <section id="2019commitee">
+        <!-- Lhakpa (Advisor)
+Lhamo Tsering (Active Member) ended 9/1/19
+Tamdin (Active Member) ended Losar 2019
+Aangy (Active Member) started Losar 2019
+Dato (Nawang Penpa)
+Rinzen Wangmo (Language Teacher)
+Raju (Language Teacher)
+Tashi Tsering (Music Teacher)
+Kunga Choezom (Active member) started 8/18/19
+Dawa Dolma (Active member) started 8/18/19 -->
+        <p class="font-weight-bold text-center mt-5">
+            2019-2020 Committee Members/Staff
+        </p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Lhakpa (Advisor)</li>
+            <li class="list-group-item">Lhamo Tsering (Active Member) ended 9/1/19</li>
+            <li class="list-group-item"> Tamdin (Active Member)</li>
+            <li class="list-group-item"> Aangy (Active Member) started Losar 2019 </li>
+            <li class="list-group-item"> Dato (Nawang Penpa)
+            </li>
+            <li class="list-group-item">Rinzen Wangmo (Language Teacher)</li>
+            <li class="list-group-item"> Phurba Gyalsten (Language Teacher)</li>
+            <li class="list-group-item"> Raju (Language Teacher)</li>
+            <li class="list-group-item">Tashi Tsering (Music Teacher) </li>
+            <li class="list-group-item">Kunga Choezom (Active member) started 8/18/19
+            </li>
+            <li class="list-group-item">Dawa Dolma (Active member) started 8/18/19 -->
+            </li>
+
+        </ul>
+    </section>
+
+    <section id="2020commitee">
+        <!-- Lhakpa (Advisor)
+Dato (Nawang Penpa: Parent Committee member)
+Kunga Choezom (parent committee member)
+Dawa Dolma (parent-committee member)
+Rinzen Wangmo (teacher)
+Tashi Tsering (teacher)
+Raju (teacher) -->
+
+        <p class="font-weight-bold text-center mt-5">
+            2020-Present Committee Members/Staff
+        </p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Lhakpa (Advisor)</li>
+            <li class="list-group-item">Dato (Nawang Penpa: Parent Committee member)
+            </li>
+            <li class="list-group-item">Kunga Choezom (parent committee member)
+            </li>
+            <li class="list-group-item"> Dawa Dolma (parent-committee member)
+            </li>
+            <li class="list-group-item">Rinzen Wangmo (Teacher)</li>
+            <li class="list-group-item">Tashi Tsering (Teacher) </li>
+            <li class="list-group-item"> Raju (Teacher)</li>
+        </ul>
+    </section>
+
+
+
+    <section id="Policies mt-5">
+        <p class="font-weight-bold text-center">
+            To view details about our policy, click the pdf below.
+        </p>
+        <!-- PDF image/icon -->
+        <a href="../pdf/Sunday School Policies.pdf" target="blank">
+            <img class="mx-auto d-block" src="https://img.icons8.com/cute-clipart/64/000000/pdf.png" />
+        </a>
+
+    </section>
+
+    <section id="communityInvolvement">
+
+
+        <p class="h2 text-center mt-5">
+            Community Involvement and Participation
+        </p>
+
+        <p class="ml-2">
+            Lo-Nyamship Association Cultural School will participate in different events and programs as follow:
+        </p>
+
+        <p class="font-weight-bold">
+            Annual Losar Party of Lo-Nyamship Association USA
+        </p>
+        <ol type="i">
+            <li>
+                3 or more cultural programs will perform from school( 70-80% programs must be
+                based on our culture) and the programs are performed on the first day of the party.
+
+            </li>
+
+            <li>
+
+                Parents, teachers and members Appreciation and thank you speech will be held only on Losar Party.
+
+            </li>
+
+
+            <li>
+
+                Words of appreciation for the committee members at the end of the years
+                period.
+
+            </li>
+
+            <li>
+                Khatak for teachers and volunteers.
+            </li>
+
+        </ol>
+
+
+        <p class="font-weight-bold">
+            Annual Phakying Celebration of Lo-Nyamship Association USA
+        </p>
+        <ol type="i">
+
+            <li>
+                2-4 cultural programs( 70-80% programs must be based on our culture) and the programs are performed on
+                the first day of the party.
+            </li>
+
+            <li>
+                No guests invitation and words of appreciation
+            </li>
+
+
+        </ol>
+
+
+
+        <p class="font-weight-bold">
+            Mustang Kyidug USA
+        </p>
+        <ol type="i">
+
+            <li>
+                Perform 2-3 programs.
+            </li>
+
+
+        </ol>
+
+
+        <p class="font-weight-bold">
+            Sakya Association of USA
+        </p>
+        <ol type="i">
+
+            <li>
+                Perform 1-2 programs.
+
+            </li>
+
+
+        </ol>
+
+
+        <p class="font-weight-bold">
+            Karmapa Association of USA
+        </p>
+        <ol type="i">
+
+            <li>
+                Perform 1-2 programs.
+
+            </li>
+
+
+        </ol>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
 
 
 
 
 
     <%-include('partials/scripts') %>
+    <script src="../js/sundaySchool.js"></script>
 </body>
 
 <%-include('partials/footer') %>
-<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+
+<a href="https://icons8.com/icon/653ERoGXKw5N/pdf">PDF icon by Icons8</a>
 
 </html>
