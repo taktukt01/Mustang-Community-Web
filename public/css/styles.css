@@ -11,6 +11,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+ html{
+  font-family: 'Varela', sans-serif;
+ }
               img{height:100px;
                 vertical-align: middle;
                 border-style: none;
@@ -41,9 +44,9 @@
             
             /* Styles for the gallery */
             
-            .tz-gallery {
+            /* .tz-gallery {
                 padding: 40px;
-            }
+            } */
 
             #frontCover{
               background-color:black;
@@ -120,6 +123,7 @@ a:hover {
  
 .page-section {
   padding: 6rem 0;
+
 }
   /* font-size: 1.5rem; */
   /* line-height: 2rem; */
@@ -157,10 +161,18 @@ a:hover {
   color: #fff !important;
 }
 
+
+.btn {
+  white-space:normal !important;
+  word-wrap: break-word; 
+}
+
+
 .btn-xl {
   padding: 1rem 1.75rem;
   font-size: 1.25rem;
 }
+
 
 .btn-social {
   border-radius: 100%;
@@ -269,6 +281,7 @@ ul li a{
      width: 100%;
    }
 }
+
 .carousel-inner img {
   margin: auto;
 }
@@ -287,7 +300,8 @@ ul li a{
 
 
 p{
-  font-family: 'Poppins', sans-serif !important;
+
+  font-family: 'Varela', sans-serif;
   line-height: 1.9em;
     margin: 0 auto 0.7em;
     font-size: 17px !important;
