@@ -32,11 +32,11 @@
                     <!-- Link with dropdown items -->
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Committee Members/Staff</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a class="font-weight-bold" href="#2014commitee">2014-2015 Committee Members/Staff</a></li>
-                        <li><a class="font-weight-bold" href="#2016commitee">2016-2017 Committee Members </a></li>
-                        <li><a class="font-weight-bold" href="#2018commitee">2018-2019 Committee Members </a></li>
-                        <li><a class="font-weight-bold" href="#2019commitee">2019-2020 Committee Members </a></li>
-                        <li><a class="font-weight-bold" href="#2020commitee">2020-Present Committee Members </a></li>
+                        <li><a class="font-weight-bold" href="#2014commitee">+ 2014-2015 Committee Members/Staff</a></li>
+                        <li><a class="font-weight-bold" href="#2016commitee">+ 2016-2017 Committee Members </a></li>
+                        <li><a class="font-weight-bold" href="#2018commitee">+ 2018-2019 Committee Members </a></li>
+                        <li><a class="font-weight-bold" href="#2019commitee">+ 2019-2020 Committee Members </a></li>
+                        <li><a class="font-weight-bold" href="#2020commitee">+ 2020-Present Committee Members </a></li>
                         <br>
 
                     </ul>
@@ -64,13 +64,13 @@
 
         <div class="container-fluid pageDetails">
             <section id="aboutUs">
-                <p class="h2 text-center font-weight-bold">
+                <p class="h2 text-center font-weight-bold titleHeader">
                     Lo-Nyamship Cultural School
                     Est June 2014
 
                 </p>
 
-                <p class="text-left">
+                <p class="text-left culturalparagraph">
                     Lo-Nyamship Cultural School was established in June 2014 with the common interests of certain
                     members of the community. The need for community learning centers and cultural and language
                     preservation was necessary at the heat of the rising immigrant from the Himalayan regions of Nepal.
@@ -80,23 +80,25 @@
                     <!-- More info -- opens more details -->
                     <!-- Button trigger modal -->
                     <br>
-                    <button type="button" class="btn btn-primary mt-3" data-toggle="modal"
+                    <button type="button" class="btn btn-primary mt-3" id="moreInfoBtn" data-toggle="modal"
                         data-target="#sundaySchoolHistory">
                         More Info
                     </button>
 
                     <!-- Modal -->
                     <div class="modal fade" id="sundaySchoolHistory" tabindex="-1" role="dialog"
-                        aria-labelledby="sundaySchoolHistory" aria-hidden="true">
+                        aria-labelledby="ModalTitle" aria-hidden="true" data-backdrop="false">
                         <div class="modal-dialog" role="document">
+
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="sundaySchoolHistory">Lo-nyamship Cultural School History
+                                    <h5 class="modal-title" id="ModalTitle">Lo-nyamship Cultural School History
                                     </h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                        <span aria-hidden="true" >&times;</span>
                                     </button>
                                 </div>
+
                                 <div class="modal-body">
                                     <!-- details -->
                                     <p>
@@ -121,14 +123,15 @@
 
                                     </p>
                                 </div>
+
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary"  id="close" data-dismiss="modal">Close</button>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
-                </p>
 
         </div>
 

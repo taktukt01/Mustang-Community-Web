@@ -1,9 +1,8 @@
 
 // Meet the team page mainly.
-module.exports.get_executiveMembers = (req,res)=>{
+module.exports.get_boardMembers = (req,res)=>{
 
-    res.render("executiveMembers");
-
+    res.render("BoardMembers/2020Board");
 
 }
 

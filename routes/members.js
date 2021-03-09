@@ -5,8 +5,7 @@ const members = require("../controllers/membersControllers");
 
 
 // Meet the team page
-router.get("/executive" , members.get_executiveMembers);
-
+router.get("/2020" , members.get_boardMembers);
 
 
 router.get("/sundaySchool" , members.get_SundaySchoolPage);

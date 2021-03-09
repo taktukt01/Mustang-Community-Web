@@ -1,8 +1,30 @@
 $(function(){
     baguetteBox.run('.tz-gallery');
 
-    var scroll = new SmoothScroll('a[href*="#"]');
+    var scroll = new SmoothScroll('a[href*="#"]',{
+        speed: 500
+    });
 
+
+    $("#moreInfoBtn").on('click', function(){
+        $(".culturalparagraph").toggle();
+        $(".titleHeader").toggle();
+
+        
+    });
+
+    $("#close").on('click', function(){
+        $(".culturalparagraph").toggle();
+        $(".titleHeader").toggle();
+
+    });
+    $("#ModalCloseButton").on('click', function(){
+        $(".culturalparagraph").toggle();
+        $(".titleHeader").toggle();
+
+    });
+    
+    
     
     $('#sidebarCollapse').on('click', function () {
 
