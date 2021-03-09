@@ -25,6 +25,9 @@
         background: #16A085;
       
   }
+  a.nav-link{
+    font-family: 'Lato', sans-serif;
+  }
 
 
   #page-container {

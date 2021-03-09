@@ -20,16 +20,6 @@ router.delete('/admin' ,isAdmin, authController.admin_post_delete);
 router.put('/admin', isAdmin, authController.admin_post_update);
 router.get('/adminHome' ,isAdmin, authController.adminHome_get);
 
-router.get('/settings' , authController.settings_get);
-// router.post('/settings' , authController.settings_post);
-
-
-//only logged in users will be able to VIEW/USE this
-router.post('/updatePassword', authController.update_password );
-router.post('/updateEmail', authController.update_email );
-
-
-
 
 router.get('/deleteAll', authController.remove_all_docs);
 

@@ -12,7 +12,8 @@
 
 <link rel="stylesheet" href="./css/styles.css">
 
-    
+
+
 
 
 </head>
@@ -122,7 +123,7 @@
 
     </section>
     <!--end of front page -->
-    <!-- MEMBERS Section-->
+    <!-- MEMBERS Section
     <section class="page-section" id="portfolio">
 
 
@@ -134,17 +135,16 @@
             <div class="d-flex justify-content-center">
 
 
-                <!-- First Modal -->
                     <div class="card p-2 shadow"  id="card-buttons">
-                        <!-- <div class="card-body"> -->
-                            <!-- <h5 class="card-title">Executive Members</h5> -->
+                        <div class="card-body">
+                            <h5 class="card-title">Executive Members</h5>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#executiveMembersToggle">
                                 Executive Members
                             </button>
 
 
-                            <!-- Modal for Executive Members -->
+                            Modal for Executive Members
                             <div class="modal fade" id="executiveMembersToggle" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -160,22 +160,22 @@
                                             <ul class="list-group" id="execMember">
 
 
-                                                <% executiveMembers.forEach( (member) =>{ %>
+                                                <%# executiveMembers.forEach( (member) =>{ %>
                                                     
 
                                                     <div class="card" >
                                                         <img class="card-img-top img-thumbnail" src="./images/cat.jpg" alt="Card image cap">
                                                         <div class="card-body mb-5">
-                                                          <h5 class="card-title"> <%= member.Name %> 
+                                                          <h5 class="card-title"> <%#= member.Name %> 
                                                              <br>
-                                                             <b> <%= member.Title %> </b></h5>
-                                                          <p class="card-text">Email: <%=member.Email %> </p>
-                                                          <p class="card-text">Contact: <%=member.Phone %> </p>
+                                                             <b> <%#= member.Title %> </b></h5>
+                                                          <p class="card-text">Email: <%#=member.Email %> </p>
+                                                          <p class="card-text">Contact: <%#=member.Phone %> </p>
 
 
 
-                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
-                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%#= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                            <a class="btn btn-outline-dark btn-social mx-1" href="<%#= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
 
 
                                                         </div>
@@ -184,7 +184,7 @@
 
                                             </ul>
 
-                                        <% }); %>
+                                        <%# }); %>
 
 
 
@@ -199,11 +199,11 @@
 </div>
 
 
-                        <!-- </div> -->
+                        </div>
 
-                        <!-- <div class="card-body"> -->
-                            <!-- <h5 class="card-title">Board Members</h5> -->
-                            <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                        <div class="card-body">
+                            <h5 class="card-title">Board Members</h5>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                                 data-target="#boardMembersToggle">
                                 Board Members
                             </button> -->
@@ -271,24 +271,24 @@
                     </div>
                 </div> -->
                 <!-- New Members Modal -->
-
+<!-- 
 
                     <div class="card p-2 shadow "  id="card-buttons">
-                        <!-- <div class="card-body"> -->
-                            <!-- <h5 class="card-title">New Members</h5> -->
+                        <div class="card-body">
+                            <h5 class="card-title">New Members</h5>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#newMembersToggle">
                                New Members
                             </button>
 
 
-                            <!-- Modal for New Members -->
+                            Modal for New Members
                             <div class="modal fade" id="newMembersToggle" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <!-- <h5 class="modal-title" id="exampleModalLongTitle">Members</h5> -->
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Members</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
                                                 <span aria-hidden="true">&times;</span>
@@ -297,24 +297,24 @@
 
                                             <ul class="list-group" id="newMember">
 
-                                                <% newMembers.forEach( (member) =>{ %>
+                                                <#% newMembers.forEach( (member) =>{ %>
 
 
                                                 <div class="card w-100">
                                                     <img class="card-img-top img-thumbnail" src="./images/cat.jpg" alt="Card image cap">
                                                     <div class="card-body mb-5">
-                                                      <h5 class="card-title"> <%= member.Name %> </h5>
-                                                      <p class="card-text">Email: <%=member.Email %> 
-                                                        <p>Contact: <%=member.Phone %> </p>
+                                                      <h5 class="card-title"> <%#= member.Name %> </h5>
+                                                      <p class="card-text">Email: <#%=member.Email %> 
+                                                        <p>Contact: <%#=member.Phone %> </p>
 
-                                                        <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
-                                                        <a class="btn btn-outline-dark btn-social mx-1" href="<%= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
+                                                        <a class="btn btn-outline-dark btn-social mx-1" href="<%#= member.Facebook %>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                        <a class="btn btn-outline-dark btn-social mx-1" href="<%#= member.Facebook %>"><i class="fas fa-envelope"></i> </a>
 
 
                                                     </div>
                                                   </div>
 
-                                                <% }); %>
+                                                <%# }); %>
                                             </ul>
 
 
@@ -330,15 +330,15 @@
 
 
                             </div>
-                        <!-- </div> -->
+                        </div>
 
                     </div>
 
 
 
                         <div class="card p-2 shadow"  id="card-buttons" >
-                            <!-- <div class="card-body"> -->
-                                <!-- <h5 class="card-title">New Members</h5> -->
+                            <div class="card-body">
+                                <h5 class="card-title">New Members</h5>
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#newMembersToggle">
                                   Sunday School
@@ -351,8 +351,8 @@
     
     
                         <div class="card p-2 shadow" id="card-buttons">
-                            <!-- <div class="card-body"> -->
-                                <!-- <h5 class="card-title">New Members</h5> -->
+                            <div class="card-body">
+                                <h5 class="card-title">New Members</h5>
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#newMembersToggle">
                                   Mane Tsokpa
@@ -363,7 +363,7 @@
     </div>
 
     </div>
-           
+            -->
 
 
 
@@ -380,7 +380,7 @@
 
 
 
-    </section>
+    <!-- </section> --> 
 
 
     <!-- Gallery Section-->

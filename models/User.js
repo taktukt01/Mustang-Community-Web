@@ -2,13 +2,13 @@
 const mongoose= require('mongoose');
 var bcrypt = require('bcryptjs');
 
-
 //Importing validator rather than doing substring or regex to check.
 const { isEmail } = require('validator');
 
 
 // Create schema
 const registrationSchema = new mongoose.Schema({
+
 firstName: {
   type: String, 
   required: [true, "Please enter your first name"],
@@ -55,10 +55,10 @@ timestamps : {
 
 
 
+// Fire a function after a 'save' occurs
 
 //We are going to use  Schema.pre  to hash our passwords (using bcrypt) before saving to db
 // fire a function before doc saved to db
-// hashing the password since we don't want to see user's actual password
 registrationSchema.pre('save', async function(next) {
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);
@@ -66,16 +66,12 @@ registrationSchema.pre('save', async function(next) {
   });
 
 
-
-// logging in User
 registrationSchema.statics.loginUser = async function(email, password){
-  // check to see if current schema has email
+
   const user = await this.findOne({ email });
-  //finds the User, otherwise returns null
   if (user) {
-    //thanks to bcrypt, we can compare our user provided password to the crypted password, stored with the User  
-    const auth = await bcrypt.compare(password, user.password);  //returns a Promise boolean
-    if (auth) {    
+    const auth = await bcrypt.compare(password, user.password);
+    if (auth) {
       return user;
     }
     throw Error('incorrect password' + "given password :"+ password + user.password);
@@ -83,25 +79,24 @@ registrationSchema.statics.loginUser = async function(email, password){
   throw Error('incorrect email' + email);
 };
 
+// registrationSchema.statics.findOrCreate = async function(id){
 
-//@param email: email to update to
-// registrationSchema.statics.updateEmail = async function(email){
+//   //find 
+//   //or create
 
-//   //get the current email,
+//     const user = await this.findById(id , function(err,result){ //returns document
 
-//   //then update it to user provided email
-//   // can we grab current localStorage 
-//   let currentId = cookies.get('jwt');
-//   if(currentId){
-//   const user = await this.findOne(currentId);
-//   if (user) {
+//       if(err){ // no users found, then create
+//         return this.create({id: id});  
+//       }
 
-//     return user;
+//       return user;
 
-//   }
+
+//     });
+
+
 // }
-//   throw Error('incorrect email' + email);
-// };
 
 const User = mongoose.model('User' , registrationSchema);
 

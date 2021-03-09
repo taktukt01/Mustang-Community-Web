@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/checkout.css">
 <%-include('../partials/headerPlugIns') %>
 <link rel="stylesheet" href="./css/styles.css">
-<%-include('../partials/stripeNav') %>
+<%-include('../partials/navBar') %>
 
 
 
@@ -28,62 +28,75 @@
 
 
  -->
+<form method="POST" action="/payment">
 
-    <div class="mx-auto" style="width: 200px;">
-
-            <button type="button" class="btn btn-primary mb-5 mt-5" id="checkout-button">Membership Fee</button>
-
-              </div>
-
-              <p class="h3 mb-3">OR</p>
-
-              <form action="/payment/custom">
-              
                 <div class="form-group">
-                  <input type="number" class="form-control" id="donationAmount" placeholder="Amount to donate">
+                  <input type="number" class="form-control" name="donationAmt" id="donationAmount" placeholder="Amount to donate">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary mb-5 mt-5" id="checkout-button">Donate</button>
 
               </form>
 
 
     
     <script type = "text/javascript">
-      var stripePublicKey = '<%= publish_key %>';
-
-      var donationAmt = '<%= amountDonate %>';
-
-  
-      var stripe = Stripe(stripePublicKey);
-      var checkoutButton = document.getElementById('checkout-button');
-
-      checkoutButton.addEventListener('click', function() {
-
-
-        fetch('/payment/fixed', {
-          method: 'POST',
-        })
-        .then(function(response) {
+    fetch("/payment", {
+        method: "POST",
+      })
+        .then(function (response) {
           return response.json();
         })
-        .then(function(session) {
-          return stripe.redirectToCheckout({ sessionId: session.id ,
-        
-   });
+        .then(function (session) {
+          console.log("Hello world!")
+          return stripe.redirectToCheckout({ sessionId: session.id });
         })
-        .then(function(result) {
-          // If `redirectToCheckout` fails due to a browser or network
+        .then(function (result) {
+          // If redirectToCheckout fails due to a browser or network
           // error, you should display the localized error message to your
-          // customer using `error.message`.
+          // customer using error.message.
           if (result.error) {
             alert(result.error.message);
           }
         })
-        .catch(function(error) {
-          console.error('Error:', error);
+        .catch(function (error) {
+          console.error("Error:", error);
         });
-      });
+
+      // var stripePublicKey = '<%= publish_key %>';
+
+      // var donationAmt = '<%= amountDonate %>';
+
+  
+      // var stripe = Stripe(stripePublicKey);
+      // var checkoutButton = document.getElementById('checkout-button');
+
+  //     checkoutButton.addEventListener('click', function() {
+
+
+  //       fetch('/payment/fixed', {
+  //         method: 'POST',
+  //       })
+  //       .then(function(response) {
+  //         return response.json();
+  //       })
+  //       .then(function(session) {
+  //         return stripe.redirectToCheckout({ sessionId: session.id ,
+        
+  //  });
+  //       })
+  //       .then(function(result) {
+  //         // If `redirectToCheckout` fails due to a browser or network
+  //         // error, you should display the localized error message to your
+  //         // customer using `error.message`.
+  //         if (result.error) {
+  //           alert(result.error.message);
+  //         }
+  //       })
+  //       .catch(function(error) {
+  //         console.error('Error:', error);
+  //       });
+  //     });
 
 
 
@@ -93,11 +106,10 @@
 
 
 
-<%- include('../partials/footer') %>  <!-- need this here , so footer is at bottom of page.-->
+<%- include('../partials/footer') %> 
 
 
 </div> <!-- end container-->
-
   </body>
 
 

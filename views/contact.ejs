@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+
+    <%-include('./partials/headerPlugIns') %>
+    <%-include('./partials/navBar') %>
+    <link rel="stylesheet" type="text/css" href="/css/sundaySchool.css">
+
+</head>
+<body>
+    <section class="container page-section bg-white" id="contact">
+        <div class="mx-auto">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-auto">Contact Us!</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Form-->
+
+            <div class="shadow-lg p-3 mb-5 bg-white rounded">
+
+                <p class="lead text-center font-weight-bold">
+
+
+                    
+                    59-07 37th avenue Woodside , NY 11377
+
+
+                   
+                
+                </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.5427015183504!2d-73.90527168475884!3d40.75008694322188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f1b0dadbac9%3A0x9e2b21eed9280289!2s59-07%2037th%20Ave%2C%20Queens%2C%20NY%2011377!5e0!3m2!1sen!2sus!4v1609372965473!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>                    
+<br>
+<br>
+                <p class="font-weight-bold">
+
+                feel free to contact us regarding any inquiries.
+
+                </p>
+
+
+            </div>
+
+
+            <form action="https://formspree.io/f/xaylaody" method="POST" id="contact-form">
+            <div class="form-row justify-content-center">
+                    <label for="inputName">Full Name</label>
+                    <input type="text" class="form-control" id="inputName" name="fullName" placeholder="Enter Full Name">    
+            </div>
+    
+            <div class="form-row justify-content-center">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" name="_replyto" placeholder="Email"
+                        required="">
+    
+            </div>
+    
+            <div class="form-row justify-content-center">
+                    <label for="inputSubject">Subject</label>
+                    <input type="text" class="form-control" id="inputSubject" name="_subject" placeholder="Subject"
+                        required="">
+            </div>
+    
+            <div class="form-row justify-content-center">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="3" name="message"
+                        placeholder="Enter Message here..."></textarea>
+    
+    
+            </div>
+    
+            <div class="form-row justify-content-center">
+
+            <button type="submit" id="submit-form" class="btn btn-primary mt-3">Submit</button>
+            <p class ="lead text-success" id="status-form"></p>
+
+            </div>
+    
+        </form>
+    
+        <br>
+    
+    
+        </div>
+
+
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script>
+        window.formbutton = window.formbutton || function () {
+            (formbutton.q = formbutton.q || []).push(arguments)
+        };
+        formbutton("create", {
+            action: "https://formspree.io/f/xaylaody" 
+        });
+    </script>
+        <%-include('./partials/scripts') %>
+
+</body>
+    </html>

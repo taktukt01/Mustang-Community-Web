@@ -11,51 +11,26 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-/*
-to disable horizontal scrolling 
-*/
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-
-}
-
-#carousel-section , #about, #gallery, #contact{
-  background-image: url('../images/background/triangle-mosaic.png');
-}
-
-.home-navbar{
- 
-  background:#535fe5;
-  
-
-}
-#dropdownMenuLink{
-  font-size: 1.25rem;
-}
+ html{
+  font-family: 'Varela', sans-serif;
+  background-color: #8BC6EC;
+background-image: linear-gradient(315deg, #8BC6EC 0%, #9599E2 100%);
+ }
               img{height:100px;
                 vertical-align: middle;
                 border-style: none;
               }
 
+              a.nav-link{
+                font-family: 'Lato', sans-serif;
+              }
               .socialsLinks{
                 height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-           
-/* text over carousel */
-.carousel-content{
-
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  z-index: 20;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-
-}
+            
 
               .gallery-container h1 {
                 text-align: center;
@@ -74,9 +49,9 @@ html, body {
             
             /* Styles for the gallery */
             
-            .tz-gallery {
+            /* .tz-gallery {
                 padding: 40px;
-            }
+            } */
 
             #frontCover{
               background-color:black;
@@ -105,6 +80,42 @@ a:hover {
 }
 
 
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  
+}
+
+
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-2 {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+
+
+
+
 
 
 
@@ -117,6 +128,7 @@ a:hover {
  
 .page-section {
   padding: 6rem 0;
+
 }
   /* font-size: 1.5rem; */
   /* line-height: 2rem; */
@@ -154,10 +166,18 @@ a:hover {
   color: #fff !important;
 }
 
+
+.btn {
+  white-space:normal !important;
+  word-wrap: break-word; 
+}
+
+
 .btn-xl {
   padding: 1rem 1.75rem;
   font-size: 1.25rem;
 }
+
 
 .btn-social {
   border-radius: 100%;
@@ -261,21 +281,12 @@ ul li a{
   background: red;
 }
 
-
-#membersButton {
-
-background: #535fe5;
-
-}
-#portfolio , #card-buttons{
-  background: linear-gradient( 160deg, rgb(55, 70, 190) 0%, rgb(80, 92, 215) 100%) ;
-}
-
 @media(max-width: 300px) {
   .box {
      width: 100%;
    }
 }
+
 .carousel-inner img {
   margin: auto;
 }
@@ -294,7 +305,8 @@ background: #535fe5;
 
 
 p{
-  font-family: 'Poppins', sans-serif !important;
+
+  font-family: 'Varela', sans-serif;
   line-height: 1.9em;
     margin: 0 auto 0.7em;
     font-size: 17px !important;
@@ -306,33 +318,3 @@ p{
 
 }
 
-
-/* ----------- Non-Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-
-    .youtube-icon{
-      margin-left: 5%;
-    }
-    .facebook-icon{
-      margin-left:20%;
-    }
-
-    .youtube-icon:hover , .facebook-icon:hover{
-      filter: alpha(opacity=80);
-      opacity: .8;
-    }
-
-
-
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) { 
-}

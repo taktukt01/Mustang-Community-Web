@@ -18,7 +18,7 @@ const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
 const fbAuth = require('./routes/passport.facebook');
-// sunday school views/controllers
+
 const members = require('./routes/members');
 // const videos = require('./routes/youtubeApi');
 
@@ -204,6 +204,10 @@ fs.readdir(__dirname +"/public/images/" , (err, files)=>{
 });
 
   });
+
+  app.get('/contact', (req,res)=>{
+    res.render("contact");
+  })
 
 
 

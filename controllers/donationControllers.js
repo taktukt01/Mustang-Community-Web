@@ -27,58 +27,27 @@ http://expressjs.com/en/guide/routing.html#route-parameters
 */
 module.exports.payment_post = async (req,res)=>{
 
-  // fixed  --> Fixed $50 payment
-  // custom  --> User input donation amount
+  console.log("...", req.body);
 
-
-  switch(req.params.paymentType){
-    case("fixed"):
-    const session = await stripe.checkout.sessions.create({
-      submit_type: 'donate',
-      payment_method_types: ["card"],
-      line_items: [{
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: [
+      {
         price_data: {
-          currency: "usd",
-          product_data: {
+          currency: 'usd',
+          unit_amount: req.body.donationAmt * 1000,
+          product_data:{
             name: "Donation"
-          },
-          unit_amount: 50000
+          }
         },
         quantity: 1,
-      }, ],
-      mode: "payment",
-      success_url: "localhost:5000/paymentSuccess",
-      cancel_url: "localhost:5000/failed",
-  
-    });
-    break;
-    case("custom"):
-    const session2 = await stripe.checkout.sessions.create({
-      submit_type: 'donate',
-      payment_method_types: ["card"],
-      line_items: [{
-        price_data: {
-          currency: "usd",
-          product_data: {
-            name: "Donation"
-          },
-          unit_amount: req.body.donationAmount * 1000
-        },
-        quantity: 1,
-      }, ],
-      mode: "payment",
-      success_url: "localhost:5000/paymentSuccess",
-      // cancel_url: "localhost:5000/failed",
-  
-    });
-break;
-}
-
-  res.json({
-    id: session.id,
-    id2: session2.id
-
+      },
+    ],
+    mode: 'payment',
+    success_url: 'https://mail.google.com/mail/u/0/',
+    cancel_url: 'https://google.com/'
   });
+  res.json({ id: session.id });
 
 }
 
