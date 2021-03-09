@@ -11,66 +11,76 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
- html{
+html {
   font-family: 'Varela', sans-serif;
   background-color: #8BC6EC;
-background-image: linear-gradient(315deg, #8BC6EC 0%, #9599E2 100%);
- }
-              img{height:100px;
-                vertical-align: middle;
-                border-style: none;
-              }
-
-              a.nav-link{
-                font-family: 'Lato', sans-serif;
-              }
-              .socialsLinks{
-                height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-image: linear-gradient(315deg, #8BC6EC 0%, #9599E2 100%);
 }
-            
 
-              .gallery-container h1 {
-                text-align: center;
-                margin-top: 70px;
-                font-family: 'Droid Sans', sans-serif;
-                font-weight: bold;
-                color: #58595a;
-            }
-            
-            .gallery-container p.page-description {
-                text-align: center;
-                margin: 30px auto;
-                font-size: 18px;
-                color: #85878c;
-            }
-            
-            /* Styles for the gallery */
-            
-            /* .tz-gallery {
+img {
+  height: 100px;
+  vertical-align: middle;
+  border-style: none;
+}
+
+nav{
+  font-family: 'Lato', sans-serif;
+  font-size: 1.00rem;
+  font-weight: 700;
+}
+a#dropdownMenuLink{
+  font-family: 'Lato', sans-serif;
+  font-size: 1.00rem;
+  font-weight: 700;
+}
+
+.socialsLinks {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.gallery-container h1 {
+  text-align: center;
+  margin-top: 70px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  color: #58595a;
+}
+
+.gallery-container p.page-description {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 18px;
+  color: #85878c;
+}
+
+/* Styles for the gallery */
+
+/* .tz-gallery {
                 padding: 40px;
             } */
 
-            #frontCover{
-              background-color:black;
-            }
-            
-            .tz-gallery .thumbnail {
-                padding: 0;
-                margin-bottom: 30px;
-                border: none;
-            }
-            
-            .tz-gallery img {
-                border-radius: 2px;
-            }
+#frontCover {
+  background-color: black;
+}
 
-            h1.photo-gall-heading{
+.tz-gallery .thumbnail {
+  padding: 0;
+  margin-bottom: 30px;
+  border: none;
+}
 
-              color:#fff;
-            }
+.tz-gallery img {
+  border-radius: 2px;
+}
+
+h1.photo-gall-heading {
+
+  color: #fff;
+}
 
 
 
@@ -83,7 +93,7 @@ a:hover {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-  
+
 }
 
 
@@ -125,13 +135,14 @@ a:hover {
 }
 
 
- 
+
 .page-section {
   padding: 6rem 0;
 
 }
-  /* font-size: 1.5rem; */
-  /* line-height: 2rem; */
+
+/* font-size: 1.5rem; */
+/* line-height: 2rem; */
 
 
 .divider-custom {
@@ -141,6 +152,7 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+
 .divider-custom .divider-custom-line {
   width: 100%;
   max-width: 7rem;
@@ -149,27 +161,32 @@ a:hover {
   border-radius: 1rem;
   border-color: #2c3e50 !important;
 }
+
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
 }
+
 .divider-custom .divider-custom-line:last-child {
   margin-left: 1rem;
 }
+
 .divider-custom .divider-custom-icon {
   color: #2c3e50 !important;
   font-size: 2rem;
 }
+
 .divider-custom.divider-light .divider-custom-line {
   background-color: #fff;
 }
+
 .divider-custom.divider-light .divider-custom-icon {
   color: #fff !important;
 }
 
 
 .btn {
-  white-space:normal !important;
-  word-wrap: break-word; 
+  white-space: normal !important;
+  word-wrap: break-word;
 }
 
 
@@ -198,6 +215,7 @@ a:hover {
   border-radius: 0.5rem;
   overflow: hidden;
 }
+
 .portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
   top: 0;
@@ -206,9 +224,11 @@ a:hover {
   opacity: 0;
   background-color: rgba(26, 188, 156, 0.9);
 }
+
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
 }
+
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
   font-size: 1.5rem;
 }
@@ -229,21 +249,22 @@ a:hover {
   opacity: 1;
 }
 
-.welcomeMessage{
+.welcomeMessage {
 
-  font-family:Times New Roman;
+  font-family: Times New Roman;
   font-weight: bold;
-  color:white;
-  margin-right:2rem;
+  color: white;
+  margin-right: 2rem;
 }
 
 
 
 /* Navigation */
-.social-part .fa{
-  padding-right:20px;
+.social-part .fa {
+  padding-right: 20px;
 }
-ul li a{
+
+ul li a {
   margin-right: 20px;
 }
 
@@ -283,8 +304,8 @@ ul li a{
 
 @media(max-width: 300px) {
   .box {
-     width: 100%;
-   }
+    width: 100%;
+  }
 }
 
 .carousel-inner img {
@@ -292,9 +313,10 @@ ul li a{
 }
 
 .navbar-brand {
-  width:150px;
+  width: 150px;
   font-size: 24px;
 }
+
 .navbar-brand img {
   height: 50px;
   /* put value of image height as your need */
@@ -304,17 +326,16 @@ ul li a{
 
 
 
-p{
+p {
 
   font-family: 'Varela', sans-serif;
   line-height: 1.9em;
-    margin: 0 auto 0.7em;
-    font-size: 17px !important;
-    font-weight: 400;
+  margin: 0 auto 0.7em;
+  font-size: 17px !important;
+  font-weight: 400;
 }
 
-.carousel-section{
-  position:relative;
+.carousel-section {
+  position: relative;
 
 }
-
