@@ -17,7 +17,7 @@ const path = require('path');
 const authControllers = require('./routes/users');
 const donationControllers = require('./routes/payment');
 const imgUploadControllers = require('./routes/galleryUpload');
-const fbAuth = require('./routes/passport.facebook');
+// const fbAuth = require('./routes/passport.facebook');
 
 const members = require('./routes/members');
 // const videos = require('./routes/youtubeApi');
@@ -48,7 +48,7 @@ app.use(cors());
 app.use(authControllers);
 app.use(donationControllers);
 app.use(imgUploadControllers);
-app.use(fbAuth);
+// app.use(fbAuth);
 app.use('/members', members);
 // app.use(videos);
 
@@ -260,8 +260,7 @@ app.get("/authPage", (req, res) => {
     }
     });
 
-    // Implement pagination...
-    // 
+    // Losar videos connected using youtube api
     app.get("/losar", (req,res)=>{
 
         res.render("losarVideos" , {
