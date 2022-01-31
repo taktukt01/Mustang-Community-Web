@@ -3,9 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 // const fetch = require('node-fetch');
 const app = express();
-require('dotenv').config({
-  silent: process.env.NODE_ENV === 'production' 
-})
+require('dotenv').config();
 const fs = require('fs');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');

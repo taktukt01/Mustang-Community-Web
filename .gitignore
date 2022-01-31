@@ -4,4 +4,4 @@ node_modules
 .env
 .ruby-version
 Gemfile.lock
-client_secret.json   
+# client_secret.json   commented -- node cannot find client_secret file :(
